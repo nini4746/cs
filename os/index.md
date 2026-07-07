@@ -11,7 +11,7 @@ OSTEP 구조 그대로 3부: 가상화 / 동시성 / 영속성.
 ## 1. 가상화 - CPU
 
 - [x] [[process]] - 프로세스란, 상태 전이, fork/exec/wait, 좀비/고아
-- [ ] [[limited-direct-execution]] - 시스템 콜, 유저/커널 모드, 컨텍스트 스위치 비용
+- [x] [[limited-direct-execution]] - 시스템 콜, 유저/커널 모드, 컨텍스트 스위치 비용
 - [ ] [[cpu-scheduling]] - FIFO/SJF/RR, MLFQ, 리눅스 CFS/EEVDF
 - [ ] [[process-vs-thread]] - 스레드 모델, 공유하는 것과 안 하는 것
 
