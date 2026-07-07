@@ -48,7 +48,7 @@ title: "computer-architecture"
 
 ## 7. 예외 제어 흐름 (CS:APP 8장, OS 접점)
 
-- [ ] [[exceptions-and-interrupts]] - 인터럽트/트랩/폴트, 시스템 콜이 실제로 일어나는 과정 → os/와 연결
+- [x] [[exceptions-and-interrupts]] - 인터럽트/트랩/폴트, 시스템 콜이 실제로 일어나는 과정 → os/와 연결
 
 ## 8. 가상 메모리 - 하드웨어 관점 (CS:APP 9장)
 
