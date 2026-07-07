@@ -39,7 +39,7 @@ OSTEP 구조 그대로 3부: 가상화 / 동시성 / 영속성.
 - [x] [[fast-file-system]] - 디스크 지역성, 블록 그룹
 - [x] [[crash-consistency]] - fsck, 저널링, copy-on-write (ZFS/btrfs)
 - [x] [[page-cache]] - 버퍼 캐시, mmap, write-back과 fsync
-- [ ] [[ssd-internals]] - FTL, wear leveling, HDD와 다른 성능 특성
+- [x] [[ssd-internals]] - FTL, wear leveling, HDD와 다른 성능 특성
 
 ## 5. 심화
 
