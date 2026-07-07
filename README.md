@@ -15,6 +15,10 @@
 - `web/` - 웹 (브라우저 동작, 렌더링, REST, 인증)
 - `security/` - 보안 (암호화, 해싱, 취약점)
 - `distributed-systems/` - 분산 시스템 (CAP, 합의, 메시지 큐, 캐싱 전략)
+- `math/` - 수학 (이산수학, 선형대수, 확률통계)
+- `software-design/` - 소프트웨어 설계 (디자인 패턴, 아키텍처, 클린 코드, 테스팅)
+- `devops/` - 데브옵스 (Docker, k8s, CI/CD, 클라우드, Git, Linux)
+- `ai-ml/` - AI/ML (ML 기초, LLM, 프롬프팅)
 
 ## 규칙
 
