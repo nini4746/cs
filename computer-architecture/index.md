@@ -31,7 +31,7 @@ title: "computer-architecture"
 
 ## 4. 프로그램 성능과 ILP (CS:APP 5장)
 
-- [ ] [[compiler-optimization-limits]] - 컴파일러가 최적화 못 하는 것 (aliasing, 부작용)
+- [x] [[compiler-optimization-limits]] - 컴파일러가 최적화 못 하는 것 (aliasing, 부작용)
 - [ ] [[instruction-level-parallelism]] - 슈퍼스칼라, 비순차 실행, 루프 언롤링
 - [ ] [[branch-prediction]] - 분기 예측, 예측 실패 비용, 정렬된 배열이 빨리 처리되는 이유
 
