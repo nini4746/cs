@@ -21,7 +21,7 @@ title: "computer-architecture"
 - [x] [[assembly-basics]] - 레지스터, 주소 지정 방식, mov/산술/제어 흐름 (x86-64 + ARM64 비교)
 - [x] [[procedures-and-stack]] - 호출 규약, 스택 프레임, 재귀가 동작하는 원리
 - [x] [[data-layout]] - 배열/구조체 메모리 배치, 정렬(alignment), 패딩
-- [ ] [[buffer-overflow]] - 스택 오버플로우 공격 원리와 방어 (canary, ASLR, NX)
+- [x] [[buffer-overflow]] - 스택 오버플로우 공격 원리와 방어 (canary, ASLR, NX)
 
 ## 3. 프로세서 아키텍처 (P&H 4장)
 
