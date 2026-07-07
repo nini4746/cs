@@ -10,7 +10,7 @@
 ## 1. 정보의 표현 (CS:APP 2장)
 
 - [x] [[bits-and-integers]] - 비트 연산, 부호 없는/2의 보수 정수, 오버플로우가 UB인 이유
-- [ ] [[floating-point]] - IEEE 754, 정밀도 한계, 0.1 + 0.2 != 0.3, NaN/Inf
+- [x] [[floating-point]] - IEEE 754, 정밀도 한계, 0.1 + 0.2 != 0.3, NaN/Inf
 
 ## 2. 기계 수준 프로그램 (CS:APP 3장)
 
