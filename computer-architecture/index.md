@@ -25,7 +25,7 @@ title: "computer-architecture"
 
 ## 3. 프로세서 아키텍처 (P&H 4장)
 
-- [ ] [[isa-design]] - ISA란 무엇인가, RISC vs CISC, x86 vs ARM vs RISC-V
+- [x] [[isa-design]] - ISA란 무엇인가, RISC vs CISC, x86 vs ARM vs RISC-V
 - [ ] [[pipelining]] - 5단계 파이프라인, 왜 클럭을 올릴 수 있나
 - [ ] [[hazards]] - 구조/데이터/제어 해저드, 포워딩, 스톨
 
