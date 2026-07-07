@@ -36,7 +36,7 @@ OSTEP 구조 그대로 3부: 가상화 / 동시성 / 영속성.
 
 - [x] [[io-devices]] - 인터럽트 vs 폴링, DMA, 디바이스 드라이버 구조
 - [x] [[file-system-basics]] - 파일/디렉토리 구현, inode, 하드/심볼릭 링크
-- [ ] [[fast-file-system]] - 디스크 지역성, 블록 그룹
+- [x] [[fast-file-system]] - 디스크 지역성, 블록 그룹
 - [ ] [[crash-consistency]] - fsck, 저널링, copy-on-write (ZFS/btrfs)
 - [ ] [[page-cache]] - 버퍼 캐시, mmap, write-back과 fsync
 - [ ] [[ssd-internals]] - FTL, wear leveling, HDD와 다른 성능 특성
