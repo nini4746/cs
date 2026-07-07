@@ -1,5 +1,5 @@
 ---
-title: "컴퓨터 구조"
+title: "computer-architecture"
 ---
 
 # 컴퓨터 구조 syllabus

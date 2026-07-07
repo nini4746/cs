@@ -1,5 +1,5 @@
 ---
-title: "자료구조"
+title: "data-structures"
 ---
 
 # 자료구조 syllabus

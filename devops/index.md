@@ -1,5 +1,5 @@
 ---
-title: "데브옵스"
+title: "devops"
 ---
 
 # 데브옵스 syllabus

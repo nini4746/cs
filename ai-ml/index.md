@@ -1,5 +1,5 @@
 ---
-title: "AI/ML"
+title: "ai-ml"
 ---
 
 # AI/ML syllabus

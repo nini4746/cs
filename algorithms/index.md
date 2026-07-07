@@ -1,5 +1,5 @@
 ---
-title: "알고리즘"
+title: "algorithms"
 ---
 
 # 알고리즘 syllabus

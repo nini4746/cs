@@ -1,5 +1,5 @@
 ---
-title: "운영체제"
+title: "os"
 ---
 
 # 운영체제 syllabus

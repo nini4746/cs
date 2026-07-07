@@ -1,5 +1,5 @@
 ---
-title: "소프트웨어 설계"
+title: "software-design"
 ---
 
 # 소프트웨어 설계 syllabus

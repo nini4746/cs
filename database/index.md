@@ -1,5 +1,5 @@
 ---
-title: "데이터베이스"
+title: "database"
 ---
 
 # 데이터베이스 syllabus

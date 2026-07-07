@@ -1,5 +1,5 @@
 ---
-title: "보안"
+title: "security"
 ---
 
 # 보안 syllabus

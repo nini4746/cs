@@ -1,5 +1,5 @@
 ---
-title: "분산 시스템"
+title: "distributed-systems"
 ---
 
 # 분산 시스템 syllabus
