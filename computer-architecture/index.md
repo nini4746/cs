@@ -57,4 +57,4 @@ title: "computer-architecture"
 ## 9. 병렬 하드웨어
 
 - [x] [[simd]] - 벡터 연산, SIMD 명령어, 자동 벡터화
-- [ ] [[multicore-and-numa]] - 멀티코어 구조, NUMA, 메모리 모델 맛보기
+- [x] [[multicore-and-numa]] - 멀티코어 구조, NUMA, 메모리 모델 맛보기
