@@ -18,7 +18,7 @@ OSTEP 구조 그대로 3부: 가상화 / 동시성 / 영속성.
 ## 2. 가상화 - 메모리
 
 - [x] [[address-spaces]] - 주소 공간 추상화, 코드/힙/스택 배치
-- [ ] [[segmentation-and-paging]] - 세그멘테이션 → 페이징으로 온 이유
+- [x] [[segmentation-and-paging]] - 세그멘테이션 → 페이징으로 온 이유
 - [ ] [[page-tables]] - 멀티레벨 페이지 테이블, TLB (하드웨어 관점은 computer-architecture/)
 - [ ] [[swapping]] - 페이지 폴트, 교체 정책 (LRU, clock), thrashing
 - [ ] [[memory-allocation]] - malloc 내부, free list, 단편화, buddy/slab
