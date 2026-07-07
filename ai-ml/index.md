@@ -1,3 +1,7 @@
+---
+title: "AI/ML"
+---
+
 # AI/ML syllabus
 
 기준: Andrew Ng ML 강의 + CS231n/CS224n 개념 + 최신 LLM 실무. 선행: math/ (선형대수, 확률).

@@ -1,3 +1,7 @@
+---
+title: "소프트웨어 설계"
+---
+
 # 소프트웨어 설계 syllabus
 
 기준: GoF, Clean Code/Architecture, Refactoring (Fowler), A Philosophy of Software Design (Ousterhout).

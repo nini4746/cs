@@ -1,3 +1,7 @@
+---
+title: "프로그래밍 언어"
+---
+
 # 프로그래밍 언어 syllabus
 
 기준: **Crafting Interpreters** (무료 공개) + CS 시리즈 PL 과목 개념. 언어 사용법이 아니라 언어가 동작하는 원리.

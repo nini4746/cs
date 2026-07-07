@@ -1,3 +1,7 @@
+---
+title: "분산 시스템"
+---
+
 # 분산 시스템 syllabus
 
 기준: **MIT 6.824** (강의 공개) + **DDIA** (Designing Data-Intensive Applications). 선행: os/, network/, database/ 트랜잭션.

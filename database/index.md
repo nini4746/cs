@@ -1,3 +1,7 @@
+---
+title: "데이터베이스"
+---
+
 # 데이터베이스 syllabus
 
 기준: **CMU 15-445** (Database Systems, 강의 공개) + Silberschatz. 사용법보다 내부 구조 중심.

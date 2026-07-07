@@ -1,3 +1,7 @@
+---
+title: "알고리즘"
+---
+
 # 알고리즘 syllabus
 
 기준 교과서: **CLRS** (Introduction to Algorithms) + MIT 6.006. 자료구조 자체는 data-structures/에서.

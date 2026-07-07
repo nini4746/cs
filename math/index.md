@@ -1,3 +1,7 @@
+---
+title: "수학"
+---
+
 # 수학 syllabus
 
 기준: 이산수학 (Rosen), 선형대수 (Strang / 3Blue1Brown), 확률 (MIT 6.041). CS에 필요한 만큼.

@@ -1,3 +1,7 @@
+---
+title: "네트워크"
+---
+
 # 네트워크 syllabus
 
 기준 교과서: **Kurose & Ross** (Computer Networking: A Top-Down Approach). 응용 계층에서 내려가는 순서.

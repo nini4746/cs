@@ -1,3 +1,7 @@
+---
+title: "오토마타·계산이론"
+---
+
 # 오토마타·계산이론 syllabus
 
 기준 교과서: **Sipser** (Introduction to the Theory of Computation). 촘스키 위계를 따라 위로.

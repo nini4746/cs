@@ -1,3 +1,7 @@
+---
+title: "자료구조"
+---
+
 # 자료구조 syllabus
 
 기준: CLRS 해당 장 + Open Data Structures. 각 구조마다 "언제 쓰나 + 내부 구현 + 캐시 관점 성능"까지.

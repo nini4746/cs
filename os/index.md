@@ -1,3 +1,7 @@
+---
+title: "운영체제"
+---
+
 # 운영체제 syllabus
 
 기준 교과서: **OSTEP** (Operating Systems: Three Easy Pieces, 무료 공개) + 공룡책 (Silberschatz) 보조.
