@@ -52,7 +52,7 @@ title: "computer-architecture"
 
 ## 8. 가상 메모리 - 하드웨어 관점 (CS:APP 9장)
 
-- [ ] [[virtual-memory]] - 주소 변환, 페이지 테이블, TLB (OS 관점은 os/에서)
+- [x] [[virtual-memory]] - 주소 변환, 페이지 테이블, TLB (OS 관점은 os/에서)
 
 ## 9. 병렬 하드웨어
 
