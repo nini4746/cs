@@ -25,7 +25,7 @@ OSTEP 구조 그대로 3부: 가상화 / 동시성 / 영속성.
 
 ## 3. 동시성
 
-- [ ] [[threads-and-races]] - 경쟁 조건, 임계 구역, 원자성이 깨지는 지점
+- [x] [[threads-and-races]] - 경쟁 조건, 임계 구역, 원자성이 깨지는 지점
 - [ ] [[locks]] - 스핀락 vs 뮤텍스, futex, 락 구현 (test-and-set, CAS)
 - [ ] [[condition-variables]] - 생산자-소비자, 왜 while로 감싸나
 - [ ] [[semaphores]] - 세마포어로 락/CV 재현, reader-writer
