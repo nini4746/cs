@@ -19,7 +19,7 @@ title: "computer-architecture"
 ## 2. 기계 수준 프로그램 (CS:APP 3장)
 
 - [x] [[assembly-basics]] - 레지스터, 주소 지정 방식, mov/산술/제어 흐름 (x86-64 + ARM64 비교)
-- [ ] [[procedures-and-stack]] - 호출 규약, 스택 프레임, 재귀가 동작하는 원리
+- [x] [[procedures-and-stack]] - 호출 규약, 스택 프레임, 재귀가 동작하는 원리
 - [ ] [[data-layout]] - 배열/구조체 메모리 배치, 정렬(alignment), 패딩
 - [ ] [[buffer-overflow]] - 스택 오버플로우 공격 원리와 방어 (canary, ASLR, NX)
 
