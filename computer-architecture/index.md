@@ -39,7 +39,7 @@ title: "computer-architecture"
 
 - [x] [[memory-hierarchy]] - 계층 구조, 지역성, 캐시 내부 동작, false sharing
 - [x] [[cache-misses]] - 3C 상세, 미스율 측정 (perf/instruments), memory mountain
-- [ ] [[cache-coherence]] - MESI, 코어 간 캐시 동기화, false sharing의 근본 원인
+- [x] [[cache-coherence]] - MESI, 코어 간 캐시 동기화, false sharing의 근본 원인
 - [ ] [[matrix-blocking]] - 행렬곱 blocking/tiling 직접 구현 + GFLOPS 측정
 
 ## 6. 링킹 (CS:APP 7장)
