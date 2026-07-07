@@ -22,6 +22,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: notes
+          fetch-depth: 0
 
       - name: Checkout Quartz
         uses: actions/checkout@v4
@@ -33,14 +34,39 @@ jobs:
       - name: Copy notes into Quartz content
         run: |
           mkdir -p quartz/content
-          rsync -a --exclude='.git' --exclude='.github' --exclude='README.md' --exclude='.gitkeep' notes/ quartz/content/
+          rsync -a --exclude='.git' --exclude='.github' --exclude='README.md' --exclude='.gitkeep' --exclude='quartz.layout.ts' notes/ quartz/content/
           printf -- '---\ntitle: "CS 공부 노트"\n---\n\n' > quartz/content/index.md
           cat notes/README.md >> quartz/content/index.md
+          cp notes/quartz.layout.ts quartz/quartz.layout.ts
 
-      - name: Configure site title and base URL
+      - name: Inject creation dates from git history
+        working-directory: notes
+        run: |
+          git ls-files '*.md' | while read -r f; do
+            [ "$f" = "README.md" ] && continue
+            target="../quartz/content/$f"
+            [ -f "$target" ] || continue
+            created=$(git log --follow --diff-filter=A --format=%aI -- "$f" | tail -1)
+            modified=$(git log -1 --format=%aI -- "$f")
+            [ -n "$created" ] || continue
+            if head -1 "$target" | grep -q '^---$'; then
+              grep -q '^created:' "$target" || {
+                sed -i "1a modified: $modified" "$target"
+                sed -i "1a created: $created" "$target"
+              }
+            else
+              printf -- '---\ncreated: %s\nmodified: %s\n---\n\n' "$created" "$modified" | cat - "$target" > "$target.tmp"
+              mv "$target.tmp" "$target"
+            fi
+          done
+
+      - name: Configure site title, base URL, and date handling
         run: |
           sed -i 's|quartz\.jzhao\.xyz|nini4746.github.io/cs|g' quartz/quartz.config.ts
           sed -i 's|pageTitle: .*|pageTitle: "CS 공부 노트",|' quartz/quartz.config.ts
+          sed -i 's|defaultDateType: "modified"|defaultDateType: "created"|' quartz/quartz.config.ts
+          sed -i 's|priority: \["frontmatter", "git", "filesystem"\]|priority: ["frontmatter", "filesystem"]|' quartz/quartz.config.ts
+          sed -i 's|Plugin.FolderPage(),|Plugin.FolderPage({ sort: (a, b) => (a.dates?.created.getTime() ?? 0) - (b.dates?.created.getTime() ?? 0) }),|' quartz/quartz.config.ts
 
       - name: Setup Node
         uses: actions/setup-node@v4
