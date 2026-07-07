@@ -43,5 +43,5 @@ OSTEP 구조 그대로 3부: 가상화 / 동시성 / 영속성.
 
 ## 5. 심화
 
-- [ ] [[virtualization-and-containers]] - VM vs 컨테이너, namespace/cgroup → devops/와 연결
+- [x] [[virtualization-and-containers]] - VM vs 컨테이너, namespace/cgroup → devops/와 연결
 - [ ] [[io-multiplexing]] - select/poll/epoll/kqueue, 이벤트 루프 → network/와 연결
