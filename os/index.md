@@ -30,7 +30,7 @@ OSTEP 구조 그대로 3부: 가상화 / 동시성 / 영속성.
 - [x] [[condition-variables]] - 생산자-소비자, 왜 while로 감싸나
 - [x] [[semaphores]] - 세마포어로 락/CV 재현, reader-writer
 - [x] [[deadlock]] - 4대 조건, 예방/회피/탐지, 락 순서 규칙
-- [ ] [[lock-free-basics]] - CAS 기반 자료구조 맛보기, ABA 문제
+- [x] [[lock-free-basics]] - CAS 기반 자료구조 맛보기, ABA 문제
 
 ## 4. 영속성
 
