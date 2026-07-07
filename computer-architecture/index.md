@@ -44,7 +44,7 @@ title: "computer-architecture"
 
 ## 6. 링킹 (CS:APP 7장)
 
-- [ ] [[linking]] - 심볼 해석, 재배치, 정적 vs 동적 링킹, 라이브러리가 로드되는 과정
+- [x] [[linking]] - 심볼 해석, 재배치, 정적 vs 동적 링킹, 라이브러리가 로드되는 과정
 
 ## 7. 예외 제어 흐름 (CS:APP 8장, OS 접점)
 
