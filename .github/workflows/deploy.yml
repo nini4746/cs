@@ -34,7 +34,8 @@ jobs:
         run: |
           mkdir -p quartz/content
           rsync -a --exclude='.git' --exclude='.github' --exclude='README.md' --exclude='.gitkeep' notes/ quartz/content/
-          cp notes/README.md quartz/content/index.md
+          printf -- '---\ntitle: "CS 공부 노트"\n---\n\n' > quartz/content/index.md
+          cat notes/README.md >> quartz/content/index.md
 
       - name: Configure site title and base URL
         run: |
