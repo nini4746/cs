@@ -110,6 +110,12 @@ int main(void) {
     long sum = 0;
     clock_t t;
 
+    // 런타임에 채워야 함. 안 쓰면 배열이 전부 0인 걸 컴파일러가 알아채고
+    // 루프를 통째로 상수 접기로 제거해서 0.000s가 나온다 (직접 당해봄)
+    for (int i = 0; i < N; i++)
+        for (int j = 0; j < N; j++)
+            a[i][j] = i ^ j;
+
     // 행 우선: a[i][0], a[i][1], ... 메모리상 연속 → 라인 64B당 int 16개 알뜰 사용
     t = clock();
     for (int i = 0; i < N; i++)
@@ -132,6 +138,13 @@ int main(void) {
 gcc -O1 locality.c -o locality && ./locality
 ```
 
+실측 (Apple M계열, 2026-07):
+
+```
+row-major:    0.032s
+column-major: 0.238s   # 같은 연산, 7배 차이
+```
+
 ### 2. False sharing (멀티스레드에서 캐시 라인 공유)
 
 서로 다른 스레드가 **다른 변수**를 써도, 두 변수가 **같은 캐시 라인**에 있으면 코어들이 라인 소유권을 계속 뺏고 뺏긴다 (캐시 일관성 프로토콜, → [[cache-coherence]]). 논리적 공유 없는데 물리적 공유로 느려지는 것.
@@ -143,11 +156,14 @@ gcc -O1 locality.c -o locality && ./locality
 
 #define ITER 100000000
 
+// volatile 필수: 없으면 컴파일러가 루프를 counter += ITER 한 줄로
+// 최적화해서 메모리 접근 자체가 사라진다 (역시 직접 당해봄)
+
 // 같은 라인: 두 카운터가 붙어 있음 (8B 간격)
-long counters_shared[2];
+volatile long counters_shared[2];
 
 // 다른 라인: 128B 정렬로 라인 분리
-struct { long v; char pad[120]; } counters_padded[2];
+struct { volatile long v; char pad[120]; } counters_padded[2];
 
 void *work_shared(void *arg) {
     long i, idx = (long)arg;
@@ -184,7 +200,12 @@ int main(void) {
 gcc -O1 -pthread false-sharing.c -o fs && ./fs
 ```
 
-같은 연산인데 padding만으로 수 배 빨라진다.
+실측 (Apple M계열, 2026-07):
+
+```
+same line (false sharing): 0.221s
+padded (separate lines):   0.035s   # padding만으로 6배
+```
 
 ### 3. 내 머신 캐시 스펙 확인 (macOS)
 
