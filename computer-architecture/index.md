@@ -27,7 +27,7 @@ title: "computer-architecture"
 
 - [x] [[isa-design]] - ISA란 무엇인가, RISC vs CISC, x86 vs ARM vs RISC-V
 - [x] [[pipelining]] - 5단계 파이프라인, 왜 클럭을 올릴 수 있나
-- [ ] [[hazards]] - 구조/데이터/제어 해저드, 포워딩, 스톨
+- [x] [[hazards]] - 구조/데이터/제어 해저드, 포워딩, 스톨
 
 ## 4. 프로그램 성능과 ILP (CS:APP 5장)
 
