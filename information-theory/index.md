@@ -18,7 +18,7 @@ title: "information-theory"
 
 - [x] [[source-coding-theorem]] - 섀넌 소스 코딩 정리, 엔트로피 = 압축 하한, 접두부호와 Kraft 부등식
 - [x] [[huffman-and-entropy-coding]] - Huffman(최적 기호 부호), arithmetic/range coding, 엔트로피에 근접
-- [ ] [[lempel-ziv]] - LZ77/78, 사전 기반, 범용 압축(분포 몰라도), gzip/zstd의 뿌리
+- [x] [[lempel-ziv]] - LZ77/78, 사전 기반, 범용 압축(분포 몰라도), gzip/zstd의 뿌리
 
 ## 3. 잡음 채널과 오류 정정
 
