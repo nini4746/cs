@@ -10,7 +10,7 @@ title: "algorithms"
 
 - [x] [[asymptotic-analysis]] - Big-O/Θ/Ω 정확한 정의, 상수가 중요해지는 경우
 - [x] [[recurrences]] - 점화식 풀기, 마스터 정리, 재귀 트리
-- [ ] [[correctness-proofs]] - 루프 불변식으로 정당성 증명하는 법
+- [x] [[correctness-proofs]] - 루프 불변식으로 정당성 증명하는 법
 
 ## 2. 정렬과 탐색
 
