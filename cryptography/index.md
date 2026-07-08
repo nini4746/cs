@@ -13,7 +13,7 @@ title: "cryptography"
 ## 1. 대칭 암호
 
 - [x] [[symmetric-ciphers]] - 블록 vs 스트림, AES/Feistel, PRP/PRF, 완전 비밀성(OTP)과 한계
-- [ ] [[block-cipher-modes]] - ECB/CBC/CTR/GCM, IV·nonce, 왜 ECB가 위험한가
+- [x] [[block-cipher-modes]] - ECB/CBC/CTR/GCM, IV·nonce, 왜 ECB가 위험한가
 
 ## 2. 공개키 암호
 
