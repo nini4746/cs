@@ -27,7 +27,7 @@ title: "ai-ml"
 
 ## 4. LLM 활용 (실무)
 
-- [ ] [[prompting]] - 프롬프트 설계 원리, few-shot, chain-of-thought
+- [x] [[prompting]] - 프롬프트 설계 원리, few-shot, chain-of-thought
 - [ ] [[rag]] - RAG 구조, 청킹 전략, 벡터 DB, 실패 모드
 - [ ] [[agents]] - 도구 사용, 에이전트 루프, MCP
 - [ ] [[llm-evaluation]] - LLM 평가 방법, LLM-as-judge, 벤치마크의 한계
