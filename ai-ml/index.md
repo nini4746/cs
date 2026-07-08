@@ -10,7 +10,7 @@ title: "ai-ml"
 
 - [x] [[ml-fundamentals]] - 지도/비지도, 훈련/검증/테스트 분리, 과적합과 정규화
 - [x] [[linear-models]] - 선형/로지스틱 회귀, 경사하강법, 손실 함수
-- [ ] [[model-evaluation]] - 정확도의 함정, precision/recall/F1, ROC, 교차 검증
+- [x] [[model-evaluation]] - 정확도의 함정, precision/recall/F1, ROC, 교차 검증
 
 ## 2. 딥러닝
 
