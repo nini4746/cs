@@ -23,7 +23,7 @@ title: "cryptography"
 
 ## 3. 무결성과 인증
 
-- [ ] [[cryptographic-hashes]] - Merkle-Damgård vs sponge, 충돌/역상 저항, 생일 공격
+- [x] [[cryptographic-hashes]] - Merkle-Damgård vs sponge, 충돌/역상 저항, 생일 공격
 - [ ] [[mac-and-aead]] - HMAC, 인증 암호(AEAD/GCM), encrypt-then-MAC 원칙
 
 ## 4. 프로토콜과 심화
