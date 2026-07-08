@@ -27,7 +27,7 @@ title: "concurrency-parallelism"
 
 ## 4. 하드웨어 병렬
 
-- [ ] [[simd-and-vectorization]] - SIMD, 자동 벡터화, 데이터 정렬 → computer-architecture/와 연결
+- [x] [[simd-and-vectorization]] - SIMD, 자동 벡터화, 데이터 정렬 → computer-architecture/와 연결
 - [ ] [[gpu-computing]] - SIMT, 워프, 메모리 계층, 왜 GPU가 특정 문제에 수십 배인가
 
 ## 5. 동시성 모델
