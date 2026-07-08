@@ -14,7 +14,7 @@ title: "ai-ml"
 
 ## 2. 딥러닝
 
-- [ ] [[neural-networks]] - 퍼셉트론 → MLP, 역전파 손으로 유도, 활성화 함수
+- [x] [[neural-networks]] - 퍼셉트론 → MLP, 역전파 손으로 유도, 활성화 함수
 - [ ] [[training-dynamics]] - 옵티마이저 (SGD/Adam), 학습률, 배치 정규화, 왜 학습이 안 되나 디버깅
 - [ ] [[cnn-rnn-overview]] - CNN/RNN 핵심 아이디어 (역사적 맥락 수준)
 
