@@ -46,5 +46,5 @@ title: "algorithms"
 
 ## 8. 계산 복잡도
 
-- [ ] [[p-vs-np]] - P, NP, NP-완전, 환원 → automata/complexity와 연결
+- [x] [[p-vs-np]] - P, NP, NP-완전, 환원 → automata/complexity와 연결
 - [ ] [[approximation-and-heuristics]] - NP-hard를 실전에서 다루는 법
