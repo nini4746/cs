@@ -16,7 +16,7 @@ title: "web"
 ## 2. 네트워크 접점
 
 - [x] [[http-for-web]] - 캐싱 헤더 전략 (ETag, Cache-Control), 압축, 우선순위 → network/http 기반
-- [ ] [[cors]] - same-origin policy, preflight, CORS 오류의 정확한 원인
+- [x] [[cors]] - same-origin policy, preflight, CORS 오류의 정확한 원인
 - [ ] [[websockets-sse]] - 실시간 통신 선택지, 폴링 vs SSE vs WebSocket
 
 ## 3. 인증·보안
