@@ -23,7 +23,7 @@ title: "data-structures"
 - [x] [[balanced-trees]] - AVL vs Red-Black, 회전, 실무 채택 (std::map)
 - [x] [[b-trees]] - 디스크 기반 트리, 차수가 큰 이유 → database/인덱스와 직결
 - [x] [[heaps]] - 이진 힙, heapify O(n) 증명, 우선순위 큐
-- [ ] [[tries]] - 트라이, 자동완성, radix tree
+- [x] [[tries]] - 트라이, 자동완성, radix tree
 
 ## 4. 집합·구간
 
