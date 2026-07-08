@@ -10,7 +10,7 @@ title: "distributed-systems"
 
 - [x] [[why-distributed]] - 분산의 이유와 근본 비용, fallacies of distributed computing
 - [x] [[rpc]] - RPC 의미론 (at-least/at-most/exactly once), 부분 실패 처리
-- [ ] [[clocks]] - 물리 시계의 한계, Lamport 시계, 벡터 시계, happened-before
+- [x] [[clocks]] - 물리 시계의 한계, Lamport 시계, 벡터 시계, happened-before
 
 ## 2. 일관성과 복제
 
