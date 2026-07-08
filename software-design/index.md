@@ -36,4 +36,4 @@ title: "software-design"
 
 ## 5. 도메인 설계
 
-- [ ] [[ddd-basics]] - 유비쿼터스 언어, bounded context, aggregate (개념만)
+- [x] [[ddd-basics]] - 유비쿼터스 언어, bounded context, aggregate (개념만)
