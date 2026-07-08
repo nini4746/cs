@@ -18,7 +18,7 @@ title: "automata"
 
 - [x] [[context-free-grammars]] - CFG, 유도, 파스 트리, 모호성
 - [x] [[pushdown-automata]] - PDA, CFG와의 동치
-- [ ] [[cfl-pumping]] - CFL 펌핑 보조정리, {aⁿbⁿcⁿ}이 CFL 아닌 이유
+- [x] [[cfl-pumping]] - CFL 펌핑 보조정리, {aⁿbⁿcⁿ}이 CFL 아닌 이유
 - [ ] [[cfg-to-parsing]] - CFG가 파서가 되는 과정 → programming-languages/compilers/와 직결
 
 ## 3. 튜링 머신과 계산 가능성
