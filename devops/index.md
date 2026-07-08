@@ -10,7 +10,7 @@ title: "devops"
 
 - [x] [[linux-essentials]] - 파일 시스템 구조, 권한, 프로세스 관리, 시그널
 - [x] [[shell-scripting]] - bash 함정 모음 (quoting, set -euo pipefail), 언제 스크립트를 버리고 프로그램 쓸까
-- [ ] [[linux-debugging]] - strace, lsof, /proc, 리소스 병목 찾기 (top/iostat)
+- [x] [[linux-debugging]] - strace, lsof, /proc, 리소스 병목 찾기 (top/iostat)
 
 ## 2. Git
 
