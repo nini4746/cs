@@ -17,7 +17,7 @@ title: "math"
 
 ## 2. 선형대수
 
-- [ ] [[vectors-and-matrices]] - 벡터 공간, 선형 변환으로서의 행렬, 행렬곱의 기하학적 의미
+- [x] [[vectors-and-matrices]] - 벡터 공간, 선형 변환으로서의 행렬, 행렬곱의 기하학적 의미
 - [ ] [[linear-systems]] - 가우스 소거, rank, 해의 존재/유일성
 - [ ] [[eigenvalues]] - 고유값/고유벡터, 대각화, PageRank
 - [ ] [[svd-basics]] - SVD, 저차원 근사 → ai-ml/ 임베딩과 연결
