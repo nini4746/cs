@@ -32,7 +32,7 @@ while true:
 ```
 
 - 노드 죽어 Pod 2개 됨 → 루프가 감지 → 1개 새로 띄움 (자가 치유)
-- 이게 distributed-systems/[[consensus-and-consistency]]의 상태 수렴과 같은 발상
+- 이게 distributed-systems/[[consensus-problem]]의 상태 수렴과 같은 발상
 - **제어 이론의 피드백 루프** - 목표값과 현재값 차이를 계속 좁힘
 
 ## 기본 오브젝트
@@ -89,7 +89,7 @@ Service (ClusterIP 10.0.0.5) → Pod들(바뀌는 IP) 자동 라우팅
 ```
 
 - **API Server**: 모든 것의 중심. `kubectl`도 여기 REST 호출
-- **etcd**: 클러스터 상태 전부 저장 (분산 KV, Raft 합의 distributed-systems/[[consensus-and-consistency]]). 유일한 진실의 원천
+- **etcd**: 클러스터 상태 전부 저장 (분산 KV, Raft 합의 distributed-systems/[[consensus-problem]]). 유일한 진실의 원천
 - **Scheduler**: 새 Pod를 어느 노드에? (자원·제약 고려, os/[[cpu-scheduling]]의 스케줄링과 유사 문제)
 - **kubelet**: 각 노드에서 "내 Pod들 살아있나" 확인, 컨테이너 런타임에 지시
 
@@ -133,7 +133,7 @@ spec:
 ## 연결
 
 - 컨테이너 = 관리 대상 → [[docker-internals]]
-- 조정 루프·etcd 합의 → distributed-systems/[[consensus-and-consistency]]
+- 조정 루프·etcd 합의 → distributed-systems/[[consensus-problem]]
 - Service 로드밸런싱·네트워킹 → [[kubernetes-networking]], network/[[load-balancing]]
 - 롤링·롤백 → [[deployment-strategies]]
 - 선언적·멱등 → [[iac]]

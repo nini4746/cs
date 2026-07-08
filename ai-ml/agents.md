@@ -102,7 +102,7 @@ MCP: 표준 인터페이스 → 한 번 만들면 어디서나 (N+M)
 - 계산·최신 한계 → [[tokenization]], [[llm-training]]
 - 인젝션·권한 → security/[[least-privilege]]
 - 결과 검증 → [[llm-evaluation]]
-- 관심사 분리 → software-design/[[coupling-and-cohesion]]
+- 관심사 분리 → software-design/[[coupling-cohesion]]
 
 ## 궁금한 것 (나중에)
 

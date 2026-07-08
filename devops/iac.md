@@ -52,7 +52,7 @@ Terraform은 **상태 파일**(state)에 "내가 만든 것" 기록:
 ```
 
 - **왜 상태파일이 필요**: 클라우드 리소스와 코드 리소스를 매핑 (이 코드 블록 = 이 실제 인스턴스)
-- **원격 상태**: 팀은 상태를 공유 저장 (S3 등) + **잠금**(동시 apply 방지, distributed-systems/[[distributed-locks]] 개념)
+- **원격 상태**: 팀은 상태를 공유 저장 (S3 등) + **잠금**(동시 apply 방지, distributed-systems/[[coordination-services]] 개념)
 - **상태에 시크릿 노출 위험**: 상태파일에 민감정보 저장될 수 있음 → 암호화·접근제어 (security/[[secrets-management]])
 
 ## drift (드리프트)
@@ -88,7 +88,7 @@ Terraform은 **상태 파일**(state)에 "내가 만든 것" 기록:
 - 선언·멱등·조정 → [[kubernetes-basics]]
 - 버전관리·리뷰 → [[git-internals]], [[git-workflows]]
 - CI/CD로 인프라 배포 → [[ci-cd-principles]]
-- 상태 잠금 → distributed-systems/[[distributed-locks]]
+- 상태 잠금 → distributed-systems/[[coordination-services]]
 - 상태 시크릿 → security/[[secrets-management]]
 - 불변 인프라 → [[deployment-strategies]]
 - 무엇을 프로비저닝하나 → [[cloud-basics]]

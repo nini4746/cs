@@ -64,7 +64,7 @@ web-service.default.svc.cluster.local → ClusterIP
 
 - **CoreDNS**가 클러스터 내부 DNS 제공
 - Service 만들면 자동으로 DNS 레코드 생성
-- 서비스 디스커버리의 핵심 (distributed-systems/[[service-discovery]] 개념)
+- 서비스 디스커버리의 핵심 (distributed-systems/[[coordination-services]] 개념)
 
 ### Ingress - 외부 HTTP 진입
 
@@ -77,7 +77,7 @@ web-service.default.svc.cluster.local → ClusterIP
 - **L7(HTTP) 라우팅**: 호스트·경로 기반 (network/[[http]])
 - Service별로 LoadBalancer 만들면 비쌈 → Ingress 하나로 여러 Service 라우팅
 - **Ingress Controller**(nginx, traefik 등)가 실제 구현 - Ingress 리소스는 규칙 선언일 뿐
-- TLS 종료도 여기서 (network/[[tls-https]])
+- TLS 종료도 여기서 (network/[[tls]])
 
 ## CNI - 실제 구현
 
@@ -103,7 +103,7 @@ web-service.default.svc.cluster.local → ClusterIP
 - Pod 네트워크 namespace → os/[[virtualization-and-containers]]
 - Service LB → network/[[load-balancing]]
 - 이름 해석 → network/[[dns]]
-- Ingress L7·TLS → network/[[http]], [[tls-https]]
+- Ingress L7·TLS → network/[[http]], [[tls]]
 - CNI eBPF → [[linux-debugging]]
 - 계층적 진단 → network/[[icmp-and-tools]]
 

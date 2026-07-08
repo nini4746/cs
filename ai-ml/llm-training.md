@@ -101,7 +101,7 @@
 - SFT·LoRA → [[fine-tuning]]
 - 학습률·정밀도 → [[training-dynamics]]
 - 토큰 단위 → [[tokenization]]
-- 분산 학습 → distributed-systems/[[consensus-and-consistency]]
+- 분산 학습 → distributed-systems/[[consensus-problem]]
 - 추론 시 확장 → [[prompting]], [[rag]], [[agents]]
 
 ## 궁금한 것 (나중에)

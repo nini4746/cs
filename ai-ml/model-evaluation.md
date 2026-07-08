@@ -113,7 +113,7 @@ F1        = 2·P·R/(P+R)  둘의 조화평균 (한쪽만 높으면 낮음)
 - [ ] ROC vs PR 곡선 언제 뭘 (불균형 정도)
 - [ ] 다중 분류 지표 (macro/micro 평균)
 - [ ] 보정(calibration) - 확률이 진짜 확률인가
-- [ ] 통계적 유의성 검정 (모델 A vs B, statistics/[[hypothesis-testing]])
+- [ ] 통계적 유의성 검정 (모델 A vs B, statistics/[[statistics-basics]])
 
 ## 출처
 
