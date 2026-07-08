@@ -38,6 +38,7 @@ title: "network"
 
 ## 6. 실습·심화
 
+- [x] [[load-balancing]] - L4 vs L7, 분배 알고리즘, consistent hashing, 세션 고정
 - [x] [[sockets]] - 소켓 프로그래밍, TCP 서버 직접 구현 → os/io-multiplexing과 연결
 - [x] [[tls]] - 핸드셰이크, 인증서 체인, 대칭/비대칭 조합 → security/와 연결
 - [x] [[packet-capture]] - tcpdump/Wireshark로 handshake 직접 관찰
