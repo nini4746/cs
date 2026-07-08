@@ -32,6 +32,6 @@ title: "devops"
 
 ## 5. 인프라
 
-- [ ] [[iac]] - Terraform 개념, 상태 관리, drift
+- [x] [[iac]] - Terraform 개념, 상태 관리, drift
 - [ ] [[cloud-basics]] - 컴퓨트/스토리지/네트워크 기본 블록, 요금이 나오는 구조
 - [ ] [[observability]] - 로그/메트릭/트레이스 3종, SLO/SLI → distributed-systems/와 연결
