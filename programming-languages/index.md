@@ -18,7 +18,7 @@ title: "programming-languages"
 
 - [x] [[functional-programming]] - 불변성, 고차 함수, 순수 함수가 사는 이유
 - [x] [[oop-under-the-hood]] - vtable, 동적 디스패치 비용, 상속 vs 조합
-- [ ] [[type-systems-advanced]] - 제네릭 구현 (단형화 vs 소거), 대수적 데이터 타입
+- [x] [[type-systems-advanced]] - 제네릭 구현 (단형화 vs 소거), 대수적 데이터 타입
 
 ## 3. 실행 모델
 
