@@ -22,7 +22,7 @@ title: "programming-languages"
 
 ## 3. 실행 모델
 
-- [ ] [[compiled-vs-interpreted]] - AOT/JIT/인터프리터 스펙트럼, JVM/V8이 실제로 하는 일
+- [x] [[compiled-vs-interpreted]] - AOT/JIT/인터프리터 스펙트럼, JVM/V8이 실제로 하는 일
 - [ ] [[memory-management-models]] - 수동(C) vs GC vs 소유권(Rust), 각각의 비용
 
 ## compilers/ - 컴파일러
