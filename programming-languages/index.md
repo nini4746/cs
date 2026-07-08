@@ -29,7 +29,7 @@ title: "programming-languages"
 
 Crafting Interpreters 순서. 오토마타 (automata/) 선행 추천 - 렉싱=DFA, 파싱=CFG.
 
-- [ ] [[lexing]] - 토크나이저 구현, 렉서가 DFA인 이유
+- [x] [[lexing]] - 토크나이저 구현, 렉서가 DFA인 이유
 - [ ] [[parsing]] - 재귀 하강 파서 구현, LL vs LR, 연산자 우선순위
 - [ ] [[ast-and-interpretation]] - AST 설계, tree-walking 인터프리터
 - [ ] [[semantic-analysis]] - 심볼 테이블, 타입 체크, 스코프 해석
