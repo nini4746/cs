@@ -26,7 +26,7 @@ title: "algorithms"
 ## 4. 동적 계획법
 
 - [x] [[dp-fundamentals]] - 최적 부분 구조, 중복 부분 문제, top-down vs bottom-up
-- [ ] [[dp-patterns]] - LCS, LIS, 배낭, 편집 거리, 구간 DP
+- [x] [[dp-patterns]] - LCS, LIS, 배낭, 편집 거리, 구간 DP
 - [ ] [[dp-optimization]] - 공간 압축, 비트마스크 DP
 
 ## 5. 그리디
