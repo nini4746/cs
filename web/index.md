@@ -27,7 +27,7 @@ title: "web"
 ## 4. API 설계
 
 - [x] [[rest-design]] - REST 제약 조건, 리소스 모델링, 버저닝, 멱등성
-- [ ] [[graphql-and-alternatives]] - GraphQL/gRPC/tRPC, REST 대비 트레이드오프
+- [x] [[graphql-and-alternatives]] - GraphQL/gRPC/tRPC, REST 대비 트레이드오프
 
 ## 5. 성능
 
