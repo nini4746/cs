@@ -8,7 +8,7 @@ title: "network"
 
 ## 1. 개요
 
-- [ ] [[internet-overview]] - 패킷 교환 vs 회선 교환, 지연 4종 (처리/큐잉/전송/전파), 계층 모델 (OSI vs TCP/IP)
+- [x] [[internet-overview]] - 패킷 교환 vs 회선 교환, 지연 4종 (처리/큐잉/전송/전파), 계층 모델 (OSI vs TCP/IP)
 
 ## 2. 응용 계층
 
