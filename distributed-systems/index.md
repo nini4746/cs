@@ -16,7 +16,7 @@ title: "distributed-systems"
 
 - [x] [[replication]] - 단일 리더/멀티 리더/리더리스, 복제 지연 이상 현상
 - [x] [[consistency-models]] - linearizability, sequential, causal, eventual - 정확한 정의
-- [ ] [[cap-theorem]] - CAP의 정확한 의미와 흔한 오해, PACELC
+- [x] [[cap-theorem]] - CAP의 정확한 의미와 흔한 오해, PACELC
 
 ## 3. 합의
 
