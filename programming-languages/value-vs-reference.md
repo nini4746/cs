@@ -1,0 +1,105 @@
+# 값 vs 참조 (Value vs Reference)
+
+## 한 줄 요약
+
+변수가 값을 직접 담나(값 의미론), 값의 위치를 가리키나(참조 의미론). 언어마다 다르고, 가변(mutable) 객체와 결합하면 aliasing 버그의 온상이 된다. "Python은 값을 넘기나 참조를 넘기나"의 정확한 답.
+
+## 왜 필요한가
+
+- 함수에 넘긴 값이 왜 바뀌기도 안 바뀌기도 하나
+- aliasing 버그 (한 변수 바꿨는데 다른 게 바뀜)
+- 언어별 인자 전달 방식의 정확한 이해
+
+## 값 의미론 vs 참조 의미론
+
+- **값 의미론(value)**: 변수가 값을 **직접 담음**. 복사·전달 시 값 자체가 복제. 한쪽 바꿔도 다른 쪽 무관
+- **참조 의미론(reference)**: 변수가 값의 **주소(참조)**를 담음. 복사·전달 시 같은 객체를 가리킴. 한쪽으로 바꾸면 둘 다 바뀜
+
+## 언어별 차이
+
+| 언어 | 기본 |
+|---|---|
+| **C** | 값 (포인터로 명시적 참조) |
+| **C++** | 값 기본, `&`로 참조 |
+| **Java** | 원시타입=값, 객체=참조 (참조를 값으로 전달) |
+| **Python** | **전부 객체 참조** (call by object reference) |
+| **Go** | **전부 값** (포인터도 값으로 복사), 명시적 `*` |
+| **Rust** | 값 + 소유권/빌림 (`&`) → [[memory-management-models]] |
+
+## Python: 전부 참조인데 왜 다르게 동작하나
+
+Python은 모든 것이 객체 참조. 그런데 **가변(mutable) vs 불변(immutable)**이 동작을 가름:
+
+```python
+def modify(lst, num):
+    lst.append(99)   # 가변(list) - 원본 바뀜
+    num += 1         # 불변(int) 재바인딩 - 원본 안 바뀜
+```
+
+실측:
+```
+list: [1, 2, 3, 99]   ← 리스트 바뀜
+int : 5                ← int 그대로
+```
+
+- **가변 객체(list, dict)**: 메서드로 **제자리 수정** → 참조 공유하니 원본도 바뀜
+- **불변 객체(int, str, tuple)**: `num += 1`은 수정이 아니라 **새 객체를 만들어 재바인딩** → 원본 안 바뀜
+- 둘 다 "참조 전달"인데 가변성 차이로 결과가 다름. Python 인자 전달의 정확한 그림
+
+## aliasing: 같은 객체를 여럿이 가리킴
+
+```python
+x = [1,2]; y = x    # y가 x와 같은 객체
+y.append(3)
+print(x)            # [1, 2, 3]  - x도 바뀜!
+```
+
+실측 확인. `y = x`는 복사가 아니라 **같은 객체를 가리킴**(aliasing). 하나로 수정하면 전부 반영. 복사하려면 명시적으로 (`x[:]`, `copy.copy`, `copy.deepcopy`).
+
+컴파일러 최적화의 aliasing 문제와 같은 뿌리 → computer-architecture/[[compiler-optimization-limits]].
+
+## 가변 기본 인자 함정 (Python 악명)
+
+```python
+def bad(item, box=[]):
+    box.append(item); return box
+bad(1)  # [1]
+bad(2)  # [1, 2]  ← [2]가 아님!
+```
+
+실측 `[1, 2]`. 이유: **기본 인자는 함수 정의 시 한 번만 생성** → 모든 호출이 **같은 리스트를 공유**. 가변 기본 인자는 호출 간에 상태가 누적됨. 해결: `box=None` 후 함수 안에서 `box = box or []`.
+
+## 얕은 복사 vs 깊은 복사
+
+가변 객체 복사 시:
+
+- **얕은 복사(shallow)**: 최상위만 복사, 내부 객체는 여전히 공유. `list.copy()`, `[:]`
+- **깊은 복사(deep)**: 재귀적으로 전부 복사. `copy.deepcopy`
+- 중첩 구조에서 얕은 복사 후 내부를 바꾸면 원본도 바뀜 → aliasing 재발
+
+## 실무 교훈
+
+1. **가변 객체 전달 = 원본 바뀔 수 있음**. 안 바꾸려면 복사하거나 불변 타입
+2. **가변 기본 인자 금지** (`=None` 패턴)
+3. **aliasing 인지**: `=`는 복사가 아님 (대부분 참조 언어)
+4. **불변을 선호**: 예측 가능, 스레드 안전 ([[functional-programming]], os/[[threads-and-races]])
+5. Go/Rust처럼 값/참조가 명시적인 언어는 이 함정이 적음 (대신 문법 부담)
+
+## 연결
+
+- 불변성의 이점 → [[functional-programming]]
+- 소유권으로 aliasing 관리 → [[memory-management-models]]
+- aliasing과 최적화 → computer-architecture/[[compiler-optimization-limits]]
+- 참조와 GC → [[garbage-collection]]
+- 공유 가변 상태와 경쟁 → os/[[threads-and-races]]
+
+## 궁금한 것 (나중에)
+
+- [ ] Java의 "참조를 값으로 전달" 정확한 의미
+- [ ] Go에서 큰 구조체 값 복사 vs 포인터 (성능)
+- [ ] Rust 소유권이 aliasing을 컴파일 타임에 막는 법
+- [ ] copy-on-write로 값 의미론을 싸게 (Swift 배열)
+
+## 출처
+
+- 각 언어 레퍼런스, PL 개념 교재
