@@ -23,7 +23,7 @@ title: "concurrency-parallelism"
 ## 3. 병렬성 이론
 
 - [x] [[parallelism-limits]] - Amdahl vs Gustafson, work-span 모델, 확장성의 벽
-- [ ] [[parallel-patterns]] - map/reduce/scan, fork-join, pipeline, 데이터 vs 태스크 병렬
+- [x] [[parallel-patterns]] - map/reduce/scan, fork-join, pipeline, 데이터 vs 태스크 병렬
 
 ## 4. 하드웨어 병렬
 
