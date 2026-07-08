@@ -13,7 +13,7 @@ title: "math"
 - [x] [[sets-relations-functions]] - 집합, 관계 (동치/순서), 함수 (단사/전사), 카디널리티와 대각선 논법
 - [x] [[combinatorics]] - 순열/조합, 포함-배제, 비둘기집 원리
 - [x] [[graph-theory]] - 그래프 기본 정리, 오일러/해밀턴, 트리 성질, 채색
-- [ ] [[modular-arithmetic]] - 합동, 페르마 소정리, RSA가 서는 자리 → security/crypto와 연결
+- [x] [[modular-arithmetic]] - 합동, 페르마 소정리, RSA가 서는 자리 → security/crypto와 연결
 
 ## 2. 선형대수
 
