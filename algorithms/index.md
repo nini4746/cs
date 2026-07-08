@@ -38,7 +38,7 @@ title: "algorithms"
 - [x] [[graph-traversal]] - BFS/DFS, 위상 정렬, SCC
 - [x] [[shortest-paths]] - 다익스트라, 벨만-포드, 플로이드-워셜, 음수 간선
 - [x] [[mst]] - 크루스칼, 프림, cut property 증명
-- [ ] [[network-flow]] - 최대 유량, min-cut, 이분 매칭
+- [x] [[network-flow]] - 최대 유량, min-cut, 이분 매칭
 
 ## 7. 문자열
 
