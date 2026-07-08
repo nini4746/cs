@@ -12,7 +12,7 @@ title: "network"
 
 ## 2. 응용 계층
 
-- [ ] [[http]] - HTTP/1.1 → 2 → 3 진화, 헤더, 캐싱, keep-alive
+- [x] [[http]] - HTTP/1.1 → 2 → 3 진화, 헤더, 캐싱, keep-alive
 - [ ] [[dns]] - 재귀/반복 질의, 레코드 타입, TTL, 캐싱 계층
 - [ ] [[email-protocols]] - SMTP/IMAP, 스팸 방지 (SPF/DKIM/DMARC)
 - [ ] [[cdn]] - CDN 동작 원리, 엣지 캐싱, DNS 기반 라우팅
