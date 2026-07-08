@@ -23,7 +23,7 @@ title: "security"
 ## 3. 시스템 보안
 
 - [x] [[memory-safety]] - 버퍼 오버플로우, use-after-free → computer-architecture/buffer-overflow 기반
-- [ ] [[least-privilege]] - 최소 권한 원칙, 샌드박싱, 컨테이너 격리의 한계
+- [x] [[least-privilege]] - 최소 권한 원칙, 샌드박싱, 컨테이너 격리의 한계
 
 ## 4. 실무 설계
 
