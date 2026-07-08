@@ -14,11 +14,13 @@
 
 `example.com`에 접속하려면 IP가 필요 ([[ip-addressing]]). DNS가 이름을 IP로 해석:
 
-실측 (`dig example.com`):
+실측 (`dig example.com`, 이 네트워크의 리졸버 응답):
 ```
 example.com. → 104.20.23.154 (A 레코드)
 TTL: 109초
 ```
+
+(반환 IP는 리졸버·CDN·지역에 따라 다름. 실제 example.com 공식 IP는 별개 - 여기선 이 네트워크가 준 값. 요점은 이름→IP 해석이 됐다는 것.)
 
 브라우저가 URL을 IP로 바꾸는 첫 단계 → web/[[what-happens-url]].
 

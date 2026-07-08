@@ -39,9 +39,9 @@ Web API: 타이머·네트워크 (브라우저/노드가 제공, JS 밖)
 
 ```js
 console.log("1: sync start");
-setTimeout(() => console.log("5: macrotask"), 0);
-Promise.resolve().then(() => console.log("3: microtask"));
-Promise.resolve().then(() => console.log("4: microtask2"));
+setTimeout(() => console.log("5: setTimeout"), 0);
+Promise.resolve().then(() => console.log("3: promise"));
+Promise.resolve().then(() => console.log("4: promise2"));
 console.log("2: sync end");
 ```
 

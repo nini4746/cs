@@ -51,7 +51,7 @@ AES: 같은 키로 암/복호화 OK: secret message  (키 256bit)
 비대칭은 **수학적 난제**에 기댐 → automata/[[complexity-classes]], algorithms/[[p-vs-np]]:
 - RSA: 인수분해가 어려움 (큰 수를 소인수분해 못 함)
 - ECC: 이산 로그가 어려움
-- P≠NP(추정)에 의존 - 풀기는 어렵고 검증은 쉬움 → algorithms/[[p-vs-np]]
+- 풀기는 어렵고 검증은 쉬움 → algorithms/[[p-vs-np]] (정확히는 factoring·이산로그의 **평균적** 어려움에 의존 - 이 둘은 NP-완전으로 알려진 것도 아니고, worst-case P≠NP보다 강한 가정)
 - 양자 컴퓨터가 이걸 깰 수 있음(Shor) → 양자 내성 암호(PQC) 연구 중
 
 ## 하이브리드: 둘의 조합
