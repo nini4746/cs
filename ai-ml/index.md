@@ -20,7 +20,7 @@ title: "ai-ml"
 
 ## 3. 트랜스포머와 LLM
 
-- [ ] [[attention-and-transformers]] - attention 메커니즘, 트랜스포머 구조, positional encoding
+- [x] [[attention-and-transformers]] - attention 메커니즘, 트랜스포머 구조, positional encoding
 - [ ] [[llm-training]] - 사전학습 → SFT → RLHF 파이프라인, 스케일링 법칙
 - [ ] [[tokenization]] - BPE, 토큰 단위가 만드는 이상한 동작들
 - [ ] [[embeddings]] - 임베딩 공간, 유사도 검색 → math/svd-basics와 연결
