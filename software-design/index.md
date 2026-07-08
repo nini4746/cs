@@ -25,7 +25,7 @@ title: "software-design"
 - [x] [[layered-architecture]] - 계층형, 의존성 방향, hexagonal/clean architecture
 - [x] [[monolith-vs-microservices]] - 트레이드오프, 마이크로서비스가 필요 없는 경우 → distributed-systems/와 연결
 - [x] [[event-driven-architecture]] - 이벤트 기반, CQRS 맛보기
-- [ ] [[api-design-principles]] - 좋은 인터페이스, 하위 호환, 버저닝
+- [x] [[api-design-principles]] - 좋은 인터페이스, 하위 호환, 버저닝
 
 ## 4. 코드 품질
 
