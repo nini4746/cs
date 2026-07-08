@@ -21,7 +21,7 @@ title: "database"
 
 - [x] [[btree-index]] - B+tree 구조, 클러스터드 vs 논클러스터드 → data-structures/b-trees 기반
 - [x] [[index-usage]] - 인덱스 타는 조건, 복합 인덱스 순서, 커버링 인덱스, EXPLAIN 읽기
-- [ ] [[lsm-tree]] - LSM tree vs B+tree, RocksDB/Cassandra 계열의 선택
+- [x] [[lsm-tree]] - LSM tree vs B+tree, RocksDB/Cassandra 계열의 선택
 
 ## 4. 쿼리 처리
 
