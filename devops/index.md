@@ -21,7 +21,7 @@ title: "devops"
 
 - [x] [[docker-internals]] - 이미지 레이어, namespace/cgroup → os/virtualization-and-containers 기반
 - [x] [[dockerfile-best-practices]] - 레이어 캐싱, 멀티스테이지 빌드, 이미지 크기
-- [ ] [[kubernetes-basics]] - Pod/Deployment/Service 모델, 선언적 상태 조정 루프
+- [x] [[kubernetes-basics]] - Pod/Deployment/Service 모델, 선언적 상태 조정 루프
 - [ ] [[kubernetes-networking]] - Service/Ingress, DNS, 왜 네트워크가 k8s의 최난관인가
 
 ## 4. CI/CD
