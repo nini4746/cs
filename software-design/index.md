@@ -16,7 +16,7 @@ title: "software-design"
 ## 2. 디자인 패턴 (GoF 선별)
 
 - [x] [[creational-patterns]] - 팩토리, 빌더, 싱글턴 (그리고 싱글턴이 욕먹는 이유)
-- [ ] [[structural-patterns]] - 어댑터, 데코레이터, 퍼사드, 프록시
+- [x] [[structural-patterns]] - 어댑터, 데코레이터, 퍼사드, 프록시
 - [ ] [[behavioral-patterns]] - 전략, 옵저버, 커맨드, 상태
 - [ ] [[patterns-in-the-wild]] - 실제 코드베이스/표준 라이브러리에서 패턴 찾기
 
