@@ -38,7 +38,7 @@ title: "network"
 
 ## 6. 실습·심화
 
-- [ ] [[sockets]] - 소켓 프로그래밍, TCP 서버 직접 구현 → os/io-multiplexing과 연결
+- [x] [[sockets]] - 소켓 프로그래밍, TCP 서버 직접 구현 → os/io-multiplexing과 연결
 - [ ] [[tls]] - 핸드셰이크, 인증서 체인, 대칭/비대칭 조합 → security/와 연결
 - [ ] [[packet-capture]] - tcpdump/Wireshark로 handshake 직접 관찰
 - [ ] [[what-happens-url]] - 주소창에 URL 치면 일어나는 일 전체 종합 (졸업 시험)
