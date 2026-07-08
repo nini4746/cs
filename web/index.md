@@ -22,7 +22,7 @@ title: "web"
 ## 3. 인증·보안
 
 - [x] [[web-auth]] - 세션 vs JWT, 쿠키 속성 (SameSite, HttpOnly), OAuth2/OIDC 흐름
-- [ ] [[web-vulnerabilities]] - XSS/CSRF/클릭재킹 동작 원리와 방어 → security/와 연결
+- [x] [[web-vulnerabilities]] - XSS/CSRF/클릭재킹 동작 원리와 방어 → security/와 연결
 
 ## 4. API 설계
 
