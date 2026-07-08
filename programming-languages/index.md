@@ -12,7 +12,7 @@ title: "programming-languages"
 - [x] [[scope-and-closures]] - 렉시컬 스코프, 클로저가 캡처하는 것, 업밸류
 - [x] [[value-vs-reference]] - 값/참조 의미론, 언어별 차이 (Python 전부 참조, Go 전부 값)
 - [x] [[garbage-collection]] - reference counting vs tracing (mark-sweep, 세대별), GC 일시정지
-- [ ] [[error-handling-models]] - 예외 vs 에러 값(Go/Rust) vs Option/Result
+- [x] [[error-handling-models]] - 예외 vs 에러 값(Go/Rust) vs Option/Result
 
 ## 2. 패러다임
 
