@@ -17,7 +17,7 @@ title: "security"
 ## 2. 웹 보안 (OWASP Top 10 중심)
 
 - [x] [[injection]] - SQL 인젝션 원리, prepared statement가 막는 방식
-- [ ] [[xss-csrf]] - XSS 3종, CSP, CSRF 토큰 → web/과 연결
+- [x] [[xss-csrf]] - XSS 3종, CSP, CSRF 토큰 → web/과 연결
 - [ ] [[authn-authz-failures]] - 세션 하이재킹, IDOR, 권한 상승 패턴
 
 ## 3. 시스템 보안
