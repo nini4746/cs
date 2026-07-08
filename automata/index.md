@@ -30,7 +30,7 @@ title: "automata"
 ## 4. 계산 복잡도
 
 - [x] [[complexity-classes]] - 시간 복잡도 클래스, P, NP, NP-완전성, Cook-Levin
-- [ ] [[space-complexity]] - PSPACE, 로그 공간 (맛보기)
+- [x] [[space-complexity]] - PSPACE, 로그 공간 (맛보기)
 
 ## 촘스키 위계 지도
 
