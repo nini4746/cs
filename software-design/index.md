@@ -8,7 +8,7 @@ title: "software-design"
 
 ## 1. 설계 원칙
 
-- [ ] [[solid]] - SOLID 각 원칙 + 과용하면 생기는 문제
+- [x] [[solid]] - SOLID 각 원칙 + 과용하면 생기는 문제
 - [ ] [[coupling-cohesion]] - 결합도/응집도, 모듈 경계 긋는 기준
 - [ ] [[deep-modules]] - Ousterhout: 깊은 모듈, 인터페이스 복잡도 vs 구현 복잡도
 - [ ] [[composition-over-inheritance]] - 상속의 함정, 조합 설계
