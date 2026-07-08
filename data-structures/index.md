@@ -33,5 +33,5 @@ title: "data-structures"
 ## 5. 확률적 자료구조
 
 - [x] [[bloom-filter]] - 원리, false positive 확률 계산, 실사용 (캐시 앞단)
-- [ ] [[skip-list]] - 확률적 균형, Redis가 쓰는 이유
+- [x] [[skip-list]] - 확률적 균형, Redis가 쓰는 이유
 - [ ] [[hyperloglog]] - 카디널리티 추정
