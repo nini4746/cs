@@ -34,5 +34,5 @@ title: "distributed-systems"
 
 - [x] [[message-queues]] - Kafka 구조 (파티션, 오프셋, 컨슈머 그룹), at-least-once 처리
 - [x] [[caching-strategies]] - cache-aside/write-through, 무효화, thundering herd
-- [ ] [[idempotency]] - 멱등성 설계, 재시도 안전성, 중복 제거
+- [x] [[idempotency]] - 멱등성 설계, 재시도 안전성, 중복 제거
 - [ ] [[observability-basics]] - 분산 추적, 왜 로그만으로 부족한가 → devops/와 연결
