@@ -21,7 +21,7 @@ title: "data-structures"
 
 - [x] [[binary-search-trees]] - BST 연산, 균형 깨지면 O(n)
 - [x] [[balanced-trees]] - AVL vs Red-Black, 회전, 실무 채택 (std::map)
-- [ ] [[b-trees]] - 디스크 기반 트리, 차수가 큰 이유 → database/인덱스와 직결
+- [x] [[b-trees]] - 디스크 기반 트리, 차수가 큰 이유 → database/인덱스와 직결
 - [ ] [[heaps]] - 이진 힙, heapify O(n) 증명, 우선순위 큐
 - [ ] [[tries]] - 트라이, 자동완성, radix tree
 
