@@ -13,7 +13,7 @@ title: "concurrency-parallelism"
 ## 1. 동시성의 본질
 
 - [x] [[concurrency-vs-parallelism]] - 동시성≠병렬성, 왜 인간 직관이 깨지나, 결정성 상실
-- [ ] [[memory-models]] - 메모리 재정렬, happens-before, sequential vs relaxed, acquire/release
+- [x] [[memory-models]] - 메모리 재정렬, happens-before, sequential vs relaxed, acquire/release
 
 ## 2. Lock-free와 원자성
 
