@@ -42,7 +42,7 @@ title: "algorithms"
 
 ## 7. 문자열
 
-- [ ] [[string-matching]] - KMP, 라빈-카프 → automata/와 연결 (KMP = DFA)
+- [x] [[string-matching]] - KMP, 라빈-카프 → automata/와 연결 (KMP = DFA)
 
 ## 8. 계산 복잡도
 
