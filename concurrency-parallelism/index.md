@@ -34,4 +34,4 @@ title: "concurrency-parallelism"
 
 - [x] [[message-passing]] - actor(Erlang), CSP(Go 채널), shared-nothing, 왜 메시지가 락보다 나은가
 - [x] [[async-and-coroutines]] - async/await, 이벤트 루프, 코루틴, 협력 스케줄링 → web/[[javascript-event-loop]]
-- [ ] [[structured-concurrency]] - 구조적 동시성, 취소·스코프, 왜 "go문"이 goto처럼 위험한가
+- [x] [[structured-concurrency]] - 구조적 동시성, 취소·스코프, 왜 "go문"이 goto처럼 위험한가
