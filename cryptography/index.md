@@ -19,7 +19,7 @@ title: "cryptography"
 
 - [x] [[public-key-crypto]] - 공개키 아이디어, trapdoor 함수, RSA 수학과 안전성 가정
 - [x] [[diffie-hellman]] - 키 교환, 이산로그 문제, 중간자 공격
-- [ ] [[elliptic-curves]] - 타원곡선, 왜 짧은 키로 같은 강도, ECDH/ECDSA
+- [x] [[elliptic-curves]] - 타원곡선, 왜 짧은 키로 같은 강도, ECDH/ECDSA
 
 ## 3. 무결성과 인증
 
