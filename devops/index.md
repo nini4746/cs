@@ -26,7 +26,7 @@ title: "devops"
 
 ## 4. CI/CD
 
-- [ ] [[ci-cd-principles]] - 파이프라인 설계, 테스트 단계 배치, 캐싱
+- [x] [[ci-cd-principles]] - 파이프라인 설계, 테스트 단계 배치, 캐싱
 - [ ] [[deployment-strategies]] - 롤링/블루그린/카나리, 롤백 설계
 - [ ] [[github-actions]] - 워크플로우 구조, 시크릿, 셀프호스티드 러너
 
