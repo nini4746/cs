@@ -32,4 +32,4 @@ title: "web"
 ## 5. 성능
 
 - [x] [[web-performance]] - Core Web Vitals, 번들 분할, 이미지 최적화, 측정 도구
-- [ ] [[rendering-strategies]] - CSR/SSR/SSG/ISR, hydration 비용
+- [x] [[rendering-strategies]] - CSR/SSR/SSG/ISR, hydration 비용
