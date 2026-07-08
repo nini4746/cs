@@ -14,7 +14,7 @@ title: "database"
 
 ## 2. 저장 구조
 
-- [ ] [[db-storage]] - 페이지/슬롯 구조, heap file, row store vs column store
+- [x] [[db-storage]] - 페이지/슬롯 구조, heap file, row store vs column store
 - [ ] [[buffer-pool]] - 버퍼 풀 관리, 교체 정책, OS 페이지 캐시 대신 직접 관리하는 이유
 
 ## 3. 인덱스
