@@ -34,7 +34,7 @@ title: "network"
 ## 5. 링크 계층
 
 - [x] [[ethernet-and-arp]] - MAC 주소, ARP, 스위치 vs 라우터
-- [ ] [[wifi]] - CSMA/CA, 무선이 유선과 다른 점
+- [x] [[wifi]] - CSMA/CA, 무선이 유선과 다른 점
 
 ## 6. 실습·심화
 
