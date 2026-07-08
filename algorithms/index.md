@@ -21,7 +21,7 @@ title: "algorithms"
 
 ## 3. 분할 정복
 
-- [ ] [[divide-and-conquer]] - 설계 패턴, 최근접 점 쌍, 카라츠바 곱셈
+- [x] [[divide-and-conquer]] - 설계 패턴, 최근접 점 쌍, 카라츠바 곱셈
 
 ## 4. 동적 계획법
 
