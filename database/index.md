@@ -39,4 +39,4 @@ title: "database"
 
 - [x] [[replication-db]] - 리더-팔로워, 복제 지연, 읽기 일관성 → distributed-systems/와 연결
 - [x] [[partitioning-db]] - 샤딩 전략, 핫스팟, 리밸런싱
-- [ ] [[nosql-landscape]] - 문서/KV/그래프/컬럼, 각각 뭘 포기하고 뭘 얻나
+- [x] [[nosql-landscape]] - 문서/KV/그래프/컬럼, 각각 뭘 포기하고 뭘 얻나
