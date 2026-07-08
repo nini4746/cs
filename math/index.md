@@ -28,3 +28,7 @@ title: "math"
 - [x] [[random-variables]] - 기댓값, 분산, 주요 분포 (이항/기하/정규/포아송)
 - [x] [[concentration]] - 큰 수의 법칙, 체르노프 바운드 맛보기 - 해시/랜덤 알고리즘 분석 도구
 - [x] [[statistics-basics]] - 추정, 신뢰구간, 가설검정, p-value의 정확한 의미
+
+## 4. 미적분 (ML 기초)
+
+- [x] [[derivatives-and-gradients]] - 미분(변화율), 연쇄법칙, 기울기(gradient) = 경사하강·역전파의 엔진 → ai-ml/과 연결
