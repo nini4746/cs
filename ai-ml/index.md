@@ -31,4 +31,4 @@ title: "ai-ml"
 - [x] [[rag]] - RAG 구조, 청킹 전략, 벡터 DB, 실패 모드
 - [x] [[agents]] - 도구 사용, 에이전트 루프, MCP
 - [x] [[llm-evaluation]] - LLM 평가 방법, LLM-as-judge, 벤치마크의 한계
-- [ ] [[fine-tuning]] - 파인튜닝 vs RAG vs 프롬프팅 선택 기준, LoRA 개념
+- [x] [[fine-tuning]] - 파인튜닝 vs RAG vs 프롬프팅 선택 기준, LoRA 개념
