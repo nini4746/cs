@@ -31,7 +31,7 @@ title: "database"
 ## 5. 트랜잭션
 
 - [x] [[transactions-acid]] - ACID 각각의 정확한 의미
-- [ ] [[concurrency-control]] - 2PL, 격리 수준 4단계 + 이상 현상 (dirty read ~ phantom)
+- [x] [[concurrency-control]] - 2PL, 격리 수준 4단계 + 이상 현상 (dirty read ~ phantom)
 - [ ] [[mvcc]] - MVCC 동작, PostgreSQL vacuum, 스냅샷 격리의 함정 (write skew)
 - [ ] [[recovery]] - WAL, ARIES, 체크포인트, crash 후 복구 과정
 
