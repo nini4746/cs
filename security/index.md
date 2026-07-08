@@ -11,7 +11,7 @@ title: "security"
 - [x] [[crypto-basics]] - 대칭(AES) vs 비대칭(RSA, ECC), 하이브리드 암호화가 표준인 이유
 - [x] [[hashing]] - 암호학적 해시 성질, SHA-2/3, 충돌 저항성
 - [x] [[password-storage]] - 왜 bcrypt/argon2인가 (salt, work factor), 평문/단순 해시가 뚫리는 과정
-- [ ] [[digital-signatures]] - 서명/검증, MAC vs 서명, 인증서와 PKI
+- [x] [[digital-signatures]] - 서명/검증, MAC vs 서명, 인증서와 PKI
 - [ ] [[tls-deep-dive]] - TLS 1.3 핸드셰이크, forward secrecy → network/tls 심화
 
 ## 2. 웹 보안 (OWASP Top 10 중심)
