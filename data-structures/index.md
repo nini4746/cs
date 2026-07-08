@@ -28,7 +28,7 @@ title: "data-structures"
 ## 4. 집합·구간
 
 - [x] [[union-find]] - 경로 압축 + rank, 역아커만 복잡도
-- [ ] [[segment-tree-and-bit]] - 구간 질의, 펜윅 트리
+- [x] [[segment-tree-and-bit]] - 구간 질의, 펜윅 트리
 
 ## 5. 확률적 자료구조
 
