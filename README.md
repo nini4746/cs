@@ -10,6 +10,7 @@
 - [algorithms](algorithms/) - 알고리즘 (정렬, 탐색, DP, 그래프)
 - [automata](automata/) - 오토마타·계산이론 (FSM, 정규언어, 문맥자유문법, 튜링머신)
 - [computer-architecture](computer-architecture/) - 컴퓨터 구조 (CPU, 캐시, 메모리 계층)
+- [concurrency-parallelism](concurrency-parallelism/) - 동시성·병렬성 (메모리 모델, lock-free, 병렬 알고리즘, GPU) · 석사급
 - [data-structures](data-structures/) - 자료구조 (배열, 리스트, 트리, 해시, 힙)
 - [database](database/) - 데이터베이스 (SQL, 인덱스, 트랜잭션, 정규화)
 - [devops](devops/) - 데브옵스 (Docker, k8s, CI/CD, 클라우드, Git, Linux)
