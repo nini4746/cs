@@ -8,7 +8,7 @@ title: "database"
 
 ## 1. 관계형 모델과 SQL
 
-- [ ] [[relational-model]] - 관계 대수, 스키마, 키 종류
+- [x] [[relational-model]] - 관계 대수, 스키마, 키 종류
 - [ ] [[sql-deep-dive]] - JOIN 종류와 실행 의미, 서브쿼리 vs JOIN, window function
 - [ ] [[normalization]] - 함수 종속, 1NF~BCNF, 실무에서 역정규화하는 순간
 
