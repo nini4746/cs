@@ -15,7 +15,7 @@ title: "devops"
 ## 2. Git
 
 - [x] [[git-internals]] - 객체 모델 (blob/tree/commit), ref가 전부인 이유, reflog로 살아나기
-- [ ] [[git-workflows]] - rebase vs merge, 브랜치 전략, 협업 관례
+- [x] [[git-workflows]] - rebase vs merge, 브랜치 전략, 협업 관례
 
 ## 3. 컨테이너
 
