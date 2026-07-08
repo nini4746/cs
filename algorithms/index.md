@@ -14,7 +14,7 @@ title: "algorithms"
 
 ## 2. 정렬과 탐색
 
-- [ ] [[comparison-sorts]] - merge/quick/heap 정렬, 비교 정렬 하한 Ω(n log n) 증명
+- [x] [[comparison-sorts]] - merge/quick/heap 정렬, 비교 정렬 하한 Ω(n log n) 증명
 - [ ] [[linear-sorts]] - counting/radix/bucket, 비교 없이 하한 뚫는 법
 - [ ] [[binary-search]] - 변형들 (lower_bound, 답 이분 탐색), off-by-one 안 내는 틀
 - [ ] [[selection]] - k번째 원소 O(n), median of medians
