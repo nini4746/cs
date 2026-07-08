@@ -23,7 +23,7 @@ title: "network"
 - [x] [[tcp-basics]] - 3-way handshake, 상태 머신, TIME_WAIT의 이유
 - [x] [[tcp-reliability]] - 시퀀스 번호, 재전송, 슬라이딩 윈도우, 흐름 제어
 - [x] [[congestion-control]] - slow start, AIMD, cubic, BBR
-- [ ] [[quic]] - TCP의 한계 (HOL blocking), QUIC 설계
+- [x] [[quic]] - TCP의 한계 (HOL blocking), QUIC 설계
 
 ## 4. 네트워크 계층
 
