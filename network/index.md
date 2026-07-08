@@ -29,7 +29,7 @@ title: "network"
 
 - [x] [[ip-addressing]] - IPv4/IPv6, 서브넷, CIDR, NAT
 - [x] [[routing]] - 라우팅 테이블, OSPF vs BGP, 인터넷이 하나로 붙어 있는 이유
-- [ ] [[icmp-and-tools]] - ping/traceroute 동작 원리
+- [x] [[icmp-and-tools]] - ping/traceroute 동작 원리
 
 ## 5. 링크 계층
 
