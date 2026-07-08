@@ -14,7 +14,7 @@ title: "data-structures"
 
 ## 2. 해시
 
-- [ ] [[hash-tables]] - 해시 함수, 체이닝 vs 오픈 어드레싱, 로드 팩터, 리사이징
+- [x] [[hash-tables]] - 해시 함수, 체이닝 vs 오픈 어드레싱, 로드 팩터, 리사이징
 - [ ] [[hash-in-practice]] - 언어별 구현 (Python dict, Java HashMap), SipHash와 HashDoS
 
 ## 3. 트리
