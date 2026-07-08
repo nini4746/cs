@@ -10,7 +10,7 @@ title: "data-structures"
 
 - [x] [[arrays-and-dynamic-arrays]] - 동적 배열 성장 전략, amortized O(1) 증명, 캐시 친화성
 - [x] [[linked-lists]] - 배열 대비 진짜 트레이드오프 (포인터 추적 비용), 실무에서 드문 이유
-- [ ] [[stacks-and-queues]] - 구현 선택지, 덱, 원형 버퍼
+- [x] [[stacks-and-queues]] - 구현 선택지, 덱, 원형 버퍼
 
 ## 2. 해시
 
