@@ -11,7 +11,7 @@ title: "information-theory"
 ## 1. 엔트로피와 정보
 
 - [x] [[entropy-and-information]] - self-information(왜 -log), 섀넌 엔트로피, 비트의 의미, 최대/최소 엔트로피
-- [ ] [[joint-conditional-entropy]] - 결합·조건부 엔트로피, chain rule, 엔트로피의 성질
+- [x] [[joint-conditional-entropy]] - 결합·조건부 엔트로피, chain rule, 엔트로피의 성질
 - [ ] [[mutual-information]] - 상호정보량, KL divergence(상대 엔트로피), 왜 비대칭인가
 
 ## 2. 무손실 압축 (source coding)
