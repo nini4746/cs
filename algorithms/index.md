@@ -35,7 +35,7 @@ title: "algorithms"
 
 ## 6. 그래프
 
-- [ ] [[graph-traversal]] - BFS/DFS, 위상 정렬, SCC
+- [x] [[graph-traversal]] - BFS/DFS, 위상 정렬, SCC
 - [ ] [[shortest-paths]] - 다익스트라, 벨만-포드, 플로이드-워셜, 음수 간선
 - [ ] [[mst]] - 크루스칼, 프림, cut property 증명
 - [ ] [[network-flow]] - 최대 유량, min-cut, 이분 매칭
