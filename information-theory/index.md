@@ -29,4 +29,4 @@ title: "information-theory"
 
 - [x] [[rate-distortion]] - 손실 압축 이론, 비트 예산 vs 왜곡 트레이드오프
 - [x] [[information-theory-in-ml]] - cross-entropy 손실, MDL, information bottleneck, 왜 ML이 정보이론인가
-- [ ] [[kolmogorov-complexity]] - 알고리즘적 정보량, 압축 불가능성, 섀넌 엔트로피와의 관계
+- [x] [[kolmogorov-complexity]] - 알고리즘적 정보량, 압축 불가능성, 섀넌 엔트로피와의 관계
