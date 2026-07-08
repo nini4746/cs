@@ -14,6 +14,7 @@
 - [database](database/) - 데이터베이스 (SQL, 인덱스, 트랜잭션, 정규화)
 - [devops](devops/) - 데브옵스 (Docker, k8s, CI/CD, 클라우드, Git, Linux)
 - [distributed-systems](distributed-systems/) - 분산 시스템 (CAP, 합의, 메시지 큐, 캐싱 전략)
+- [information-theory](information-theory/) - 정보이론 (엔트로피, 압축, 오류정정, 채널용량) · 석사급
 - [math](math/) - 수학 (이산수학, 선형대수, 확률통계)
 - [network](network/) - 네트워크 (TCP/IP, HTTP, DNS, 소켓)
 - [os](os/) - 운영체제 (프로세스, 스레드, 메모리 관리, 스케줄링, 동기화)
