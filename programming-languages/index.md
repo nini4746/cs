@@ -9,7 +9,7 @@ title: "programming-languages"
 ## 1. 언어 핵심 개념
 
 - [x] [[static-vs-dynamic-typing]] - 타입 검사 시점, 강타입/약타입 구분, 타입 추론
-- [ ] [[scope-and-closures]] - 렉시컬 스코프, 클로저가 캡처하는 것, 업밸류
+- [x] [[scope-and-closures]] - 렉시컬 스코프, 클로저가 캡처하는 것, 업밸류
 - [ ] [[value-vs-reference]] - 값/참조 의미론, 언어별 차이 (Python 전부 참조, Go 전부 값)
 - [ ] [[garbage-collection]] - reference counting vs tracing (mark-sweep, 세대별), GC 일시정지
 - [ ] [[error-handling-models]] - 예외 vs 에러 값(Go/Rust) vs Option/Result
