@@ -29,7 +29,7 @@ title: "software-design"
 
 ## 4. 코드 품질
 
-- [ ] [[naming-and-readability]] - 이름 짓기, 함수 크기, 주석의 역할
+- [x] [[naming-and-readability]] - 이름 짓기, 함수 크기, 주석의 역할
 - [ ] [[refactoring-catalog]] - 냄새 → 리팩토링 매핑, 안전한 리팩토링 순서
 - [ ] [[testing-strategy]] - 단위/통합/E2E 피라미드, 테스트 더블, 무엇을 테스트하지 말 것인가
 - [ ] [[tdd]] - TDD 사이클, 효과 있는 경우와 아닌 경우
