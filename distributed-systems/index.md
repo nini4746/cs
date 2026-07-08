@@ -27,7 +27,7 @@ title: "distributed-systems"
 
 ## 4. 트랜잭션과 파티셔닝
 
-- [ ] [[distributed-transactions]] - 2PC, saga 패턴, exactly-once의 실체
+- [x] [[distributed-transactions]] - 2PC, saga 패턴, exactly-once의 실체
 - [ ] [[partitioning]] - consistent hashing, 리밸런싱, 핫스팟 → database/partitioning-db와 연결
 
 ## 5. 실무 패턴
