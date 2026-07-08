@@ -8,7 +8,7 @@ title: "automata"
 
 ## 1. 정규 언어
 
-- [ ] [[dfa-nfa]] - DFA/NFA 정의, NFA→DFA 부분집합 구성, 동치 증명
+- [x] [[dfa-nfa]] - DFA/NFA 정의, NFA→DFA 부분집합 구성, 동치 증명
 - [ ] [[regex-and-finite-automata]] - 정규식 ↔ NFA ↔ DFA 상호 변환 (Kleene 정리)
 - [ ] [[regex-engines]] - 이론이 실제 엔진과 만나는 지점: DFA 계열(RE2) vs 백트래킹(PCRE), ReDoS
 - [ ] [[pumping-lemma]] - 펌핑 보조정리로 비정규성 증명, {aⁿbⁿ}이 정규가 아닌 이유
