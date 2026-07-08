@@ -26,5 +26,5 @@ title: "math"
 
 - [x] [[probability-basics]] - 조건부 확률, 베이즈 정리, 독립
 - [x] [[random-variables]] - 기댓값, 분산, 주요 분포 (이항/기하/정규/포아송)
-- [ ] [[concentration]] - 큰 수의 법칙, 체르노프 바운드 맛보기 - 해시/랜덤 알고리즘 분석 도구
+- [x] [[concentration]] - 큰 수의 법칙, 체르노프 바운드 맛보기 - 해시/랜덤 알고리즘 분석 도구
 - [ ] [[statistics-basics]] - 추정, 신뢰구간, 가설검정, p-value의 정확한 의미
