@@ -18,7 +18,7 @@ title: "concurrency-parallelism"
 ## 2. Lock-free와 원자성
 
 - [x] [[atomics-and-cas]] - 원자 연산, compare-and-swap, ABA 문제, 왜 CAS가 만능 아닌가
-- [ ] [[lock-free-structures]] - lock-free 스택/큐, 진행 보장 계층(wait-free/lock-free/obstruction-free)
+- [x] [[lock-free-structures]] - lock-free 스택/큐, 진행 보장 계층(wait-free/lock-free/obstruction-free)
 
 ## 3. 병렬성 이론
 
