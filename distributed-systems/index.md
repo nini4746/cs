@@ -23,7 +23,7 @@ title: "distributed-systems"
 - [x] [[consensus-problem]] - 왜 어려운가, FLP 불가능성
 - [x] [[raft]] - 리더 선출, 로그 복제, 안전성 논증 (6.824 핵심)
 - [x] [[paxos-overview]] - Paxos 기본, Raft와 비교
-- [ ] [[coordination-services]] - ZooKeeper/etcd, 분산 락의 함정
+- [x] [[coordination-services]] - ZooKeeper/etcd, 분산 락의 함정
 
 ## 4. 트랜잭션과 파티셔닝
 
