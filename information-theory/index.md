@@ -23,7 +23,7 @@ title: "information-theory"
 ## 3. 잡음 채널과 오류 정정
 
 - [x] [[channel-capacity]] - 채널 용량, 잡음 채널 코딩 정리, 왜 용량 아래면 오류 0 가능한가
-- [ ] [[error-correcting-codes]] - 패리티/Hamming code, 블록 부호, 거리와 정정 능력, 현대 부호 개관(LDPC/터보)
+- [x] [[error-correcting-codes]] - 패리티/Hamming code, 블록 부호, 거리와 정정 능력, 현대 부호 개관(LDPC/터보)
 
 ## 4. 심화·응용
 
