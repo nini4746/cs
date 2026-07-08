@@ -25,7 +25,7 @@ title: "automata"
 
 - [x] [[turing-machines]] - TM 정의, 변형들의 동치, Church-Turing 논제
 - [x] [[decidability]] - 결정 가능/인식 가능, 정지 문제 대각선 논법 증명
-- [ ] [[reductions]] - 환원으로 결정 불가능성 증명, Rice 정리
+- [x] [[reductions]] - 환원으로 결정 불가능성 증명, Rice 정리
 
 ## 4. 계산 복잡도
 
