@@ -29,4 +29,4 @@ title: "security"
 
 - [x] [[threat-modeling]] - 위협 모델링 기초, 공격 표면 분석
 - [x] [[secrets-management]] - 시크릿 관리, 키 로테이션, .env가 위험해지는 순간
-- [ ] [[supply-chain]] - 의존성 공격, lockfile, 패키지 신뢰 문제
+- [x] [[supply-chain]] - 의존성 공격, lockfile, 패키지 신뢰 문제
