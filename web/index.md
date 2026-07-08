@@ -11,7 +11,7 @@ title: "web"
 - [x] [[browser-architecture]] - 멀티 프로세스 구조, 렌더러/메인/컴포지터 스레드
 - [x] [[critical-rendering-path]] - HTML 파싱 → DOM/CSSOM → 레이아웃 → 페인트 → 컴포지팅
 - [x] [[javascript-event-loop]] - 이벤트 루프, 태스크/마이크로태스크 큐, async가 도는 원리
-- [ ] [[reflow-repaint]] - 리플로우 유발 요인, transform이 싼 이유 (컴포지터 전용)
+- [x] [[reflow-repaint]] - 리플로우 유발 요인, transform이 싼 이유 (컴포지터 전용)
 
 ## 2. 네트워크 접점
 
