@@ -25,7 +25,7 @@ title: "database"
 
 ## 4. 쿼리 처리
 
-- [ ] [[query-execution]] - iterator 모델, hash join vs merge join vs nested loop
+- [x] [[query-execution]] - iterator 모델, hash join vs merge join vs nested loop
 - [ ] [[query-optimization]] - 비용 기반 최적화, 통계, 플랜이 틀리는 경우
 
 ## 5. 트랜잭션
