@@ -20,7 +20,7 @@ title: "distributed-systems"
 
 ## 3. 합의
 
-- [ ] [[consensus-problem]] - 왜 어려운가, FLP 불가능성
+- [x] [[consensus-problem]] - 왜 어려운가, FLP 불가능성
 - [ ] [[raft]] - 리더 선출, 로그 복제, 안전성 논증 (6.824 핵심)
 - [ ] [[paxos-overview]] - Paxos 기본, Raft와 비교
 - [ ] [[coordination-services]] - ZooKeeper/etcd, 분산 락의 함정
