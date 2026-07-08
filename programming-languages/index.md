@@ -35,4 +35,4 @@ Crafting Interpreters 순서. 오토마타 (automata/) 선행 추천 - 렉싱=DF
 - [x] [[semantic-analysis]] - 심볼 테이블, 타입 체크, 스코프 해석
 - [x] [[bytecode-vm]] - 스택 기반 VM, 바이트코드 컴파일
 - [x] [[codegen-and-optimization]] - 네이티브 코드 생성 개요, SSA, 기본 최적화 패스
-- [ ] [[build-a-language]] - 미니 언어 처음부터 끝까지 (종합 프로젝트)
+- [x] [[build-a-language]] - 미니 언어 처음부터 끝까지 (종합 프로젝트)
