@@ -19,7 +19,7 @@ title: "network"
 
 ## 3. 전송 계층
 
-- [ ] [[udp]] - 왜 UDP가 존재하나, 체크섬, UDP 위에 뭘 쌓나 (QUIC, DNS, 게임)
+- [x] [[udp]] - 왜 UDP가 존재하나, 체크섬, UDP 위에 뭘 쌓나 (QUIC, DNS, 게임)
 - [ ] [[tcp-basics]] - 3-way handshake, 상태 머신, TIME_WAIT의 이유
 - [ ] [[tcp-reliability]] - 시퀀스 번호, 재전송, 슬라이딩 윈도우, 흐름 제어
 - [ ] [[congestion-control]] - slow start, AIMD, cubic, BBR
