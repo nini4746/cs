@@ -16,7 +16,7 @@ title: "ai-ml"
 
 - [x] [[neural-networks]] - 퍼셉트론 → MLP, 역전파 손으로 유도, 활성화 함수
 - [x] [[training-dynamics]] - 옵티마이저 (SGD/Adam), 학습률, 배치 정규화, 왜 학습이 안 되나 디버깅
-- [ ] [[cnn-rnn-overview]] - CNN/RNN 핵심 아이디어 (역사적 맥락 수준)
+- [x] [[cnn-rnn-overview]] - CNN/RNN 핵심 아이디어 (역사적 맥락 수준)
 
 ## 3. 트랜스포머와 LLM
 
