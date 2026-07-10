@@ -107,6 +107,53 @@ SQL은 **무엇을** 원하는지만 → DB가 **어떻게** 실행할지 결정
 - 같은 결과를 여러 방식으로 실행 가능 → 최적화기가 선택 → [[query-optimization]]
 - 실행 계획을 EXPLAIN으로 확인 → [[index-usage]]
 
+## 셀프 체크
+
+> [!question]- INNER JOIN과 LEFT JOIN은 각각 무엇을 남기며, 잘못 고르면 어떤 문제가 생기나?
+> INNER JOIN은 양쪽에 매칭되는 행만 남기고, LEFT JOIN은 왼쪽 테이블 전부에 매칭되는 오른쪽을(없으면 NULL) 붙인다. "주문 없는 사용자도 보고 싶은데" INNER를 쓰면 데이터가 누락되고, 반대로 오조인하면 과다 집계가 발생한다.
+
+> [!question]- WHERE와 HAVING의 차이, 그리고 SELECT의 별칭을 WHERE에서 못 쓰는 이유는?
+> WHERE는 그룹 짓기 전 개별 행에 조건을 걸고, HAVING은 GROUP BY 후 그룹에 조건을 건다. 논리적 실행 순서가 FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY 이므로, SELECT는 WHERE보다 나중에 처리되어 SELECT에서 정의한 별칭을 WHERE에서 참조할 수 없다.
+
+> [!question]- window 함수는 GROUP BY와 어떻게 다르며 언제 쓰나?
+> GROUP BY는 행들을 합쳐 그룹당 한 행을 내지만, window 함수는 행을 합치지 않고 각 원본 행에 집계·순위값을 덧붙인다. 순위(RANK/ROW_NUMBER), 누적합, 이동평균, 이전/다음 행 비교(LAG/LEAD)처럼 원본 행을 유지하며 계산할 때 쓴다.
+
+## 연습문제
+
+> [!example]- 문제: `users(id, name)`, `orders(id, user_id, amount)`가 있다. 주문이 하나도 없는 사용자를 포함해 사용자별 주문 수와 총액을 구하는 SQL을 작성하라.
+> **풀이**
+> ```sql
+> SELECT u.id, u.name,
+>        COUNT(o.id)        AS order_count,
+>        COALESCE(SUM(o.amount), 0) AS total_amount
+> FROM users u
+> LEFT JOIN orders o ON o.user_id = u.id
+> GROUP BY u.id, u.name
+> ORDER BY total_amount DESC;
+> ```
+> LEFT JOIN이라 주문 없는 사용자도 남고, 그 경우 `COUNT(o.id)`는 0, `SUM`은 NULL이므로 `COALESCE`로 0 처리한다. `COUNT(*)` 대신 `COUNT(o.id)`를 써야 매칭 없는 행(NULL)을 세지 않는다.
+
+> [!example]- 문제: 각 사용자 안에서 금액이 큰 순으로 순위를 매겨 사용자별 상위 2건의 주문만 뽑는 SQL을 작성하라.
+> **풀이**
+> ```sql
+> SELECT user_id, id, amount
+> FROM (
+>   SELECT user_id, id, amount,
+>          ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY amount DESC) AS rn
+>   FROM orders
+> ) t
+> WHERE rn <= 2;
+> ```
+> PARTITION BY로 사용자별로 나눠 각 그룹 안에서 amount 내림차순 순번을 매기고, 바깥에서 rn <= 2로 상위 2건을 거른다. window 함수 결과는 SELECT 단계에서 나오므로 WHERE에서 바로 못 걸어 서브쿼리로 감싼다.
+
+## 파인만
+
+> [!note]- 백지에 이 노트 핵심을 남에게 설명하듯 써보라. 막히면 그 부분만 다시.
+> **점검 포인트**: 이해했다면 답할 수 있어야 하는 핵심 3가지.
+> 1. JOIN 종류별로 "무엇을 남기나"와 오조인 시 데이터 누락/과다.
+> 2. 논리적 실행 순서(FROM→WHERE→GROUP BY→HAVING→SELECT→ORDER BY)와 그로부터 따라오는 WHERE/HAVING·별칭 규칙.
+> 3. GROUP BY와 window 함수의 차이(행을 합치나 vs 각 행에 붙이나)와 쓰임.
+
 ## 연결
 
 - 관계형 기반 → [[relational-model]]
