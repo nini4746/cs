@@ -1,0 +1,106 @@
+# 쇼어 알고리즘 (Shor's Algorithm)
+
+## 한 줄 요약
+
+쇼어(Shor) 알고리즘은 큰 정수 N을 **다항 시간**에 소인수분해하는 양자 알고리즘으로, 고전 최선(수체 체, 준지수 시간)을 지수적으로 앞선다. 핵심은 인수분해를 **주기 찾기**(period finding)로 환원하고, 그 주기를 **양자 푸리에 변환**(QFT, Quantum Fourier Transform)으로 추출하는 것이다. RSA(cryptography/[[public-key-crypto]])와 디피-헬만·타원곡선(cryptography/[[diffie-hellman]])의 안전성이 인수분해·이산로그의 어려움에 기대므로, 쇼어는 현대 공개키 암호의 실존적 위협이다.
+
+## 왜 필요한가
+
+- 공개키 암호(RSA, DH, ECC)의 안전 근거를 통째로 무너뜨림 → cryptography/[[public-key-crypto]]
+- "양자가 지수 가속을 주는 실용적 문제"의 대표 예 (Grover는 제곱)
+- 포스트양자 암호(PQC) 전환의 직접적 동기
+- 주기 구조를 착취하는 QFT가 여러 양자 알고리즘의 핵심 도구
+
+## 인수분해 → 주기 찾기 환원
+
+N을 인수분해하려면, 무작위 a(1<a<N, gcd(a,N)=1)에 대해 함수의 주기 r을 찾으면 됨:
+
+```
+f(x) = a^x mod N ,  주기 r: a^r ≡ 1 (mod N)
+```
+
+- r이 짝수이고 a^(r/2) ≢ −1 (mod N)이면:
+- gcd(a^(r/2) ± 1, N)이 N의 **비자명 인수**를 줌 (고전 정수론, 유클리드 호제법)
+- 즉 어려운 부분은 오직 **주기 r 찾기** - 여기가 양자의 역할
+
+## 왜 주기 찾기가 고전엔 어려운가
+
+- f(x) = a^x mod N 의 주기 r은 지수적으로 클 수 있음
+- 고전은 값을 하나씩 계산하며 반복을 찾아야 함 → 지수
+- 양자는 모든 x를 중첩으로 계산한 뒤 QFT로 주기를 한 번에 드러냄
+
+## 양자 푸리에 변환 (QFT)
+
+이산 푸리에 변환의 양자판, 진폭에 작용:
+
+```
+QFT |x⟩ = (1/√N) Σ_k e^(2πi xk/N) |k⟩
+```
+
+- 고전 FFT는 O(N log N), QFT는 **O((log N)²)** 게이트 - 지수 이득
+- 주기적 진폭을 넣으면 출력이 주기의 역수(1/r 배수) 근처에 몰림
+- H 게이트와 제어 위상 회전으로 구성 → [[quantum-gates]]
+
+## 회로 흐름
+
+```mermaid
+graph LR
+    init["입력 |0⟩, 출력 |0⟩"] --> H["H⊗n: 균등 중첩"] --> U["모듈러 지수 a^x mod N"] --> ms["출력 측정"] --> qft["입력에 QFT"] --> M["입력 측정 → r 추정"]
+```
+
+1. 두 레지스터: 입력(지수 x), 출력(f 값)
+2. 입력에 H → x의 균등 중첩
+3. 모듈러 지수 연산 `|x⟩|0⟩` → `|x⟩|a^x mod N⟩` (얽힘 생성 → [[entanglement]])
+4. 출력 측정 → 입력이 주기적으로 겹친 상태로 붕괴
+5. 입력에 QFT → 주기 정보가 측정 가능한 위치로
+6. 측정 후 **연분수**(continued fraction)로 r 복원
+
+## 복잡도 비교
+
+| 방법 | 시간 |
+|---|---|
+| 시행 나눗셈 | O(√N) = 지수(자릿수 기준) |
+| 수체 체(GNFS) | 준지수 exp(O((log N)^⅓)) |
+| **쇼어** | **O((log N)³)** 다항 |
+
+- N의 자릿수 L=log N 기준으로 GNFS는 준지수, 쇼어는 다항
+- 2048비트 RSA: 고전은 사실상 불가, 쇼어는 큰 결함 허용 양자 컴퓨터면 가능
+
+## 암호에 대한 위협
+
+| 암호 | 근거 문제 | 쇼어 영향 |
+|---|---|---|
+| RSA | 인수분해 | 깨짐 |
+| Diffie-Hellman | 이산로그 | 깨짐(변형으로) |
+| ECC | 타원곡선 이산로그 | 깨짐 |
+| AES(대칭) | 무차별 대입 | Grover로 절반만(안전) |
+
+- 이산로그도 같은 주기 찾기 틀로 처리 → cryptography/[[diffie-hellman]], cryptography/[[elliptic-curves]]
+- 대칭키는 Grover(제곱)만 받아 키 2배면 견딤 → [[grover-search]]
+
+## 현실과 대응
+
+- 현재 하드웨어로는 작은 수만 시연(15, 21 등) - 큰 N엔 수백만 논리 큐빗·오류 정정 필요 → [[quantum-error-correction]], [[nisq-and-hardware]]
+- **포스트양자 암호(PQC)**: 격자·해시·코드 기반, NIST 표준화(2024 Kyber, Dilithium 등)
+- "harvest now, decrypt later" 우려로 지금부터 전환 진행 → security/[[crypto-basics]]
+
+## 연결
+
+- 깨지는 대상 암호 → cryptography/[[public-key-crypto]], cryptography/[[diffie-hellman]], cryptography/[[elliptic-curves]]
+- QFT의 위상·게이트 기반 → [[quantum-gates]]
+- 중첩·얽힘 활용 → [[qubits-and-superposition]], [[entanglement]]
+- 대칭키는 Grover만 → [[grover-search]]
+- 실현 조건 → [[quantum-error-correction]], [[nisq-and-hardware]]
+
+## 궁금한 것 (나중에)
+
+- [ ] QFT 회로 상세 (제어 위상 회전 배열)
+- [ ] 연분수로 r 복원하는 과정
+- [ ] 모듈러 지수 연산의 큐빗 비용
+- [ ] 이산로그판 쇼어와 타원곡선 적용
+
+## 출처
+
+- Nielsen & Chuang 5장 (QFT, 위상 추정, 인수분해)
+- Shor (1994) 원논문
+- Qiskit textbook: Shor's Algorithm
