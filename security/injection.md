@@ -127,6 +127,7 @@ SQL 인젝션은 20년 넘은 공격인데 여전히 OWASP 상위:
 - XSS → web/[[web-vulnerabilities]], [[xss-csrf]]
 - 최소 권한 → [[least-privilege]]
 - HashDoS도 복잡도 인젝션 → data-structures/[[hash-in-practice]]
+- 명령 인젝션·셸 메타문자 → devops/[[shell-scripting]]
 
 ## 궁금한 것 (나중에)
 

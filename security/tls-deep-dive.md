@@ -118,6 +118,10 @@ TLS 1.3의 핵심 성질:
 - 인증서·서명 → [[digital-signatures]]
 - HTTPS와 HSTS → web/[[web-vulnerabilities]], network/[[http]]
 - QUIC 내장 TLS → network/[[quic]]
+- ECDHE 키 교환 → cryptography/[[diffie-hellman]]
+- ECDHE의 타원곡선 → cryptography/[[elliptic-curves]]
+- AES-GCM 모드 → cryptography/[[block-cipher-modes]]
+- AEAD(암호화+인증) → cryptography/[[mac-and-aead]]
 
 ## 궁금한 것 (나중에)
 

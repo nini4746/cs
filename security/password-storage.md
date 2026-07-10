@@ -136,6 +136,8 @@ PBKDF2 200k iterations: 23ms per hash
 - 웹 인증 → web/[[web-auth]]
 - pepper 관리 → [[secrets-management]]
 - rate limiting → [[authn-authz-failures]]
+- 암호학적 해시 성질 → cryptography/[[cryptographic-hashes]]
+- GPU 병렬 대입·메모리 하드 → concurrency-parallelism/[[gpu-computing]]
 
 ## 궁금한 것 (나중에)
 

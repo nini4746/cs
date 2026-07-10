@@ -126,6 +126,7 @@ computer-architecture/[[buffer-overflow]], os/[[memory-allocation]]에서 본 �
 - GC (안전) → programming-languages/[[garbage-collection]]
 - 정적 분석 한계 → automata/[[decidability]]
 - 최소 권한 → [[least-privilege]]
+- data race 방지(Rust) → concurrency-parallelism/[[memory-models]]
 
 ## 궁금한 것 (나중에)
 

@@ -127,6 +127,10 @@ TLS(network/[[tls]])가 셋 다 제공.
 - 수학적 기반 → math/[[modular-arithmetic]], algorithms/[[p-vs-np]]
 - AES-NI 하드웨어 → computer-architecture/[[isa-design]]
 - 키 관리 → [[secrets-management]]
+- 대칭 암호(AES) 심화 → cryptography/[[symmetric-ciphers]]
+- 공개키 암호(RSA/ECC) 심화 → cryptography/[[public-key-crypto]]
+- DH 키 교환 상세 → cryptography/[[diffie-hellman]]
+- ECC 원리 → cryptography/[[elliptic-curves]]
 
 ## 궁금한 것 (나중에)
 

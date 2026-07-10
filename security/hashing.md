@@ -117,6 +117,8 @@ data-structures/[[hash-tables]]의 해시와 **목적이 다름**:
 - Git 해시 → devops/[[git-internals]]
 - 생일 공격 확률 → math/[[probability-basics]], [[combinatorics]]
 - 블룸 필터도 해시 → data-structures/[[bloom-filter]]
+- 해시 함수 내부 구조 심화 → cryptography/[[cryptographic-hashes]]
+- HMAC (해시+키 인증) → cryptography/[[mac-and-aead]]
 
 ## 궁금한 것 (나중에)
 

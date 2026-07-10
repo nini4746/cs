@@ -133,6 +133,7 @@ GET /orders/124    → 남의 주문 (권한 확인 안 하면 접근됨!)
 - 비밀번호·rate limit → [[password-storage]]
 - 최소 권한 → [[least-privilege]]
 - ARP/네트워크 MITM → network/[[ethernet-and-arp]]
+- 세션 ID 예측 불가(엔트로피) → information-theory/[[entropy-and-information]]
 
 ## 궁금한 것 (나중에)
 

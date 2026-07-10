@@ -124,6 +124,10 @@ CA(인증기관)가 신원 확인 후 서명 → "이 공개키는 이 도메인
 - JWT → web/[[web-auth]]
 - DKIM → network/[[email-protocols]]
 - 코드/패키지 서명 → [[supply-chain]]
+- 서명의 공개키 기반 → cryptography/[[public-key-crypto]]
+- ECDSA 타원곡선 → cryptography/[[elliptic-curves]]
+- MAC과 비교 → cryptography/[[mac-and-aead]]
+- Git 커밋 서명 → devops/[[git-internals]]
 
 ## 궁금한 것 (나중에)
 

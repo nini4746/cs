@@ -132,6 +132,7 @@
   - 최소 권한 → [[least-privilege]]
   - 입력 검증 → [[injection]], [[xss-csrf]]
 - 공격 트리 = 그래프 → algorithms/[[graph-traversal]]
+- 위험=가능성×영향 정량화 → math/[[probability-basics]]
 
 ## 궁금한 것 (나중에)
 
