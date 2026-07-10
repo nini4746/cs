@@ -84,6 +84,35 @@ H(p,q) = H(p) + KL(p||q) 확인:
 - **통합 관점**: 압축·추론·학습·일반화가 한 언어로 (엔트로피·KL·상호정보)
 - **"학습 = 압축 = 이해"**: 규칙성을 찾아 짧게 표현하는 것이 지능의 한 정의
 
+## 셀프 체크
+
+> [!question]- cross-entropy 손실이 왜 KL divergence 최소화와 같은가?
+> `H(p,q)=H(p)+D(p‖q)`인데 진짜 분포 p는 데이터로 고정이라 H(p)가 상수. 따라서 cross-entropy를 줄이는 것은 곧 `D(p‖q)`를 줄이는 것 = 모델 q를 진짜 분포 p에 맞추는 것이다. 최대우도(MLE)와도 동치.
+
+> [!question]- 분류에서 MSE 대신 cross-entropy를 쓰는 실질적 이유는?
+> 확률 출력에 자연스럽고 MLE와 동치라는 이론적 근거 외에, 기울기가 건강하다. 시그모이드+MSE는 기울기 소실이 생기지만 시그모이드+CE는 오차(예측-정답)에 비례하는 깨끗한 기울기를 준다.
+
+> [!question]- MDL과 information bottleneck은 각각 무엇을 정보로 균형 잡나?
+> MDL은 `L(모델)+L(데이터|모델)`을 최소화 - 모델 복잡도와 데이터 적합도의 균형(오컴의 면도날). Information bottleneck은 `min I(X;Z)-β·I(Z;Y)` - 입력 X는 최대한 압축하되 라벨 Y 정보는 유지하는 표현 Z를 찾는다.
+
+## 연습문제
+
+> [!example]- 문제: 정답 라벨 `p=[0,1,0]`(클래스 1), 모델 예측 `q=[0.2,0.7,0.1]`일 때 cross-entropy 손실을 구하라.
+> **풀이**
+> `H(p,q) = -Σ p log₂ q = -(0·log q₀ + 1·log₂0.7 + 0·log q₂) = -log₂0.7`.
+> `log₂0.7 ≈ -0.515` → 손실 `≈ 0.515 비트`.
+> 정답 클래스의 예측 확률만 손실에 기여하며, q₁→1이면 손실→0, q₁→0이면 손실→∞.
+
+> [!example]- 문제: 언어모델의 cross-entropy가 심볼당 H=3비트일 때 perplexity를 구하고 의미를 해석하라.
+> **풀이**
+> `perplexity = 2^H = 2³ = 8`.
+> 의미: 매 스텝 모델이 평균적으로 "동등하게 그럴듯한 8개 후보 중 하나를 고르는" 만큼의 불확실성을 가진다. perplexity가 낮을수록(H 낮을수록) 예측을 잘하는 모델이다.
+
+## 파인만
+
+> [!note]- 백지에 "학습 = 압축"을 cross-entropy·MDL·bottleneck 세 관점으로 설명하라.
+> **점검 포인트**: (1) cross-entropy=H(p)+KL이라 손실 최소화=KL 최소화=MLE라는 삼위일체, (2) MDL의 L(모델)+L(데이터|모델) 균형이 과적합/과소적합을 절충한다는 것, (3) information bottleneck의 압축(I(X;Z)↓)과 예측(I(Z;Y)↑) 균형.
+
 ## 연결
 
 - cross-entropy·KL → [[mutual-information]], [[entropy-and-information]]
