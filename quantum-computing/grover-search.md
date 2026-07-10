@@ -130,6 +130,7 @@ graph LR
 - 반사·회전의 선형대수 → math/[[vectors-and-matrices]], math/[[eigenvalues]]
 - 암호 영향 → security/[[crypto-basics]], cryptography/[[public-key-crypto]]
 - 지수 가속 대조 → [[shor-algorithm]]
+- NP 무차별 대입에 제곱 가속(다항 아님) → complexity-theory/[[p-and-np]]
 
 ## 궁금한 것 (나중에)
 

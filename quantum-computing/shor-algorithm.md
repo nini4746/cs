@@ -127,6 +127,8 @@ graph LR
 - 중첩·얽힘 활용 → [[qubits-and-superposition]], [[entanglement]]
 - 대칭키는 Grover만 → [[grover-search]]
 - 실현 조건 → [[quantum-error-correction]], [[nisq-and-hardware]]
+- QFT는 이산 푸리에 변환의 양자판 → signal-processing/[[fourier-transform]]
+- 모듈러 지수·gcd 환원의 정수론 → math/[[modular-arithmetic]]
 
 ## 궁금한 것 (나중에)
 

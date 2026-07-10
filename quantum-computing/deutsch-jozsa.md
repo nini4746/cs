@@ -119,6 +119,7 @@ graph LR
 - H·오라클 게이트 → [[quantum-gates]]
 - 같은 킥백 기법의 발전 → [[grover-search]], [[shor-algorithm]]
 - 양자 복잡도 클래스(BQP) → complexity-theory/[[beyond-np]], algorithms/[[p-vs-np]]
+- 하다마드 변환·간섭의 선형대수 → math/[[vectors-and-matrices]]
 
 ## 궁금한 것 (나중에)
 

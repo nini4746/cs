@@ -131,6 +131,7 @@ Einstein-Podolsky-Rosen(1935)의 문제 제기:
 - 측정 상관과 확률 → math/[[probability-basics]]
 - 알고리즘에서의 활용 → [[shor-algorithm]], [[grover-search]]
 - 얽힘 보호 → [[quantum-error-correction]]
+- 측정 상관·얽힘 엔트로피의 정보량 → information-theory/[[entropy-and-information]]
 
 ## 궁금한 것 (나중에)
 

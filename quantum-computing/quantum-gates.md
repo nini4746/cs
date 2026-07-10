@@ -137,6 +137,7 @@ graph LR
 - CNOT으로 만드는 얽힘 → [[entanglement]]
 - 게이트로 구성한 알고리즘 → [[deutsch-jozsa]], [[grover-search]]
 - 게이트 오류와 정정 → [[quantum-error-correction]]
+- 비가역 삭제와 열(Landauer)의 정보량 → information-theory/[[entropy-and-information]]
 
 ## 궁금한 것 (나중에)
 

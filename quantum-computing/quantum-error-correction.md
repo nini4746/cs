@@ -136,6 +136,7 @@ p < p_th  ⟹  논리 오류율 임의로 감소 (다항 오버헤드로)
 - 정정이 필요한 긴 알고리즘 → [[shor-algorithm]]
 - 물리적 한계 맥락 → [[nisq-and-hardware]]
 - 고전 오류 정정 대비 → information-theory/[[entropy-and-information]]
+- 패리티·신드롬의 고전 오류정정 코드 대응 → information-theory/[[error-correcting-codes]]
 
 ## 궁금한 것 (나중에)
 
