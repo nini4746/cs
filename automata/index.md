@@ -1,5 +1,5 @@
 ---
-title: "automata"
+title: "오토마타"
 ---
 
 # 오토마타·계산이론 syllabus

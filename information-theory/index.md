@@ -1,5 +1,5 @@
 ---
-title: "information-theory"
+title: "정보이론"
 ---
 
 # 정보이론 syllabus

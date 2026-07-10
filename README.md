@@ -6,23 +6,25 @@
 
 ## 구조
 
-- [ai-ml](ai-ml/) - AI/ML (ML 기초, LLM, 프롬프팅)
-- [algorithms](algorithms/) - 알고리즘 (정렬, 탐색, DP, 그래프)
-- [automata](automata/) - 오토마타·계산이론 (FSM, 정규언어, 문맥자유문법, 튜링머신)
-- [computer-architecture](computer-architecture/) - 컴퓨터 구조 (CPU, 캐시, 메모리 계층)
-- [concurrency-parallelism](concurrency-parallelism/) - 동시성·병렬성 (메모리 모델, lock-free, 병렬 알고리즘, GPU) · 석사급
-- [data-structures](data-structures/) - 자료구조 (배열, 리스트, 트리, 해시, 힙)
-- [database](database/) - 데이터베이스 (SQL, 인덱스, 트랜잭션, 정규화)
-- [devops](devops/) - 데브옵스 (Docker, k8s, CI/CD, 클라우드, Git, Linux)
-- [distributed-systems](distributed-systems/) - 분산 시스템 (CAP, 합의, 메시지 큐, 캐싱 전략)
-- [information-theory](information-theory/) - 정보이론 (엔트로피, 압축, 오류정정, 채널용량) · 석사급
-- [math](math/) - 수학 (이산수학, 선형대수, 확률통계)
-- [network](network/) - 네트워크 (TCP/IP, HTTP, DNS, 소켓)
-- [os](os/) - 운영체제 (프로세스, 스레드, 메모리 관리, 스케줄링, 동기화)
-- [programming-languages](programming-languages/) - 프로그래밍 언어 (개념, 패러다임, 인터프리터, 컴파일러)
-- [security](security/) - 보안 (암호화, 해싱, 취약점)
-- [software-design](software-design/) - 소프트웨어 설계 (디자인 패턴, 아키텍처, 클린 코드, 테스팅)
-- [web](web/) - 웹 (브라우저 동작, 렌더링, REST, 인증)
+- [AI·머신러닝](ai-ml/) - ML 기초, LLM, 프롬프팅
+- [알고리즘](algorithms/) - 정렬, 탐색, DP, 그래프
+- [오토마타](automata/) - FSM, 정규언어, 문맥자유문법, 튜링머신
+- [컴퓨터 구조](computer-architecture/) - CPU, 캐시, 메모리 계층
+- [동시성·병렬성](concurrency-parallelism/) - 메모리 모델, lock-free, 병렬 알고리즘, GPU · 석사급
+- [암호학](cryptography/) - 대칭·공개키 암호, 해시, MAC, AEAD
+- [자료구조](data-structures/) - 배열, 리스트, 트리, 해시, 힙
+- [데이터베이스](database/) - SQL, 인덱스, 트랜잭션, 정규화
+- [devops](devops/) - Docker, k8s, CI/CD, 클라우드, Git, Linux
+- [분산 시스템](distributed-systems/) - CAP, 합의, 메시지 큐, 캐싱 전략
+- [GitHub 트렌딩](github-trending/) - 트렌딩 리포지토리 정리
+- [정보이론](information-theory/) - 엔트로피, 압축, 오류정정, 채널용량 · 석사급
+- [수학](math/) - 이산수학, 선형대수, 확률통계
+- [네트워크](network/) - TCP/IP, HTTP, DNS, 소켓
+- [운영체제](os/) - 프로세스, 스레드, 메모리 관리, 스케줄링, 동기화
+- [프로그래밍 언어](programming-languages/) - 개념, 패러다임, 인터프리터, 컴파일러
+- [보안](security/) - 암호화, 해싱, 취약점
+- [소프트웨어 설계](software-design/) - 디자인 패턴, 아키텍처, 클린 코드, 테스팅
+- [웹](web/) - 브라우저 동작, 렌더링, REST, 인증
 
 ## 규칙
 

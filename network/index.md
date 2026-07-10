@@ -1,5 +1,5 @@
 ---
-title: "network"
+title: "네트워크"
 ---
 
 # 네트워크 syllabus

@@ -1,5 +1,5 @@
 ---
-title: "ai-ml"
+title: "AI·머신러닝"
 ---
 
 # AI/ML syllabus

@@ -1,5 +1,5 @@
 ---
-title: "math"
+title: "수학"
 ---
 
 # 수학 syllabus

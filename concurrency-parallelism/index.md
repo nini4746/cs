@@ -1,5 +1,5 @@
 ---
-title: "concurrency-parallelism"
+title: "동시성·병렬성"
 ---
 
 # 동시성·병렬성 syllabus

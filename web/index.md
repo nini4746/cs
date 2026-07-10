@@ -1,5 +1,5 @@
 ---
-title: "web"
+title: "웹"
 ---
 
 # 웹 syllabus

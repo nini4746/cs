@@ -1,5 +1,5 @@
 ---
-title: "github-trending"
+title: "GitHub 트렌딩"
 ---
 
 매일 GitHub 트렌딩을 공부 관점으로 요약해 쌓아두는 곳입니다.

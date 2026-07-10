@@ -1,5 +1,5 @@
 ---
-title: "cryptography"
+title: "암호학"
 ---
 
 # 암호학 syllabus
