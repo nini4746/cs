@@ -160,6 +160,8 @@ SQL은 **무엇을** 원하는지만 → DB가 **어떻게** 실행할지 결정
 - 인덱스가 JOIN·WHERE 가속 → [[btree-index]], [[index-usage]]
 - 실행 방법 → [[query-execution]], [[query-optimization]]
 - 정규화된 스키마의 JOIN → [[normalization]]
+- 선언적 (무엇 vs 어떻게) → programming-languages/[[functional-programming]]
+- 집합 연산(UNION·INTERSECT·EXCEPT) → math/[[sets-relations-functions]]
 
 ## 궁금한 것 (나중에)
 

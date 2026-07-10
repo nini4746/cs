@@ -137,6 +137,7 @@ SELECT ... FROM a JOIN b JOIN c WHERE ...
 - JOIN 순서 DP → algorithms/[[dp-fundamentals]]
 - 규칙 변환 = 컴파일러 최적화 → compilers/[[codegen-and-optimization]]
 - I/O 비용 → computer-architecture/[[memory-hierarchy]]
+- 통계·히스토그램·샘플링 추정 → math/[[statistics-basics]]
 
 ## 궁금한 것 (나중에)
 

@@ -127,6 +127,7 @@ WAL이 복구 외에도:
 - 멱등성 (redo/undo) → distributed-systems/[[idempotency]]
 - 로그 기반 복제 → [[replication-db]]
 - MVCC undo → [[mvcc]]
+- CDC로 로그를 변경 스트림으로 → distributed-systems/[[message-queues]]
 
 ## 궁금한 것 (나중에)
 

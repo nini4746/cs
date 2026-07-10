@@ -149,6 +149,9 @@ GROUP BY([[sql-deep-dive]]) 실행:
 - grace hash = 블로킹 → computer-architecture/[[matrix-blocking]]
 - 인덱스 접근 → [[btree-index]], [[index-usage]]
 - 벡터화 → computer-architecture/[[simd]]
+- iterator pull = lazy 평가 → programming-languages/[[functional-programming]]
+- 쿼리 JIT 컴파일 실행 → programming-languages/[[compiled-vs-interpreted]]
+- sort-merge 조인·정렬 집계 = 정렬 → algorithms/[[comparison-sorts]]
 
 ## 궁금한 것 (나중에)
 

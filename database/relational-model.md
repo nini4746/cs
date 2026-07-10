@@ -136,6 +136,7 @@ SQL의 이론적 기반 - 관계에 대한 연산:
 - 선언적 사고 → programming-languages/[[functional-programming]]
 - 트랜잭션 → [[transactions-acid]]
 - 대안 → [[nosql-landscape]]
+- 관계 = 튜플의 집합, 집합 연산(∪∩−) → math/[[sets-relations-functions]]
 
 ## 궁금한 것 (나중에)
 

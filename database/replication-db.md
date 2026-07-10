@@ -117,6 +117,7 @@
 - CAP 트레이드오프 → distributed-systems/[[cap-theorem]]
 - failover 합의 → distributed-systems/[[consensus-problem]]
 - 지리적 근접 → [[cdn]]
+- 분산 복제 일반론 (멀티리더·리더리스) → distributed-systems/[[replication]]
 
 ## 궁금한 것 (나중에)
 

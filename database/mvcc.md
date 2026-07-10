@@ -122,6 +122,7 @@ MVCC의 성능 이득 대가 = vacuum 관리. PostgreSQL 운영의 핵심 이슈
 - 옛 버전 GC → programming-languages/[[garbage-collection]]
 - 읽기 락 없음 → os/[[lock-free-basics]]
 - undo 로그 → [[recovery]]
+- 스냅샷 격리 ~ 일관성 모델 → distributed-systems/[[consistency-models]]
 
 ## 궁금한 것 (나중에)
 

@@ -136,6 +136,7 @@ JSON 같은 **중첩 문서**를 저장 (MongoDB, CouchDB):
 - 일관성 완화 (BASE) → distributed-systems/[[consistency-models]], [[cap-theorem]]
 - 파티셔닝 → [[partitioning-db]]
 - Redis 자료구조 → data-structures/[[skip-list]]
+- KV 캐시 스토어(Redis) → distributed-systems/[[caching-strategies]]
 
 ## 궁금한 것 (나중에)
 

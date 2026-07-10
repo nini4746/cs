@@ -118,6 +118,7 @@
 - 큰 UPDATE와 락·MVCC → [[mvcc]], [[concurrency-control]]
 - 복제 지연 → [[replication-db]]
 - 스키마 설계 자체 → [[normalization]]
+- 스키마 = 계약, 하위 호환 = API 버저닝 → software-design/[[api-design-principles]]
 
 ## 궁금한 것 (나중에)
 

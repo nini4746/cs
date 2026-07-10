@@ -136,6 +136,7 @@ age:  [30,25,...]
 - column의 SIMD → computer-architecture/[[simd]]
 - OLTP/OLAP → [[normalization]]
 - 인덱스 조직 → [[btree-index]]
+- heap file은 파일시스템 위에 → os/[[file-system-basics]]
 
 ## 궁금한 것 (나중에)
 

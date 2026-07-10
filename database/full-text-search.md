@@ -159,6 +159,7 @@ IDF(역문서빈도): 여러 문서에 흔하면 관련↓ (the는 어디나 있
 - 의미 검색 (임베딩) → ai-ml/[[embeddings]]
 - 하이브리드 검색·RAG → ai-ml/[[rag]]
 - IDF의 정보량 직관 → math/[[probability-basics]]
+- IDF = 희귀어의 정보량(놀라움) → information-theory/[[entropy-and-information]]
 
 ## 궁금한 것 (나중에)
 

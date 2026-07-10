@@ -123,6 +123,7 @@ SERIALIZABLE 아니면 생기는 미묘한 문제:
 - MVCC (읽기-쓰기 분리) → [[mvcc]]
 - 낙관적 동시성 → os/[[lock-free-basics]]
 - 경쟁 조건 (OS) → os/[[threads-and-races]]
+- 직렬성 ~ 분산의 일관성 모델 → distributed-systems/[[consistency-models]]
 
 ## 궁금한 것 (나중에)
 

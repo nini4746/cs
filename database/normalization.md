@@ -148,6 +148,7 @@ Orders
 - OLTP 트랜잭션 → [[transactions-acid]]
 - OLAP column store → [[db-storage]]
 - NoSQL의 역정규화 → [[nosql-landscape]]
+- 함수 종속 = 결정적 관계 → math/[[sets-relations-functions]]
 
 ## 궁금한 것 (나중에)
 

@@ -133,6 +133,8 @@ EXPLAIN ANALYZE SELECT ... ;   -- 실제 실행 + 시간 (PostgreSQL)
 - 통계와 최적화기 → [[query-optimization]]
 - JOIN 실행 방식 → [[query-execution]]
 - SQL 쿼리 → [[sql-deep-dive]]
+- 인덱스가 의존하는 정렬 구조 → data-structures/[[b-trees]]
+- 선택도·카디널리티 추정의 통계 → math/[[statistics-basics]]
 
 ## 궁금한 것 (나중에)
 
