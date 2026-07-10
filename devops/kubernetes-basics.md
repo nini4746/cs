@@ -130,6 +130,56 @@ spec:
 - **작은 규모엔 과함**: 컨테이너 몇 개면 불필요 (그냥 docker나 관리형 서비스)
 - **디버깅**: 계층 많아 어디서 막혔는지 추적 (kubectl describe/logs, [[observability]])
 
+## 셀프 체크
+
+> [!question]- k8s의 선언적 조정 루프(reconciliation loop)란?
+> 원하는 상태(etcd의 선언, 예 replicas=3)와 실제 상태(클러스터 관찰)를 컨트롤러가 계속 비교해 다르면 조정(Pod 생성/삭제)한다. 명령형("3개 띄워")이 아니라 선언형("3개가 원하는 상태")이며 제어 이론의 피드백 루프와 같다.
+
+> [!question]- Pod가 일회용이라 Service가 필요한 이유는?
+> Pod는 죽으면 되살리지 않고 새로 만들어 IP가 바뀐다. 그래서 직접 Pod IP에 의존할 수 없고, Service가 고정 가상 IP+로드밸런싱을 제공해 Pod가 바뀌어도 안정된 주소로 접근하게 한다.
+
+> [!question]- Deployment는 무엇을 하나?
+> 원하는 replica 수를 유지(죽으면 새로 띄움)하고, 이미지 버전 변경 시 롤링 업데이트(Pod 하나씩 교체), 문제 시 이전 ReplicaSet으로 롤백한다. Deployment→ReplicaSet→Pod 구조.
+
+> [!question]- 컨트롤 플레인의 핵심 구성요소와 역할은?
+> API Server(모든 요청 관문), etcd(클러스터 상태 저장, Raft 합의, 유일 진실원), Scheduler(새 Pod를 어느 노드에 배치), Controller Manager(조정 루프). 워커 노드엔 kubelet·컨테이너 런타임·kube-proxy.
+
+> [!question]- k8s의 자가 치유는 어떻게 일어나나?
+> 조정 루프가 실제 상태(예: 노드 죽어 Pod 2개)를 원하는 상태(3개)와 비교해 부족분을 새로 띄운다. 사람 개입 없이 목표값과 현재값 차이를 계속 좁힌다.
+
+## 연습문제
+
+> [!example]- 문제: nginx Pod를 3개 유지하는 Deployment YAML을 작성하라(라벨 app: web, 이미지 버전 고정).
+> **풀이**
+> ```yaml
+> apiVersion: apps/v1
+> kind: Deployment
+> metadata:
+>   name: web
+> spec:
+>   replicas: 3
+>   selector:
+>     matchLabels: {app: web}
+>   template:
+>     metadata:
+>       labels: {app: web}
+>     spec:
+>       containers:
+>       - name: web
+>         image: nginx:1.25
+> ```
+> `kubectl apply -f`하면 API Server가 etcd에 저장하고 컨트롤러가 3개로 조정한다. latest 대신 태그를 고정해 재현성을 확보.
+
+> [!example]- 문제: 앱 Pod들의 IP로 직접 호출하도록 설정했더니 Pod 재시작 후 연결이 끊긴다. 원인과 해결은?
+> **풀이**
+> 원인: Pod는 일회용이라 재생성 시 IP가 바뀐다. 고정 IP를 가정한 직접 호출은 깨진다.
+> 해결: 대상 Pod들을 label 셀렉터로 묶는 Service(ClusterIP)를 만들고, 호출자는 Service 주소(또는 DNS 이름)로 접근한다. Service가 바뀌는 Pod IP로 자동 라우팅·로드밸런싱한다.
+
+## 파인만
+
+> [!note]- 백지에 조정 루프와 Pod/Deployment/Service 관계를 남에게 설명하듯 그려보라. 막히면 그 부분만 다시.
+> **점검 포인트**: (1) 선언적 조정 루프=자가 치유의 원리, (2) Pod 일회용→Service 필요, Deployment의 replica 유지·롤링, (3) API Server·etcd 중심 아키텍처.
+
 ## 연결
 
 - 컨테이너 = 관리 대상 → [[docker-internals]]

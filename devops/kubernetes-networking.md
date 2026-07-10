@@ -97,6 +97,47 @@ web-service.default.svc.cluster.local → ClusterIP
 - **DNS 문제 흔함**: 서비스 못 찾음의 상당수가 DNS
 - 진단은 계층적으로 ([[linux-debugging]], network/[[icmp-and-tools]]): Pod→Service→DNS→Ingress 순 확인
 
+## 셀프 체크
+
+> [!question]- k8s 네트워크 모델(flat 네트워크)의 규칙은?
+> 모든 Pod는 고유 IP를 갖고, 모든 Pod가 NAT 없이 서로 통신(노드를 넘어도), 노드도 Pod와 NAT 없이 통신. "클러스터 전체가 하나의 평평한 네트워크인 척"하며, 이 추상을 실제로 만드는 게 CNI다.
+
+> [!question]- Service(ClusterIP)는 실제로 어떻게 트래픽을 Pod로 보내나?
+> Service는 가상 IP다. kube-proxy가 각 노드에 iptables/IPVS 규칙을 설치해 ClusterIP로 온 패킷을 실제 Pod IP로 DNAT(리라이트)한다. 커널 레벨 로드밸런싱이다.
+
+> [!question]- Service의 주요 종류는?
+> ClusterIP(내부 전용, 기본), NodePort(각 노드 포트로 외부 노출), LoadBalancer(클라우드 LB 프로비저닝, 외부 IP), headless(ClusterIP 없이 Pod IP 직접, StatefulSet용).
+
+> [!question]- 클러스터 내부에서 이름으로 서비스를 찾는 방법은?
+> CoreDNS가 내부 DNS를 제공하고, Service를 만들면 자동으로 DNS 레코드가 생긴다(`web-service.default.svc.cluster.local`, 같은 namespace면 `web-service`). 서비스 디스커버리의 핵심.
+
+> [!question]- Ingress와 Ingress Controller의 차이는?
+> Ingress는 호스트·경로 기반 L7(HTTP) 라우팅 규칙의 선언일 뿐이고, 실제 구현은 Ingress Controller(nginx, traefik 등)가 한다. Service별 LoadBalancer는 비싸므로 Ingress 하나로 여러 Service를 라우팅하고 TLS 종료도 처리.
+
+> [!question]- CNI는 무슨 역할인가?
+> k8s는 네트워크 모델(규칙)만 정의하고 구현은 CNI 플러그인(Calico, Cilium, Flannel 등)에 위임한다. 노드 간 Pod 통신을 오버레이(VXLAN)나 라우팅으로 실현하고 NetworkPolicy도 강제한다. Cilium은 eBPF 기반.
+
+## 연습문제
+
+> [!example]- 문제: 한 파드에서 `web-service`로 요청했더니 간헐적으로 실패한다. Pod→Service→DNS→Ingress→CNI 계층으로 진단 순서를 세워라.
+> **풀이**
+> 1. DNS: `web-service`가 ClusterIP로 해석되나 확인(CoreDNS, 서비스 못 찾음의 상당수가 DNS).
+> 2. Service/엔드포인트: `kubectl get endpoints web-service`로 셀렉터가 살아있는 Pod를 잡는지(라벨 불일치·NotReady 여부).
+> 3. kube-proxy/iptables: ClusterIP→Pod DNAT 규칙이 정상인지.
+> 4. Pod↔Pod: 대상 Pod IP로 직접 통신되는지(CNI 오버레이·라우팅 문제).
+> 5. Ingress: 외부 진입이면 Ingress Controller·경로 규칙·TLS 확인.
+> 넓게→좁게 계층적으로.
+
+> [!example]- 문제: 외부에서 `example.com/api`와 `example.com/web`을 각각 다른 Service로 보내려 한다. Service마다 LoadBalancer를 만들지 말고 경제적으로 구성하는 방법과 그 이유는?
+> **풀이**
+> Ingress 하나를 두고 경로 기반 L7 라우팅으로 `/api`→api-service, `/web`→web-service로 보낸다. Ingress Controller(nginx 등)가 이를 구현하고 TLS 종료도 한곳에서 처리.
+> 이유: Service마다 LoadBalancer(외부 IP)를 만들면 각각 클라우드 LB 비용이 든다. Ingress 하나로 여러 Service를 묶으면 진입점·비용이 하나로 준다.
+
+## 파인만
+
+> [!note]- 백지에 Pod→Service→DNS→Ingress→CNI 계층을 남에게 설명하듯 그려보라. 막히면 그 계층만 다시.
+> **점검 포인트**: (1) flat 네트워크 규칙과 CNI가 그것을 구현함, (2) Service 가상 IP가 kube-proxy DNAT로 Pod에 닿는 원리, (3) DNS 디스커버리와 Ingress L7 라우팅의 역할.
+
 ## 연결
 
 - 안정 IP 필요 이유 (Pod 일회용) → [[kubernetes-basics]]

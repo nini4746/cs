@@ -112,6 +112,60 @@ env:
 - **무료 티어**: 퍼블릭 저장소 무료 (이 노트 사이트도)
 - 대안: GitLab CI, CircleCI, Jenkins (개념 같음 - 이벤트→잡→스텝)
 
+## 셀프 체크
+
+> [!question]- Workflow/Event/Job/Step/Action의 관계는?
+> Workflow(파일 하나=파이프라인)는 Event(push·PR·schedule 등)에 반응해 Job들을 실행한다. Job은 독립 러너(runs-on)에서 돌고 기본 병렬(needs로 순서). Job 안의 Step은 순차이며 uses(재사용 액션) 또는 run(셸 명령)이다.
+
+> [!question]- 잡들의 실행 순서는 기본적으로 어떻게 되고 어떻게 바꾸나?
+> 기본은 병렬(각자 깨끗한 러너). `needs:`로 의존을 걸면 앞 잡이 끝나야 다음 잡이 실행된다(예: build 후 deploy).
+
+> [!question]- 시크릿을 워크플로우에서 어떻게 다루고 GITHUB_TOKEN은 어떻게 좁히나?
+> 저장소/조직 Secrets에 저장하고 `${{ secrets.X }}`로 참조하면 로그에 마스킹된다. YAML·코드에 하드코딩 금지(커밋되면 히스토리에 영원). 자동 발급 GITHUB_TOKEN은 `permissions:`로 최소 권한만 부여한다.
+
+> [!question]- 퍼블릭 저장소에 셀프호스티드 러너가 위험한 이유는?
+> 악의적 PR이 러너(내 머신)에서 코드를 실행할 수 있다. 셀프호스티드는 프라이빗 저장소에만 권장하고, 포크 PR에 시크릿 노출(`pull_request_target`)도 조심한다.
+
+> [!question]- CI 시간을 줄이는 대표 최적화 세 가지는?
+> 캐싱(actions/cache로 의존성 캐시), 매트릭스(여러 버전·OS 동시 테스트), 동시성 제어(concurrency + cancel-in-progress로 연속 푸시 시 이전 빌드 취소).
+
+## 연습문제
+
+> [!example]- 문제: PR과 main push에서 Node 앱을 테스트하고, main에서만 빌드→배포하는(배포는 빌드 후에만) 워크플로우 뼈대를 작성하라.
+> **풀이**
+> ```yaml
+> name: CI
+> on:
+>   pull_request:
+>   push: {branches: [main]}
+> jobs:
+>   test:
+>     runs-on: ubuntu-latest
+>     steps:
+>       - uses: actions/checkout@v4
+>       - uses: actions/setup-node@v4
+>         with: {node-version: 20}
+>       - run: npm ci
+>       - run: npm test
+>   deploy:
+>     needs: test
+>     if: github.ref == 'refs/heads/main'
+>     runs-on: ubuntu-latest
+>     steps:
+>       - run: echo "deploy"
+> ```
+> test는 PR·push 모두, deploy는 needs로 test 후 + if로 main에서만 실행.
+
+> [!example]- 문제: 개발자가 API 키를 워크플로우 YAML에 하드코딩했다. 무엇이 문제고 올바른 방법은?
+> **풀이**
+> 문제: YAML은 커밋되어 git 히스토리에 영원히 남아(되돌려도 남음) 저장소 접근자 누구나 키를 본다. 로그 마스킹도 안 된다.
+> 올바른 방법: 키를 저장소/조직 Secrets에 넣고 `env: API_KEY: ${{ secrets.API_KEY }}`로 주입 → 로그 마스킹됨. 장기 클라우드 키라면 OIDC로 단기 토큰을 발급받아 키 자체를 없앤다.
+
+## 파인만
+
+> [!note]- 백지에 Workflow→Job→Step 구조와 이벤트 트리거를 남에게 설명하듯 그려보라. 막히면 그 부분만 다시.
+> **점검 포인트**: (1) 이벤트→잡(병렬/needs)→스텝(uses/run) 구조, (2) 시크릿 저장·마스킹·최소 권한, (3) 캐싱·매트릭스·동시성 최적화와 러너 선택 위험.
+
 ## 연결
 
 - CI/CD 개념 구현 → [[ci-cd-principles]]

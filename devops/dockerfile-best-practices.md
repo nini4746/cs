@@ -94,6 +94,54 @@ CMD ["/app"]
 - **비용**: 레지스트리 저장·전송 비용
 - **CI 속도**: 캐싱으로 빌드 빠르게 ([[ci-cd-principles]])
 
+## 셀프 체크
+
+> [!question]- 멀티스테이지 빌드는 무엇을 해결하나?
+> 빌드 환경과 실행 환경을 분리한다. 빌드 스테이지에서 컴파일러·개발 의존성으로 빌드하고 최종 스테이지엔 결과물(바이너리)만 COPY한다. 빌드 도구가 최종 이미지에 안 들어가 크기가 급감하고(예: 800MB→10MB) 공격 표면이 작아진다.
+
+> [!question]- alpine·distroless·scratch는 각각 무엇인가?
+> alpine은 초소형 리눅스(~5MB), distroless는 OS 도구 없이 런타임만(셸도 없어 더 안전), scratch는 빈 이미지(정적 바이너리만). 작을수록 크기·취약점 표면이 준다.
+
+> [!question]- 컨테이너를 non-root로 실행해야 하는 이유는?
+> 기본 root로 돌면 컨테이너 탈출 시 호스트 root 권한을 얻어 위험하다. `USER appuser`로 최소 권한 사용자로 실행하면 피해 범위가 줄어든다(최소 권한 원칙).
+
+> [!question]- 시크릿을 이미지에 넣으면 왜 안 되나?
+> 레이어는 불변이라 나중 레이어에서 지워도 이전 레이어에 영원히 남는다(git 히스토리와 같음). 이미지를 받은 누구나 추출할 수 있으므로 시크릿은 런타임에 주입해야 한다.
+
+> [!question]- 이미지 재현성을 위해 무엇을 하나?
+> 베이스 이미지 버전 고정(`FROM node:20.11`, latest 금지)과 lockfile 사용(package-lock.json). 같은 Dockerfile이 같은 이미지를 만들도록 버전을 핀한다.
+
+## 연습문제
+
+> [!example]- 문제: Go 앱을 담은 단일 스테이지 Dockerfile(최종 ~900MB, root 실행)을 작고 안전하게 다시 써라.
+> **풀이**
+> 멀티스테이지 + 최소 베이스 + non-root:
+> ```dockerfile
+> FROM golang:1.22 AS build
+> WORKDIR /src
+> COPY go.mod go.sum ./
+> RUN go mod download
+> COPY . .
+> RUN go build -o /app
+> FROM gcr.io/distroless/static:nonroot
+> COPY --from=build /app /app
+> USER nonroot
+> CMD ["/app"]
+> ```
+> 빌드 도구는 build 스테이지에만, 최종엔 정적 바이너리만. distroless+nonroot로 셸 없는 최소 이미지에 비-root 실행.
+
+> [!example]- 문제: CI 이미지 빌드가 매번 느리고, 이미지에 apt 캐시가 남아 크다. Dockerfile을 어떻게 개선하나?
+> **풀이**
+> 1. 레이어 캐싱: 의존성 정의를 먼저 COPY·설치, 앱 코드는 나중에 → 코드 변경 시 무거운 설치가 캐시됨.
+> 2. RUN 합치기 + 정리: `RUN apt-get update && apt-get install -y pkg && rm -rf /var/lib/apt/lists/*`로 중간 캐시를 같은 레이어에서 제거.
+> 3. .dockerignore로 node_modules·.git 등 불필요한 빌드 컨텍스트 제외.
+> 재현성 위해 베이스·패키지 버전도 고정.
+
+## 파인만
+
+> [!note]- 백지에 "작고 빠르고 안전한 이미지"를 만드는 규칙을 남에게 설명하듯 써보라. 막히면 그 부분만 다시.
+> **점검 포인트**: (1) 멀티스테이지로 빌드/실행 분리, (2) 최소 베이스+non-root로 공격 표면 축소, (3) 레이어 캐싱 순서와 시크릿을 런타임 주입하는 이유.
+
 ## 연결
 
 - 레이어 캐싱 → [[docker-internals]]

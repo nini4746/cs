@@ -104,6 +104,45 @@ network/[[icmp-and-tools]]의 계층 진단과 같은 사고:
 - strace보다 저오버헤드, 커널 내부 깊이
 - 프로덕션 관측의 최신 (distributed-systems/[[observability-basics]])
 
+## 셀프 체크
+
+> [!question]- 성능 문제에서 의심할 네 자원과 각 확인 도구는?
+> CPU(top/htop), 메모리(free/top), 디스크 I/O(iostat/iotop), 네트워크(ss/iftop). USE 방법(Utilization/Saturation/Errors)으로 각 자원의 활용률·포화·오류를 본다.
+
+> [!question]- strace는 무엇을 관찰하나?
+> 프로세스의 시스템 콜을 실시간 추적한다(파일 열기, 네트워크 등). 어느 시스템 콜에서 막히는지(파일 없음, 네트워크 타임아웃) 보여줘 "왜 느리지/실패하지"를 커널 요청 레벨에서 진단한다.
+
+> [!question]- "파일을 지웠는데 디스크가 안 빈다"를 lsof로 어떻게 진단하나?
+> 프로세스가 그 파일을 아직 열고 있으면(fd가 참조 유지) 공간이 반환되지 않는다. `lsof`로 누가 열고 있는지 찾아 프로세스를 종료/재시작하면 해제된다. 포트 점유도 `lsof -i :포트`로 확인.
+
+> [!question]- /proc은 무엇인가?
+> 커널·프로세스 상태를 파일처럼 노출하는 가상 파일시스템("모든 것은 파일"). `/proc/PID/status`(상태·메모리), `/proc/PID/fd/`(열린 fd), `/proc/PID/maps`(메모리 매핑), `/proc/meminfo` 등. top 같은 도구가 이걸 읽는다.
+
+> [!question]- 계층적 진단의 순서는?
+> 증상 파악 → 자원 확인(top/free/iostat, 어디 병목) → 프로세스 좁히기 → 시스템 콜(strace, 뭘 하다 막힘) → 파일·소켓(lsof) → 로그(왜). 넓게→좁게, 추측 말고 측정.
+
+## 연습문제
+
+> [!example]- 문제: 웹 서버 프로세스가 응답 없이 멈춰 있다(hang). CPU는 낮다. 어떤 순서로 무슨 도구를 써서 원인을 좁히겠는가?
+> **풀이**
+> 1. top/free/iostat: CPU 낮음 확인 → CPU 바운드 아님, 메모리·I/O·대기 여부 점검.
+> 2. `strace -p PID`: 어느 시스템 콜에서 블록됐는지(예: read/recvfrom 대기 → 네트워크·DB 응답 대기, futex → 락 대기).
+> 3. `lsof -p PID` / `lsof -i`: 열린 소켓·파일 확인(멈춘 연결, 잠긴 파일).
+> 4. `/proc/PID/status`, dmesg, 로그: 상태·OOM·에러 확인.
+> 측정으로 좁혀 추측을 배제.
+
+> [!example]- 문제: 서비스 재시작 시 "address already in use (포트 8080)"가 난다. 원인 후보와 확인·해결을 제시하라.
+> **풀이**
+> 1. `lsof -i :8080` 또는 `ss -ltnp`로 누가 8080을 점유하는지 확인.
+> 2. 이전 프로세스가 아직 살아있으면 종료(kill), 좀비/자식 여부도 확인.
+> 3. 프로세스가 없는데도 나면 TCP TIME_WAIT로 소켓이 정리 대기 중일 수 있음 → 잠시 후 재시도하거나 SO_REUSEADDR 설정.
+> lsof/ss로 점유 주체를 먼저 특정하는 게 핵심.
+
+## 파인만
+
+> [!note]- 백지에 "넓게→좁게" 계층적 진단 순서와 각 단계 도구를 남에게 설명하듯 써보라. 막히면 그 단계만 다시.
+> **점검 포인트**: (1) 네 자원 병목과 USE, (2) strace(시스템 콜)·lsof(열린 파일/소켓)·/proc의 쓰임새, (3) 측정 우선·추측 배제 원칙.
+
 ## 연결
 
 - 시스템 콜 → os/[[exceptions-and-interrupts]], [[limited-direct-execution]]
