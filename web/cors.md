@@ -86,6 +86,38 @@ No 'Access-Control-Allow-Origin' header is present
 - **CSRF**: 교차 출처 **요청**이 사용자 권한으로 실행되는 공격 (form 제출 등) → security/[[xss-csrf]]
 - CORS는 CSRF를 직접 막지 않음 (별개 문제)
 
+## 셀프 체크
+
+> [!question]- same-origin policy에서 "출처(origin)"는 무엇으로 결정되나?
+> 프로토콜 + 호스트 + 포트, 이 셋의 조합이다. 셋 중 하나라도 다르면 다른 출처다. 예: https와 http(프로토콜), example.com과 api.example.com(호스트), :443과 :8080(포트)은 각각 다른 출처.
+
+> [!question]- CORS 오류에서 실제로 요청을 차단하는 주체는 누구인가?
+> 브라우저다. 서버는 응답을 정상적으로 보내지만, 응답에 허용 출처를 명시한 Access-Control-Allow-Origin 헤더가 없으면 브라우저가 JS의 응답 접근을 막는다. 그래서 해결은 클라이언트가 아니라 서버에서 헤더를 추가해야 한다.
+
+> [!question]- 어떤 요청이 preflight(OPTIONS)를 유발하나?
+> 단순 요청이 아닌 복잡 요청 - PUT/DELETE 같은 메서드, 커스텀 헤더, JSON Content-Type 등. 브라우저가 실제 요청 전에 OPTIONS로 "이 메서드·헤더를 써도 되나" 미리 물어본다. GET·기본 헤더 POST는 preflight가 없다.
+
+> [!question]- CORS와 CSRF는 어떻게 다른가? CORS가 CSRF를 막나?
+> CORS는 교차 출처 "읽기"(JS가 응답을 읽는 것)를 제어하고, CSRF는 교차 출처 "요청"이 사용자 권한으로 실행되는 공격이다. CORS는 form 제출 같은 교차 출처 요청 자체는 막지 않으므로 CSRF를 직접 방어하지 못한다. 별개 문제다.
+
+## 연습문제
+
+> [!example]- 프론트엔드(myapp.com)에서 api.other.com으로 fetch하니 콘솔에 "No 'Access-Control-Allow-Origin' header is present" 오류가 뜬다. 원인과 올바른 해결책을 설명하라.
+> **풀이**
+> 원인: api.other.com 서버가 응답에 Access-Control-Allow-Origin 헤더를 보내지 않아, 브라우저가 same-origin policy에 따라 JS의 응답 접근을 차단했다.
+> 흔한 오해: 프론트엔드 코드 문제가 아니다. 브라우저 정책이라 클라이언트 코드로는 못 고친다.
+> 해결: api.other.com 서버(백엔드)에서 Access-Control-Allow-Origin: https://myapp.com 헤더를 추가한다. 쿠키를 함께 보내야 하면 Allow-Credentials: true와 구체적 출처(와일드카드 * 불가)를 설정. 개발 중이면 같은 출처로 만드는 프록시로 우회할 수도 있다.
+
+> [!example]- 네트워크 탭에서 POST 요청 하나를 보냈는데 OPTIONS 요청이 먼저 하나 더 찍힌다. 왜인지, 이 왕복을 줄일 방법은 무엇인지 답하라.
+> **풀이**
+> 그 POST가 복잡 요청(예: Content-Type: application/json이나 커스텀 헤더 포함)이라 브라우저가 preflight(OPTIONS)를 먼저 보냈다. 서버가 Access-Control-Allow-* 응답으로 허용하면 실제 POST가 나간다.
+> 줄이기: 서버가 preflight 응답에 Access-Control-Max-Age를 주면 브라우저가 그 시간 동안 preflight 결과를 캐싱해 매 요청마다 OPTIONS를 반복하지 않는다.
+
+## 파인만
+
+> [!note]- 백지에 "왜 브라우저는 교차 출처 요청을 기본 차단하고, CORS는 그걸 어떻게 다시 열어주나"를 남에게 설명하듯 써보라. 막히면 그 부분만 다시.
+> **점검 포인트**: 이해했다면 답할 수 있어야 하는 핵심 3가지 - (1) 출처의 정의(프로토콜+호스트+포트)와 same-origin이 막는 것, (2) CORS에서 차단 주체가 브라우저이고 해결이 서버 헤더라는 점, (3) preflight가 왜·언제 생기는지.
+
 ## 연결
 
 - 출처와 보안 → security/[[web-vulnerabilities]], [[xss-csrf]]
