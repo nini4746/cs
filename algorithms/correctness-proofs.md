@@ -132,6 +132,8 @@ for (i = 1; i < n; i++) {
 - 그리디 교환 논증 → [[greedy]]
 - 이진 탐색 정확성 → [[binary-search]]
 - 동시성 불변식 → os/[[threads-and-races]]
+- 분산 프로토콜 안전성 증명 → distributed-systems/[[consensus-problem]]
+- 종료 증명의 한계(정지 문제) → automata/[[decidability]]
 
 ## 궁금한 것 (나중에)
 

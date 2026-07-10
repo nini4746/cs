@@ -125,6 +125,8 @@ xy = x₁y₁·10^2m + (x₁y₀+x₀y₁)·10^m + x₀y₀
 - 정렬 예시 → [[comparison-sorts]], [[binary-search]]
 - 부분 문제 겹치면 DP → [[dp-fundamentals]]
 - 병렬화 → computer-architecture/[[multicore-and-numa]]
+- 분할 정복의 정수 FFT → signal-processing/[[fft]]
+- 재귀적 캐시 블로킹 → computer-architecture/[[matrix-blocking]]
 
 ## 궁금한 것 (나중에)
 

@@ -125,6 +125,7 @@ O(1) < O(log n) < O(n) < O(n log n) < O(n²) < O(n³) < O(2ⁿ) < O(n!)
 - 캐시가 Big-O를 이기는 사례 → computer-architecture/[[memory-hierarchy]], [[linked-lists]]
 - 평균 분석의 확률 → math/[[probability-basics]]
 - 정렬 하한 → [[comparison-sorts]]
+- 다항=효율의 기준(다항 vs 지수 경계) → automata/[[complexity-classes]]
 
 ## 궁금한 것 (나중에)
 

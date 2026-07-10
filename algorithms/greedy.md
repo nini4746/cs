@@ -145,6 +145,8 @@
 - 안 되면 DP → [[dp-fundamentals]], [[dp-patterns]]
 - 허프만의 우선순위 큐 → data-structures/[[heaps]]
 - MST/최단경로 → [[mst]], [[shortest-paths]]
+- 허프만 = 엔트로피 부호화 → information-theory/[[huffman-and-entropy-coding]]
+- SJF 등 스케줄링 그리디 → os/[[cpu-scheduling]]
 
 ## 궁금한 것 (나중에)
 

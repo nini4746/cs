@@ -150,6 +150,8 @@
 - 배낭 vs 그리디 → [[greedy]]
 - 공간/추가 최적화 → [[dp-optimization]]
 - 편집 거리 응용 → ai-ml/[[tokenization]] (문자열)
+- diff/merge = LCS → devops/[[git-internals]]
+- 편집 거리 기반 유사 검색 → database/[[full-text-search]]
 
 ## 궁금한 것 (나중에)
 

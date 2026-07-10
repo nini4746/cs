@@ -133,6 +133,7 @@ LSD (최하위 자리부터):
 - 안정성 (radix의 전제) → [[comparison-sorts]]
 - 누적합 → data-structures/[[segment-tree-and-bit]]
 - 균등 분포 → math/[[random-variables]]
+- 기수 기반 파티셔닝 → database/[[partitioning-db]]
 
 ## 궁금한 것 (나중에)
 

@@ -128,6 +128,8 @@ NP-hard 문제를 만나면 **최적해를 다항 시간에 포기**하고:
 - 근사·휴리스틱 → [[approximation-and-heuristics]]
 - 암호학이 P≠NP에 기댐 → security/[[crypto-basics]]
 - 결정 불가 (더 어려움) → automata/[[decidability]]
+- P와 NP 클래스 정의 → complexity-theory/[[p-and-np]]
+- NP-완전성과 환원 → complexity-theory/[[np-completeness]]
 
 ## 궁금한 것 (나중에)
 

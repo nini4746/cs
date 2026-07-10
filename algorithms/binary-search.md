@@ -152,6 +152,7 @@ lower_bound(10)=7   ← 전부보다 큼 = n (못 찾음 신호)
 - 오버플로우 버그 → computer-architecture/[[bits-and-integers]]
 - 불변식으로 정당성 → [[correctness-proofs]]
 - BST의 탐색도 같은 원리 → data-structures/[[binary-search-trees]]
+- 정렬된 인덱스 노드 내 이분 탐색 → database/[[btree-index]]
 
 ## 궁금한 것 (나중에)
 

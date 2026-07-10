@@ -146,6 +146,9 @@ MST를 만들고([[mst]]) DFS 순회 → 최적 투어의 2배 이내. Christofi
 - 비트마스크 정확해 → [[dp-optimization]]
 - 그리디가 근사로 → [[greedy]]
 - 실무 최적화 → ai-ml/[[training-dynamics]] (경사하강도 지역탐색)
+- 근사 비율·PTAS 이론 심화 → complexity-theory/[[approximation-algorithms]]
+- 근사 불가능성(PCP)과 NP-hardness → complexity-theory/[[np-completeness]]
+- ILP/LP 완화 + 반올림 → math/[[linear-systems]]
 
 ## 궁금한 것 (나중에)
 

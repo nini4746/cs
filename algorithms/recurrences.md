@@ -134,6 +134,7 @@
 - 귀납 증명 (치환법) → [[induction]], math/[[induction]]
 - 분할 정복 설계 → [[divide-and-conquer]]
 - 정렬 하한 → [[comparison-sorts]]
+- 생성함수로 점화식 풀이 → math/[[combinatorics]]
 
 ## 궁금한 것 (나중에)
 

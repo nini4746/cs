@@ -140,6 +140,7 @@
 - 매칭 = 할당 문제 → [[approximation-and-heuristics]]
 - 최소 컷 응용 → ai-ml/ (이미지 분할)
 - 쌍대성 (LP duality) → math/[[linear-systems]]
+- 매칭·컷·연결성 이론 → math/[[graph-theory]]
 
 ## 궁금한 것 (나중에)
 

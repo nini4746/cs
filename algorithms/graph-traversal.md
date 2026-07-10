@@ -155,6 +155,7 @@ DFS/BFS로 한 덩어리씩 방문 → 몇 개의 연결된 덩어리인지. Uni
 - 가중 최단경로 → [[shortest-paths]]
 - 연결 요소 대안 → [[union-find]]
 - DP를 DAG 최단경로로 → [[dp-fundamentals]]
+- GC의 mark 단계 = 루트에서 그래프 순회 → programming-languages/[[garbage-collection]]
 
 ## 궁금한 것 (나중에)
 

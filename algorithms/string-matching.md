@@ -138,6 +138,7 @@ failure of 'ababc': 0 0 1 2 0
 - 다중 패턴 트라이 → data-structures/[[tries]]
 - 라빈-카프 해싱 → data-structures/[[hash-tables]]
 - 편집 거리 (유사 문자열) → [[dp-patterns]]
+- 검색 엔진의 패턴 매칭 기반 → database/[[full-text-search]]
 
 ## 궁금한 것 (나중에)
 

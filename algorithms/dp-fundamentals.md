@@ -165,6 +165,7 @@ DP는 **모든 선택을 고려**해 최적을 보장. 그리디([[greedy]])는 
 - 구체적 패턴 → [[dp-patterns]]
 - 공간 최적화 → [[dp-optimization]]
 - 복잡도 → [[asymptotic-analysis]]
+- 조인 순서 최적화 DP → database/[[query-optimization]]
 
 ## 궁금한 것 (나중에)
 
