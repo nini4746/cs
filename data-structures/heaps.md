@@ -102,6 +102,38 @@ for (m=n; m>0; m--) {          // n번 extract
 - **피보나치 힙**: decrease-key O(1) amortized → 다익스트라 이론 최적. 상수 커서 실무엔 드묾
 - **이항 힙 / 페어링 힙**: 병합(meld) 지원
 
+## 셀프 체크
+
+<details>
+<summary>힙과 BST의 정렬 성질은 어떻게 다르며, 그 결과 무엇이 가능/불가능한가?</summary>
+
+BST는 전체 순서를 유지하지만 힙은 부모-자식 관계만 정렬하고 형제나 전체 순서는 없다. 그래서 힙은 정렬된 출력을 못 하지만, 루트가 항상 최솟값(min-heap)이라 O(1)에 최솟값을 확인할 수 있다.
+</details>
+
+<details>
+<summary>힙이 포인터 없이 배열로 표현될 수 있는 이유와 그 이점은?</summary>
+
+완전 이진 트리(마지막 레벨 빼고 꽉 참)라서 인덱스 산술로 부모=(i-1)/2, 왼자식=2i+1, 오른자식=2i+2로 이동할 수 있다. 포인터가 없어 메모리를 절약하고 연속 메모리라 캐시 친화적이다.
+</details>
+
+<details>
+<summary>build-heap이 삽입 n번의 O(n log n)이 아니라 O(n)인 이유는?</summary>
+
+바닥부터 sift-down으로 만들면, 대부분의 노드가 바닥 근처라 sift-down 거리가 짧기 때문이다. 높이별 노드 수 × 이동 거리를 합치면 수렴해 O(n)이 된다. 그래서 한 번에 힙을 만들 땐 삽입을 반복하는 것보다 이게 빠르다.
+</details>
+
+<details>
+<summary>heapsort가 O(n log n)을 보장하고 in-place인데도 실무 기본 정렬이 아닌 이유는?</summary>
+
+퀵정렬보다 상수가 크고 캐시 지역성이 나쁘기 때문이다. extract-min이 배열 여기저기를 오가 캐시를 잘 못 쓴다. 다만 최악에도 O(n log n) 보장이 필요할 때는 유용하다.
+</details>
+
+<details>
+<summary>우선순위 큐를 "큐"라고 부르지만 일반 큐와 무엇이 다른가?</summary>
+
+이름과 달리 FIFO가 아니라 우선순위가 높은(예: 값이 최소인) 것부터 나온다. 힙으로 구현하며 다익스트라, 작업 스케줄링, 이벤트 시뮬레이션, top-k 등에 쓰인다.
+</details>
+
 ## 연결
 
 - 배열 기반 = 캐시 친화 → [[memory-hierarchy]], [[linked-lists]]

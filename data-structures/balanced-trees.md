@@ -90,6 +90,32 @@ BST와 달리 **최악도 O(log n)** - 회전이 높이를 보장. 이게 균형
 - **Scapegoat, Weight-balanced**: 다른 균형 기준
 - **B-tree**: 다분기, 디스크용 → [[b-trees]]
 
+## 셀프 체크
+
+<details>
+<summary>회전(rotation)은 무엇을 보존하면서 무엇을 바꾸나?</summary>
+
+회전은 BST 불변식(중위 순서, 정렬)을 보존하면서 트리의 높이만 바꾸는 O(1) 연산이다. 예를 들어 우회전은 A<x<B<y<C 순서를 그대로 유지한다. 삽입/삭제 후 불균형 지점에서 회전으로 균형을 복구한다.
+</details>
+
+<details>
+<summary>AVL과 Red-Black의 균형 기준과 성능 특성 차이는?</summary>
+
+AVL은 모든 노드에서 좌우 서브트리 높이 차 ≤ 1의 엄격한 균형으로 높이 ≤ 1.44 log n, 조회가 빠르지만 수정 시 회전이 잦다. Red-Black은 색칠 규칙으로 가장 긴 경로 ≤ 2×가장 짧은 경로의 느슨한 균형으로 높이 ≤ 2 log n, 조회는 약간 느리지만 회전이 적어 수정이 빠르다.
+</details>
+
+<details>
+<summary>실무 정렬 맵(std::map, TreeMap)이 AVL이 아니라 Red-Black을 쓰는 이유는?</summary>
+
+범용 상황은 읽기와 쓰기가 섞여 있는데, Red-Black은 재조정(회전) 횟수가 AVL보다 적어 수정이 섞인 전체 워크로드에서 유리하기 때문이다. 그래서 C++ std::map/set, Java TreeMap/TreeSet, 리눅스 커널 CFS 등이 Red-Black을 채택한다.
+</details>
+
+<details>
+<summary>균형 트리가 순수 BST와 달리 보장하는 것은 무엇이고 그 근거는?</summary>
+
+탐색/삽입/삭제가 최악에도 O(log n)임을 보장한다. 순수 BST는 정렬된 입력에서 한쪽으로 치우쳐 O(n)으로 퇴화하지만, 균형 트리는 회전으로 높이를 항상 O(log n)으로 강제한다. 이 최악 보장이 균형 트리의 존재 이유다.
+</details>
+
 ## 연결
 
 - 균형 없는 BST의 문제 → [[binary-search-trees]]

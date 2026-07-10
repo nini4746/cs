@@ -61,6 +61,32 @@ Google이 만든 오픈 어드레싱 설계, abseil/Rust가 채택:
 4. **신뢰 못 할 입력을 키로**: DoS 저항 해시 확인 (대부분 언어 기본은 안전)
 5. 극한 성능 필요하면 flat_hash_map/SwissTable 계열
 
+## 셀프 체크
+
+<details>
+<summary>Python dict가 삽입 순서를 기억할 수 있는 이유는?</summary>
+
+별도 배열에 (entry, hash)를 삽입 순서대로 저장하고, 해시 테이블에는 그 배열의 인덱스만 담기 때문이다(compact dict). 이 분리 덕에 순서를 보존하면서 메모리도 절약한다. Python은 체이닝이 아니라 오픈 어드레싱을 쓴다.
+</details>
+
+<details>
+<summary>Java HashMap의 treeify는 무엇이며 무엇을 완화하나?</summary>
+
+한 버킷의 체인이 8개를 넘고 테이블이 충분히 크면 그 버킷을 red-black tree로 변환해 최악을 O(n)에서 O(log n)으로 낮춘다. 키가 한 버킷에 몰리는 HashDoS 상황을 완화하는 방어책이다.
+</details>
+
+<details>
+<summary>SwissTable이 SIMD를 어떻게 활용해 조회를 빠르게 하나?</summary>
+
+각 슬롯의 해시 상위 1바이트를 별도 메타데이터 배열에 모아 두고, 조회 시 SIMD로 16개 메타바이트를 한 번에 비교해 매칭 후보만 실제 키를 비교한다. 캐시 친화적 배치와 벡터 병렬로 빠르다.
+</details>
+
+<details>
+<summary>HashDoS 공격의 원리와 SipHash가 이를 막는 방식은?</summary>
+
+공격자가 해시 함수를 알면 전부 같은 버킷으로 가는 키를 만들어 보내 모든 삽입/조회를 O(n)으로 만들고 CPU를 폭발시킨다. SipHash는 프로세스마다 랜덤 시크릿 키를 쓰는 keyed hash라서 공격자가 충돌 키를 미리 계산할 수 없어 이를 막는다.
+</details>
+
 ## 연결
 
 - 해시 테이블 원리 → [[hash-tables]]

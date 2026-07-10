@@ -79,6 +79,32 @@ dequeue: head에서 읽고 head=(head+1)%size
 
 [[linked-lists]]의 교훈대로 배열 기반(동적 배열/원형 버퍼)이 보통 빠름. 링크드 리스트 구현은 교과서에 흔하지만 실무 기본은 배열.
 
+## 셀프 체크
+
+<details>
+<summary>스택과 큐의 접근 순서 차이와 각각의 대표 용도는?</summary>
+
+스택은 LIFO(마지막에 넣은 게 먼저 나옴)로 함수 호출 스택, 실행 취소, 괄호 매칭, DFS에 쓰인다. 큐는 FIFO(처음 넣은 게 먼저 나옴)로 BFS, 작업 큐, 스케줄링 ready 큐, 버퍼링에 쓰인다.
+</details>
+
+<details>
+<summary>큐를 단순 배열로 구현할 때의 문제와 원형 버퍼가 이를 어떻게 푸나?</summary>
+
+배열 앞에서 dequeue하면 뒤 원소를 전부 당겨야 해 O(n)이 된다. 원형 버퍼는 고정 크기 배열에 head/tail 인덱스를 %size로 순환시켜, enqueue는 tail에 쓰고 tail을 전진, dequeue는 head에서 읽고 head를 전진한다. 앞 제거로 생긴 빈 공간을 뒤가 재활용해 둘 다 O(1), 밀기가 없다.
+</details>
+
+<details>
+<summary>우선순위 큐가 일반 큐와 무엇이 다른가?</summary>
+
+이름은 큐지만 FIFO가 아니라 우선순위 순으로 나온다. 힙으로 구현한다. 스택/큐와 헷갈리지 말아야 한다.
+</details>
+
+<details>
+<summary>스택/큐 구현에서 배열 기반과 리스트 기반 중 실무 기본이 배열인 이유는?</summary>
+
+배열 기반(동적 배열/원형 버퍼)은 연속 메모리라 캐시가 좋은 반면, 리스트 기반은 pointer chasing으로 캐시가 나쁘다. 링크드 리스트의 교훈대로 배열 밀기가 캐시 덕에 보통 더 빨라 실무 기본은 배열이다.
+</details>
+
 ## 연결
 
 - 배열 기반 구현 → [[arrays-and-dynamic-arrays]]

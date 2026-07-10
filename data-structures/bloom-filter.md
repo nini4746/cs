@@ -79,6 +79,32 @@ FP율 ≈ (1 - e^(-kn/m))^k
 - **Count-Min Sketch**: 빈도 추정
 - **Bloom filter**: 소속 검사 (이 노트)
 
+## 셀프 체크
+
+<details>
+<summary>블룸 필터의 오류가 왜 비대칭인가 (false negative는 없고 false positive만 있는 이유)?</summary>
+
+넣은 원소는 해당 비트들을 켰고 비트를 끌 일이 없으므로 반드시 "있음"으로 나와 false negative가 없다. 반면 안 넣은 원소라도 다른 원소들이 우연히 그 k개 비트를 전부 켜놨으면 "있음"으로 오판할 수 있어 false positive는 존재한다. 그래서 "없음"은 믿고 "있음"은 확인이 필요하다.
+</details>
+
+<details>
+<summary>false positive율을 결정하는 세 값과 각각의 방향은?</summary>
+
+비트 수 m(클수록 FP↓), 삽입 원소 수 n(많을수록 FP↑), 해시 함수 수 k(최적값 존재)이다. 최적 k ≈ (m/n) × ln 2, FP율 ≈ (1 - e^(-kn/m))^k. 원하는 FP율과 예상 n으로 m, k를 역산한다.
+</details>
+
+<details>
+<summary>블룸 필터가 실제 데이터 저장보다 극도로 작은 이유와 그 대가는?</summary>
+
+원소 자체를 저장하지 않고 비트만 켜기 때문이다. 100만 URL을 실제 저장하면 수십 MB지만 블룸 필터는 1% FP에 ~1.2MB다. 대가로 "정확히 뭐가 들었나"는 열거하지 못하고 소속 여부만 확률적으로 답한다.
+</details>
+
+<details>
+<summary>블룸 필터가 왜 삭제를 지원하지 못하며 어떤 변형이 이를 해결하나?</summary>
+
+한 비트를 여러 원소가 공유하므로 특정 원소를 지우려고 비트를 끄면 그 비트를 공유하는 다른 원소에 영향을 준다. 비트 대신 카운터를 쓰는 counting Bloom filter가 삭제를 지원하고, Cuckoo filter도 삭제를 지원하며 지역성이 더 낫다.
+</details>
+
 ## 연결
 
 - 해시 함수 → [[hash-tables]], security/[[hashing]]

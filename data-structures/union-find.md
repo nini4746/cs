@@ -87,6 +87,32 @@ union이 그룹을 병합하고 find가 정확히 판정.
 - 경로 압축이 트리를 파괴해 되돌리기 어려움
 - 분리가 필요하면 다른 구조 (link-cut tree 등)
 
+## 셀프 체크
+
+<details>
+<summary>union-find가 답하는 두 연산과 "같은 그룹 판정"은 어떻게 표현되나?</summary>
+
+find(x)는 x가 속한 그룹의 대표(root)를 반환하고, union(a, b)는 두 그룹을 합친다. 같은 그룹 판정은 find(a) == find(b)로 표현된다. 원소들을 트리로 묶고 루트를 대표로 삼는다.
+</details>
+
+<details>
+<summary>순진한 트리 표현의 문제와, 이를 개선하는 두 최적화는?</summary>
+
+순진하게 union하면 트리가 한 줄로 길어져 find가 O(n)으로 퇴화한다(BST 퇴화와 같은 문제). union by rank는 낮은 트리를 높은 트리 밑에 붙여 트리가 깊어지는 걸 억제하고, 경로 압축은 find 하는 김에 지나온 노드들을 루트에 직접 연결해 트리를 점점 납작하게 만든다.
+</details>
+
+<details>
+<summary>두 최적화를 함께 쓰면 복잡도가 왜 "사실상 상수"인가?</summary>
+
+연산당 amortized O(α(n))이 되는데, α는 역아커만 함수로 우주의 원자 수 규모의 n에서도 ≤ 4다. 증명은 어렵지만 결과적으로 실질적으로 O(1)로 볼 수 있다.
+</details>
+
+<details>
+<summary>union-find의 근본적 한계는 무엇이고 그 이유는?</summary>
+
+분리(un-union)가 안 되고 합치기만 된다(그래서 disjoint set union). 경로 압축이 트리를 납작하게 파괴해 원래 구조로 되돌리기 어렵기 때문이다. 분리가 필요하면 rollback union-find나 link-cut tree 같은 다른 구조를 써야 한다.
+</details>
+
 ## 연결
 
 - 트리 퇴화 문제 → [[binary-search-trees]]
