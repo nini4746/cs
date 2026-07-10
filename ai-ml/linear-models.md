@@ -132,6 +132,8 @@ step 1999: w=2.0000 b=1.0000 mse=0.000000
 - 학습률·옵티마이저 → [[training-dynamics]]
 - 비선형으로 확장 → [[neural-networks]]
 - 분류 평가 (precision/recall) → [[model-evaluation]]
+- 크로스 엔트로피 손실 → information-theory/[[information-theory-in-ml]]
+- 가중합 = 내적 → math/[[vectors-and-matrices]]
 
 ## 궁금한 것 (나중에)
 

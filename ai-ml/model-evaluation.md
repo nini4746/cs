@@ -141,6 +141,8 @@ F1        = 2·P·R/(P+R)  둘의 조화평균 (한쪽만 높으면 낮음)
 - 확률 출력·임계값 → [[linear-models]]
 - LLM 평가의 어려움 → [[llm-evaluation]]
 - 측정 우선 정신 → software-design/[[testing-strategy]]
+- 1종·2종 오류·통계적 유의성 → math/[[statistics-basics]]
+- 불균형·기저율 → math/[[probability-basics]]
 
 ## 궁금한 것 (나중에)
 

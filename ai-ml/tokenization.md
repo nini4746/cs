@@ -138,6 +138,7 @@ merge 4: ('lowe', 'r') -> 'lower'
 - 문맥 창·비용 → [[prompting]]
 - 청킹과 토큰 예산 → [[rag]]
 - 임베딩으로 변환 → [[embeddings]]
+- BPE 빈도 기반 병합 = 압축 부호화 → information-theory/[[huffman-and-entropy-coding]]
 
 ## 궁금한 것 (나중에)
 

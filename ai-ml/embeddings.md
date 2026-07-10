@@ -132,6 +132,8 @@ king - man + woman 에 가장 가까운: queen (1.000)
 - 검색 활용 → [[rag]]
 - 의미 vs 어휘 검색 → database/[[full-text-search]]
 - ANN 인덱스 → data-structures/
+- 코사인 유사도 = 내적·노름 → math/[[vectors-and-matrices]]
+- ANN(HNSW)의 계층 그래프 인덱스 → data-structures/[[skip-list]]
 
 ## 궁금한 것 (나중에)
 

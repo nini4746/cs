@@ -130,6 +130,8 @@ XOR 학습 결과:
 - 학습 안정화 (초기화·옵티마이저) → [[training-dynamics]]
 - 과적합·일반화 → [[ml-fundamentals]]
 - 특화 구조 → [[cnn-rnn-overview]], [[attention-and-transformers]]
+- 역전파의 기울기 재사용 = 동적계획법 → algorithms/[[dp-fundamentals]]
+- 층 합성 = 행렬 곱 → math/[[vectors-and-matrices]]
 
 ## 궁금한 것 (나중에)
 

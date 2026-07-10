@@ -149,6 +149,9 @@ attention만으론 구분 불가 → 위치 신호 추가
 - 토큰이 입력 단위 → [[tokenization]]
 - 벡터 표현 → [[embeddings]]
 - softmax → [[linear-models]]
+- Q·K 내적·가중합 = 행렬 연산 → math/[[vectors-and-matrices]]
+- 모든 토큰 병렬 계산 → GPU 활용 → concurrency-parallelism/[[gpu-computing]]
+- 길이의 제곱 O(n²) 복잡도 → algorithms/[[asymptotic-analysis]]
 
 ## 궁금한 것 (나중에)
 

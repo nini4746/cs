@@ -135,6 +135,8 @@ MCP: 표준 인터페이스 → 한 번 만들면 어디서나 (N+M)
 - 인젝션·권한 → security/[[least-privilege]]
 - 결과 검증 → [[llm-evaluation]]
 - 관심사 분리 → software-design/[[coupling-cohesion]]
+- 프롬프트 인젝션 = 주입 공격 → security/[[injection]]
+- 멀티 에이전트 협업·작업 분배 → concurrency-parallelism/[[message-passing]]
 
 ## 궁금한 것 (나중에)
 

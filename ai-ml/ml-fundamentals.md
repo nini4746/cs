@@ -130,6 +130,7 @@ ML의 **근본 목표** - 훈련 데이터가 아니라 **새 데이터**에서 
 - 자기지도·RL → [[llm-training]]
 - 정규화 (드롭아웃 등) → [[training-dynamics]]
 - 신경망으로 확장 → [[neural-networks]]
+- 편향-분산·일반화의 통계 → math/[[statistics-basics]]
 
 ## 궁금한 것 (나중에)
 

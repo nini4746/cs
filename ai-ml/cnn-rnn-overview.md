@@ -127,6 +127,8 @@ MLP → CNN(이미지)·RNN(순서) → 트랜스포머(통합, 병렬)
 - 기울기 소실 → [[training-dynamics]]
 - attention이 한계 해결 → [[attention-and-transformers]]
 - 병렬화 → 대규모 → [[llm-training]]
+- CNN 합성곱 = 필터 슬라이딩(컨볼루션) → signal-processing/[[digital-filters]]
+- RNN 순차 병목·병렬화 불가 → concurrency-parallelism/[[parallelism-limits]]
 
 ## 궁금한 것 (나중에)
 

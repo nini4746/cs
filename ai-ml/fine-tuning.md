@@ -121,6 +121,7 @@ LoRA: W는 고정, 작은 저랭크 행렬 ΔW = A·B 만 학습
 - 학습률·망각 → [[training-dynamics]]
 - 과적합·검증 → [[ml-fundamentals]]
 - 파인튜닝 효과 평가 → [[llm-evaluation]]
+- LoRA의 저랭크 근사(ΔW=A·B) → math/[[svd-basics]]
 
 ## 궁금한 것 (나중에)
 

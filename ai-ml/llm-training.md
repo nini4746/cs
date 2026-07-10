@@ -134,6 +134,8 @@
 - 토큰 단위 → [[tokenization]]
 - 분산 학습 → distributed-systems/[[consensus-problem]]
 - 추론 시 확장 → [[prompting]], [[rag]], [[agents]]
+- 다음 토큰 예측 = 엔트로피·압축 → information-theory/[[entropy-and-information]]
+- 수천 GPU 병렬 학습 → concurrency-parallelism/[[gpu-computing]]
 
 ## 궁금한 것 (나중에)
 

@@ -130,6 +130,7 @@ RAG:      외부·최신 지식 필요 → [[rag]]
 - 도구·인젝션 → [[agents]]
 - 프롬프팅 vs 파인튜닝 선택 → [[fine-tuning]]
 - 출력 평가 → [[llm-evaluation]]
+- 프롬프트 인젝션 = 주입 공격 → security/[[injection]]
 
 ## 궁금한 것 (나중에)
 
