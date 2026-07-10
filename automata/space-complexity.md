@@ -114,6 +114,8 @@ L ⊆ NL ⊆ P ⊆ NP ⊆ PSPACE ⊆ EXPTIME
 - 튜링 머신 테이프 = 공간 → [[turing-machines]]
 - P vs NP (시간) → algorithms/[[p-vs-np]]
 - 공간 절약 실전 → algorithms/[[dp-optimization]], data-structures/[[hyperloglog]]
+- 공간 클래스(L·PSPACE·Savitch) → complexity-theory/[[space-classes]]
+- 메모리 제약하 계산(외부 정렬) → database/[[buffer-pool]]
 
 ## 궁금한 것 (나중에)
 

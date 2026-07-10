@@ -131,6 +131,7 @@ E → E + T | T 로 "num+num" 파싱:
 - 실전 파서 구현 → compilers/[[parsing]]
 - 렉싱(DFA) → compilers/[[lexing]]
 - CFG 한계 → 의미분석 → compilers/[[semantic-analysis]]
+- 파스 트리 → AST로 의미 해석 → compilers/[[ast-and-interpretation]]
 
 ## 궁금한 것 (나중에)
 

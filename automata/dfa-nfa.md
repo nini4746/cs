@@ -137,6 +137,7 @@ DFA 상태 = "NFA가 현재 있을 수 있는 상태들의 집합"
 - 상태 최소화 → [[dfa-minimization]]
 - 렉서 → compilers/[[lexing]]
 - KMP = DFA → algorithms/[[string-matching]]
+- 프로토콜 상태 머신 = 유한 오토마타 → network/[[tcp-basics]]
 
 ## 궁금한 것 (나중에)
 

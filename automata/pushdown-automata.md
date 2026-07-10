@@ -124,6 +124,7 @@ PDA는 스택이 **하나** → 여전히 한계:
 - CFL 한계 → [[cfl-pumping]]
 - 스택 2개 = 튜링 → [[turing-machines]]
 - 파서의 스택 → compilers/[[parsing]]
+- PDA의 무한 스택 = 스택 자료구조(LIFO) → data-structures/[[stacks-and-queues]]
 
 ## 궁금한 것 (나중에)
 

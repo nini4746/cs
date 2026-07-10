@@ -120,6 +120,9 @@ L ⊆ P ⊆ NP ⊆ PSPACE ⊆ EXPTIME
 - 환원과 완전성 → [[reductions]]
 - 공간 복잡도 → [[space-complexity]]
 - 양자와 암호 → security/[[crypto-basics]]
+- NP-완전 문제 상세 → complexity-theory/[[np-completeness]]
+- PSPACE·공간 클래스 → complexity-theory/[[space-classes]]
+- BQP·인수분해가 여기(Shor) → quantum-computing/[[shor-algorithm]]
 
 ## 궁금한 것 (나중에)
 

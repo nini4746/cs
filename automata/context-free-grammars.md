@@ -147,6 +147,7 @@ CFG는 정규보다 강하고 튜링 머신보다 약함. → [[cfl-pumping]], [
 - CFG 한계 → [[cfl-pumping]]
 - 파서 구현 → [[cfg-to-parsing]], compilers/[[parsing]]
 - 파싱 후 의미 분석 → compilers/[[semantic-analysis]]
+- 파스 트리 → AST로 의미 해석 → compilers/[[ast-and-interpretation]]
 
 ## 궁금한 것 (나중에)
 

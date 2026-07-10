@@ -119,6 +119,7 @@ CFL은 **교집합에 닫혀있지 않음**: aⁿbⁿcᵐ (CFL) ∩ aᵐbⁿcⁿ
 - CFG 파스 트리 (반복 변수) → [[context-free-grammars]]
 - 문맥 민감이 필요한 것 → [[turing-machines]]
 - 변수 선언-사용은 의미분석 → compilers/[[semantic-analysis]]
+- 파스 트리에 변수 반복(비둘기집) → math/[[combinatorics]]
 
 ## 궁금한 것 (나중에)
 

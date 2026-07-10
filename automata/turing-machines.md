@@ -124,6 +124,7 @@ TM이 최상위. 그 위는 없음 (계산 가능성의 한계). 하지만 TM도
 - NTM과 P vs NP → algorithms/[[p-vs-np]]
 - 보편 TM = 인터프리터 → programming-languages/[[compiled-vs-interpreted]]
 - 복잡도 클래스 → [[complexity-classes]]
+- 람다 계산이 TM과 동등(FP의 기반) → programming-languages/[[functional-programming]]
 
 ## 궁금한 것 (나중에)
 

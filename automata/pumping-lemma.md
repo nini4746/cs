@@ -116,6 +116,7 @@ Myhill-Nerode 정리가 더 강력한 판별법 (필요충분) → [[dfa-minimiz
 - 문맥 자유의 펌핑 → [[cfl-pumping]]
 - 균형 괄호는 CFG로 → [[context-free-grammars]]
 - 정규식 한계 → [[regex-and-finite-automata]]
+- 정규식으로 못 하는 중첩은 파서(CFG)로 → compilers/[[parsing]]
 
 ## 궁금한 것 (나중에)
 

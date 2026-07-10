@@ -130,6 +130,7 @@ Cook-Levin이 SAT을 첫 NP-완전으로 → 이후 전부 환원 체인
 - NP-완전성 → algorithms/[[p-vs-np]]
 - 복잡도 클래스 → [[complexity-classes]]
 - 대각선 논법 (정지 문제 근원) → math/[[sets-relations-functions]]
+- NP-완전 환원과 경도 → complexity-theory/[[reductions-and-hardness]]
 
 ## 궁금한 것 (나중에)
 

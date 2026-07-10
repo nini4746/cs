@@ -108,6 +108,7 @@ aⁿbⁿ ([[pumping-lemma]])을 Myhill-Nerode로:
 - 비정규 증명 (펌핑 대안) → [[pumping-lemma]]
 - 정규식 엔진 최적화 → [[regex-engines]]
 - 동치 관계 → math/[[sets-relations-functions]]
+- 렉서의 DFA 상태 최소화 → compilers/[[lexing]]
 
 ## 궁금한 것 (나중에)
 
