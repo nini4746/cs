@@ -142,6 +142,7 @@ CS: 함수형 프로그래밍(programming-languages/[[functional-programming]]),
 - 대각선 (정지 문제) → automata/[[decidability]]
 - 타입 = 집합 → programming-languages/[[type-systems-advanced]]
 - mod 동치 → [[modular-arithmetic]]
+- 대각선 논법 (계층 정리) → complexity-theory/[[hierarchy-theorems]]
 
 ## 궁금한 것 (나중에)
 

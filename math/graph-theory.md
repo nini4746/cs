@@ -134,6 +134,7 @@
 - 채색 = 레지스터 할당 → compilers/[[codegen-and-optimization]]
 - NP-완전 → algorithms/[[p-vs-np]]
 - 유량·매칭 → algorithms/[[network-flow]]
+- 네트워크 토폴로지 (그래프) → network/[[routing]]
 
 ## 궁금한 것 (나중에)
 

@@ -130,6 +130,7 @@ C(n,k) = n!/(k!(n-k)!) = "n choose k"    (순서 무시)
 - 비둘기집 (펌핑) → automata/[[pumping-lemma]]
 - 확률 → [[probability-basics]]
 - 경우의 수 DP → algorithms/[[dp-patterns]]
+- 경우의 수 = 정보량 (log n! 하한) → information-theory/[[entropy-and-information]]
 
 ## 궁금한 것 (나중에)
 

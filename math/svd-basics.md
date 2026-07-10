@@ -130,6 +130,7 @@ A ≈ (큰 특이값 k개만) → rank-k 근사
 - 임베딩 → ai-ml/[[embeddings]]
 - 데이터 전처리 → ai-ml/[[ml-fundamentals]]
 - 부동소수점 (수치 SVD) → computer-architecture/[[floating-point]]
+- 저차원 근사 = 손실 압축 → information-theory/[[rate-distortion]]
 
 ## 궁금한 것 (나중에)
 

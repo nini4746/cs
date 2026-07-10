@@ -141,6 +141,7 @@ Q를 부정(¬Q)하고 모순 유도 → Q 참. 유명 예:
 - 타입=명제 → programming-languages/[[type-systems-advanced]]
 - SAT → algorithms/[[p-vs-np]]
 - 결정 불가 (대각선) → automata/[[decidability]]
+- 술어 논리 = WHERE → database/[[sql-deep-dive]]
 
 ## 궁금한 것 (나중에)
 

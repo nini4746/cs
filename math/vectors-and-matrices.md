@@ -129,6 +129,8 @@
 - Strassen → algorithms/[[divide-and-conquer]]
 - 신경망 → ai-ml/[[neural-networks]]
 - 임베딩 유사도 → ai-ml/[[embeddings]]
+- 내적 유사도 (어텐션) → ai-ml/[[attention-and-transformers]]
+- 상태 벡터·게이트 행렬 → quantum-computing/[[qubits-and-superposition]]
 
 ## 궁금한 것 (나중에)
 

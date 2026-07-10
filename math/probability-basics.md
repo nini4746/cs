@@ -143,6 +143,7 @@ P(A|B) = P(B|A) P(A) / P(B)
 - 확률적 자료구조 → data-structures/[[bloom-filter]]
 - 베이즈 분류 → ai-ml/[[ml-fundamentals]]
 - 평균 분석 → algorithms/[[asymptotic-analysis]]
+- 확률 → 정보량·엔트로피 → information-theory/[[entropy-and-information]]
 
 ## 궁금한 것 (나중에)
 

@@ -145,6 +145,7 @@ P(합이 평균에서 벗어남) ≤ e^(-거리²/...)   (지수적으로 작음
 - 블룸 필터 오류 → data-structures/[[bloom-filter]]
 - 소수 판정 반복 → [[modular-arithmetic]]
 - ML 일반화 → ai-ml/[[ml-fundamentals]]
+- 고확률 보장·반복 증폭 → complexity-theory/[[randomized-complexity]]
 
 ## 궁금한 것 (나중에)
 

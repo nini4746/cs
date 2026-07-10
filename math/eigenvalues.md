@@ -131,6 +131,8 @@ Av = λv
 - PageRank 그래프 → algorithms/[[graph-theory]]
 - PCA/임베딩 → ai-ml/[[embeddings]]
 - 확률 (마르코프) → [[probability-basics]]
+- 관측·유니터리 고유값 → quantum-computing/[[qubits-and-superposition]]
+- 스펙트럼 분석 (푸리에 기저) → signal-processing/[[fourier-transform]]
 
 ## 궁금한 것 (나중에)
 

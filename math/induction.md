@@ -149,6 +149,7 @@ algorithms/[[correctness-proofs]]의 루프 불변식이 귀납:
 - 점화식 → algorithms/[[recurrences]]
 - 재귀 → computer-architecture/[[procedures-and-stack]]
 - 분할 정복 (강귀납) → algorithms/[[divide-and-conquer]]
+- 구조적 귀납 (트리 불변식) → data-structures/[[balanced-trees]]
 
 ## 궁금한 것 (나중에)
 

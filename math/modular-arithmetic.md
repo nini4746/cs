@@ -155,6 +155,9 @@ security/[[crypto-basics]]의 RSA가 이 위에:
 - 해싱 → data-structures/[[hash-tables]]
 - 인수분해 난이도 → algorithms/[[p-vs-np]]
 - 고속 거듭제곱 = 분할 → algorithms/[[divide-and-conquer]]
+- RSA 공개키 (모듈러 역원) → cryptography/[[public-key-crypto]]
+- 이산 로그 (모듈러 거듭제곱) → cryptography/[[diffie-hellman]]
+- 타원곡선 이산 로그 → cryptography/[[elliptic-curves]]
 
 ## 궁금한 것 (나중에)
 

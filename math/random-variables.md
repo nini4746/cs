@@ -145,6 +145,7 @@ Var[X] = E[(X - E[X])²]   (평균에서 얼마나 퍼졌나)
 - 재전송 (기하) → network/[[tcp-reliability]]
 - 큐잉 (포아송) → network/[[internet-overview]]
 - p99 (분산) → distributed-systems/[[observability-basics]]
+- 분포 → 엔트로피 → information-theory/[[entropy-and-information]]
 
 ## 궁금한 것 (나중에)
 
