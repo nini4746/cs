@@ -119,6 +119,7 @@
 - 로그=진실 → database/[[recovery]]
 - 마이크로서비스 → [[monolith-vs-microservices]]
 - 관측성 → distributed-systems/[[observability-basics]]
+- CQRS 정규화/역정규화 → database/[[normalization]]
 
 ## 궁금한 것 (나중에)
 

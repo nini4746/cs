@@ -123,6 +123,8 @@
 - 결합 → [[coupling-cohesion]]
 - 프록시 응용 → distributed-systems/[[caching-strategies]], [[rpc]], network/[[cdn]]
 - 컴포지트 트리 → data-structures/[[tries]]
+- 보호 프록시 = 접근 제어 → security/[[authn-authz-failures]]
+- 플라이웨이트 = 공유로 메모리 절약 → computer-architecture/[[data-layout]]
 
 ## 궁금한 것 (나중에)
 

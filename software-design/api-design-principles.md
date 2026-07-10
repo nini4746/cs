@@ -115,6 +115,7 @@ API 전반의 일관성 - 배우기 쉽게:
 - REST API → web/[[rest-design]]
 - HTTP 버저닝 → network/[[http]]
 - 빌더 (오용 방지) → [[creational-patterns]]
+- RPC·gRPC 계약(proto) → distributed-systems/[[rpc]]
 
 ## 궁금한 것 (나중에)
 

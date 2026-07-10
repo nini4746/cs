@@ -115,6 +115,7 @@ Singleton.getInstance()  // 항상 같은 인스턴스
 - 오브젝트 풀 → os/[[memory-allocation]]
 - 테스트 (DI) → [[testing-strategy]]
 - 다른 패턴 → [[structural-patterns]], [[behavioral-patterns]]
+- 오브젝트 풀 = 커넥션 풀 → database/[[buffer-pool]]
 
 ## 궁금한 것 (나중에)
 

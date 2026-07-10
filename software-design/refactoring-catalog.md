@@ -114,6 +114,7 @@
 - 테스트 안전망 → [[testing-strategy]]
 - 커밋 분리 → devops/[[git-internals]]
 - 복잡도↓ → [[deep-modules]]
+- 원시 집착 → 값 타입 → programming-languages/[[type-systems-advanced]]
 
 ## 궁금한 것 (나중에)
 

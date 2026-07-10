@@ -127,6 +127,8 @@ Command { execute(); undo(); }
 - 비지터 = AST → compilers/[[ast-and-interpretation]]
 - 이터레이터 → database/[[query-execution]]
 - undo 스택 → data-structures/[[stacks-and-queues]]
+- 분기를 다형성으로 (전략·상태) → programming-languages/[[oop-under-the-hood]]
+- 전략 = 고차 함수 → programming-languages/[[functional-programming]]
 
 ## 궁금한 것 (나중에)
 

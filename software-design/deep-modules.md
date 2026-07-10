@@ -120,6 +120,7 @@ Ousterhout("A Philosophy of Software Design")의 전제: **소프트웨어 설�
 - 깊은 모듈 예 (파일 I/O) → os/[[file-system-basics]]
 - API 설계 → [[api-design-principles]]
 - 이름·가독성 → [[naming-and-readability]]
+- 깊은 모듈 예 (GC, 인터페이스 0) → programming-languages/[[garbage-collection]]
 
 ## 궁금한 것 (나중에)
 

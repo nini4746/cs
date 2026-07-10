@@ -117,6 +117,7 @@
 - 아키텍처 (계층 결합) → [[layered-architecture]]
 - 조합 (결합↓) → [[composition-over-inheritance]]
 - 마이크로서비스 결합 → [[monolith-vs-microservices]]
+- 캡슐화 (결합↓ 수단) → programming-languages/[[oop-under-the-hood]]
 
 ## 궁금한 것 (나중에)
 

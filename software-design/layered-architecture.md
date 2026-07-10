@@ -122,6 +122,7 @@ network/[[internet-overview]], os와 공통:
 - 테스트 격리 → [[testing-strategy]]
 - 계층 모델 → network/[[internet-overview]]
 - 마이크로서비스 → [[monolith-vs-microservices]]
+- 표현 계층 API → web/[[rest-design]]
 
 ## 궁금한 것 (나중에)
 

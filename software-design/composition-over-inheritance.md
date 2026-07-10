@@ -127,6 +127,7 @@
 - 결합·캡슐화 → [[coupling-cohesion]], [[deep-modules]]
 - 전략 패턴 → [[behavioral-patterns]]
 - DI → [[solid]]
+- 인터페이스 상속·트레이트 (서브타이핑) → programming-languages/[[type-systems-advanced]]
 
 ## 궁금한 것 (나중에)
 

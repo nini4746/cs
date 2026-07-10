@@ -118,6 +118,7 @@
 - 운영 → devops/[[kubernetes-basics]]
 - 경계 (DDD) → [[ddd-basics]]
 - 결합 → [[coupling-cohesion]]
+- 단일 트랜잭션 (분산에선 불가) → database/[[transactions-acid]]
 
 ## 궁금한 것 (나중에)
 
