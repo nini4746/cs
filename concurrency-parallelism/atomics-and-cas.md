@@ -144,6 +144,7 @@ SC(주소, new): 그 사이 아무도 안 건드렸으면 저장 성공
 - 캐시 일관성 → computer-architecture/[[cache-coherence]]
 - 낙관적 동시성 → database/[[mvcc]]
 - GC와 메모리 회수 → programming-languages/[[garbage-collection]]
+- CAS로 짜는 무잠금 입문 → os/[[lock-free-basics]]
 
 ## 궁금한 것 (나중에)
 

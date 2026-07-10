@@ -130,6 +130,7 @@ Span (T∞)  = 임계 경로 (무한 코어 시간) - 의존성 사슬의 최장
 - 메모리·캐시 병목 → computer-architecture/[[memory-hierarchy]], [[cache-coherence]]
 - 임계 경로 → algorithms/[[graph-theory]]
 - 프로파일링 → devops/[[linux-debugging]]
+- NUMA·false sharing 병목 → computer-architecture/[[multicore-and-numa]]
 
 ## 궁금한 것 (나중에)
 

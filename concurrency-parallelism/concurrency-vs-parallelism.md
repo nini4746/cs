@@ -142,6 +142,7 @@ counter = t2_read + 1    # 1  T2 쓰기 (T1 갱신 덮어씀!)
 - 공유 없애기 → [[message-passing]]
 - 병렬성 한계 → [[parallelism-limits]]
 - 불변성 → programming-languages/[[functional-programming]]
+- 동시성 버그의 한 종류(교착) → os/[[deadlock]]
 
 ## 궁금한 것 (나중에)
 

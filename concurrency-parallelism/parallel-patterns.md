@@ -140,6 +140,7 @@ map: 데이터 조각마다 (key,value) 방출 → shuffle(key로 모음) → re
 - 분할정복 → algorithms/[[divide-and-conquer]]
 - 파이프라인 하드웨어 → computer-architecture/[[pipelining]]
 - MapReduce 분산 → distributed-systems/[[message-queues]], devops/[[cloud-basics]]
+- 리덕션 결합법칙 깨는 부동소수점 → computer-architecture/[[floating-point]]
 
 ## 궁금한 것 (나중에)
 

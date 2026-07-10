@@ -129,6 +129,7 @@ SoA (Struct of Arrays): {xs:[...], ys:[...], zs:[...]}  ← x들이 연속 → S
 - 캐시·레이아웃 → computer-architecture/[[memory-hierarchy]]
 - 멀티코어와 직교 → [[parallelism-limits]]
 - 행렬 연산 → math/[[vectors-and-matrices]], ai-ml/[[neural-networks]]
+- AoS/SoA 데이터 배치 → computer-architecture/[[data-layout]]
 
 ## 궁금한 것 (나중에)
 

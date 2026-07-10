@@ -128,6 +128,7 @@ CSP:   동기(기본), 채널로 전송, rendezvous, 단일 프로세스 내 주
 - 경량 스레드·협력 스케줄링 → [[async-and-coroutines]]
 - 위치 투명성·분산 → distributed-systems/[[rpc]], [[message-queues]]
 - 분산 원자성 한계 → distributed-systems/[[distributed-transactions]]
+- "let it crash" 에러 처리 철학 → programming-languages/[[error-handling-models]]
 
 ## 궁금한 것 (나중에)
 

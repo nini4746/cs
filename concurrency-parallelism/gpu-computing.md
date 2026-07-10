@@ -134,6 +134,7 @@ grid → block(스레드 블록) → thread 계층
 - 행렬곱·딥러닝 → ai-ml/[[neural-networks]], [[llm-training]]
 - 다중 GPU 확장 → [[parallelism-limits]]
 - 전송 병목·비용 → devops/[[cloud-basics]]
+- 다중 코어·NUMA 확장 → computer-architecture/[[multicore-and-numa]]
 
 ## 궁금한 것 (나중에)
 

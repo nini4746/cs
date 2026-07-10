@@ -131,6 +131,8 @@ release-acquire 짝 → happens-before 성립
 - 락의 가시성 보장 → os/[[locks]]
 - Rust의 컴파일타임 안전 → programming-languages/[[type-systems-advanced]]
 - 데이터 레이스 = 미정의 → [[concurrency-vs-parallelism]]
+- 데이터 레이스·스레드 기초 → os/[[threads-and-races]]
+- 비순차 실행이 만드는 재정렬 → computer-architecture/[[instruction-level-parallelism]]
 
 ## 궁금한 것 (나중에)
 

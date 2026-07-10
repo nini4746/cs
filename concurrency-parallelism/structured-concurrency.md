@@ -143,6 +143,8 @@ Go:            errgroup (부분적, 언어 기본은 아직 비구조적 go)
 - 공유 회피와 함께 안전한 동시성 → [[message-passing]]
 - 동시성 버그 → [[concurrency-vs-parallelism]]
 - 지역적 추론·캡슐화 → software-design/[[coupling-cohesion]]
+- 에러 전파를 구조로 → programming-languages/[[error-handling-models]]
+- RAII식 자원 정리 → programming-languages/[[memory-management-models]]
 
 ## 궁금한 것 (나중에)
 
