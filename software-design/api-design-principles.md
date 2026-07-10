@@ -77,6 +77,35 @@ API 전반의 일관성 - 배우기 쉽게:
 - **RPC/gRPC**: web/[[graphql-and-alternatives]] (계약 = proto)
 - 원리는 공통 (명확·호환·일관·최소)
 
+## 셀프 체크
+
+> [!question]- 호환 변경(backward compatible)과 비호환 변경(breaking)의 예를 각각 두 개씩 들라.
+> 호환: 필드·메서드 추가, 선택적 파라미터 추가. 비호환: 필드·메서드 제거·이름 변경, 필수 파라미터 추가, 기존 동작 변경. 이미 쓰는 클라이언트가 있으므로 비호환 변경은 그들을 다 깨뜨린다.
+
+> [!question]- "when in doubt, leave it out"이 왜 하위 호환과 연결되나?
+> 공개 API는 되돌리기 어렵다. 추가는 나중에 호환적으로 할 수 있지만 제거는 비호환이라 못 뺀다. 그래서 애매하면 빼고 작게 시작한다.
+
+> [!question]- make illegal states unrepresentable을 어떻게 구현하나?
+> 타입으로 잘못된 사용을 컴파일 타임에 막는다. ADT로 불가능한 상태를 표현 못 하게, 빌더로 필수 단계를 강제, 단위를 타입으로 구분(miles vs km)해 혼동을 막는다.
+
+## 연습문제
+
+> [!example]- 문제: `createUser(String name, boolean active, boolean admin, boolean sendWelcomeEmail)` 시그니처는 오용하기 쉽다. 왜 나쁜지 진단하고 개선하라.
+> **풀이**
+> 문제: 호출부가 `createUser("kim", true, false, true)`처럼 boolean 나열이라 뭐가 뭔지 안 보이고(least surprise 위반), 순서를 바꿔도 컴파일된다.
+> 개선: boolean을 enum·타입으로(`Status.ACTIVE`, `Role.USER`), 선택 옵션은 빌더나 옵션 객체로 → `User.builder().name("kim").active().build()`. 잘못된 조합을 타입으로 막고 이름이 곧 문서가 된다.
+
+> [!example]- 문제: 운영 중인 v1 `search(query)`에 필수 파라미터 `locale`을 추가해야 한다. 하위 호환을 지키며 진화하는 방법을 설계하라.
+> **풀이**
+> 필수 파라미터 추가는 비호환이라 기존 호출을 깬다.
+> 방법 1: `locale`을 선택적 파라미터 + 기본값(예: 서버 기본 로케일)으로 추가 → 기존 호출 그대로 동작.
+> 방법 2: 정말 필수라면 `/v2/search`로 분리 병행 운영하고, v1에 deprecation 공지 + 마이그레이션 기간을 준다. SemVer로 major 증가를 알린다.
+
+## 파인만
+
+> [!note]- 백지에 "좋은 API의 조건"을 신입에게 설명하듯 써보라. 막히면 그 부분만 다시.
+> **점검 포인트**: (1) 쓰기 쉽고 오용 어렵게 + 최소 노출을 왜 그렇게 하나, (2) 호환 변경 vs 비호환 변경의 경계, (3) 비호환이 불가피할 때 버저닝·deprecation으로 어떻게 완충하나.
+
 ## 연결
 
 - 깊은 모듈 (인터페이스 최소) → [[deep-modules]]
