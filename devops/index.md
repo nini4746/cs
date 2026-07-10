@@ -1,5 +1,5 @@
 ---
-title: "devops"
+title: "DevOps"
 ---
 
 # 데브옵스 syllabus

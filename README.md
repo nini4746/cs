@@ -14,7 +14,7 @@
 - [암호학](cryptography/) - 대칭·공개키 암호, 해시, MAC, AEAD
 - [자료구조](data-structures/) - 배열, 리스트, 트리, 해시, 힙
 - [데이터베이스](database/) - SQL, 인덱스, 트랜잭션, 정규화
-- [devops](devops/) - Docker, k8s, CI/CD, 클라우드, Git, Linux
+- [DevOps](devops/) - Docker, k8s, CI/CD, 클라우드, Git, Linux
 - [분산 시스템](distributed-systems/) - CAP, 합의, 메시지 큐, 캐싱 전략
 - [GitHub 트렌딩](github-trending/) - 트렌딩 리포지토리 정리
 - [정보이론](information-theory/) - 엔트로피, 압축, 오류정정, 채널용량 · 석사급
