@@ -150,6 +150,7 @@ CMD ["/app"]
 - 시크릿 → security/[[secrets-management]]
 - 의존성 고정 → security/[[supply-chain]]
 - CI 빌드 → [[ci-cd-principles]]
+- 레이어 전송·캐싱 (작은 이미지 = 빠른 배포) → network/[[cdn]]
 
 ## 궁금한 것 (나중에)
 

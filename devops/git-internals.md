@@ -139,6 +139,7 @@ git reset --hard 실수 → reflog에서 이전 커밋 찾아 복구
 - 커밋 서명 → security/[[digital-signatures]]
 - 워크플로우 → [[git-workflows]]
 - 커밋 정리 (rebase) → software-design/[[refactoring-catalog]]
+- 내용 주소 = 해시 매핑 → data-structures/[[hash-tables]]
 
 ## 궁금한 것 (나중에)
 

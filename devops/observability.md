@@ -140,6 +140,7 @@
 - 벤더 중립 → [[cloud-basics]]
 - USE 방법 → [[linux-debugging]]
 - 꼬리 지연 → database/의 지연 논의
+- 분산 관측의 기초 → distributed-systems/[[observability-basics]]
 
 ## 궁금한 것 (나중에)
 

@@ -147,6 +147,8 @@ web-service.default.svc.cluster.local → ClusterIP
 - Ingress L7·TLS → network/[[http]], [[tls]]
 - CNI eBPF → [[linux-debugging]]
 - 계층적 진단 → network/[[icmp-and-tools]]
+- Pod 고유 IP·NAT 없는 평면 주소 → network/[[ip-addressing]]
+- 이름 기반 서비스 디스커버리 → distributed-systems/[[coordination-services]]
 
 ## 궁금한 것 (나중에)
 

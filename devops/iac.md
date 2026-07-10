@@ -125,6 +125,7 @@ Terraform은 **상태 파일**(state)에 "내가 만든 것" 기록:
 - 상태 시크릿 → security/[[secrets-management]]
 - 불변 인프라 → [[deployment-strategies]]
 - 무엇을 프로비저닝하나 → [[cloud-basics]]
+- 멱등성 (반복 적용 안전) → distributed-systems/[[idempotency]]
 
 ## 궁금한 것 (나중에)
 

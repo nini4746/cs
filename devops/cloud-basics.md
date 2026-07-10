@@ -124,6 +124,7 @@ SaaS: 완성 소프트웨어 (그냥 사용)               - Gmail, Notion
 - 관리형 정적 호스팅 → [[github-actions]]
 - 큐 → distributed-systems/[[message-queues]]
 - 비용 관측 → [[observability]]
+- 관리형 DB (DynamoDB 등) → database/[[nosql-landscape]]
 
 ## 궁금한 것 (나중에)
 

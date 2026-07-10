@@ -146,6 +146,7 @@ cat log | grep ERROR | wc -l   # 로그에서 ERROR 줄 수
 - 셸 스크립트 → [[shell-scripting]]
 - 디버깅 → [[linux-debugging]]
 - 컨테이너 → [[docker-internals]]
+- 파일 인터페이스로 통일 = 깊은 모듈 → software-design/[[deep-modules]]
 
 ## 궁금한 것 (나중에)
 

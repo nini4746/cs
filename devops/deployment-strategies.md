@@ -134,6 +134,7 @@ v2에 5% 트래픽 → 지표 관찰 → 25% → 50% → 100%
 - 지표로 카나리 판단·문제 감지 → [[observability]]
 - 롤백·MTTR·작은 배포 → [[ci-cd-principles]], [[git-workflows]]
 - 스키마 하위 호환 → database/[[schema-migration]]
+- 롤링 업그레이드·버전 공존 → distributed-systems/[[replication]]
 
 ## 궁금한 것 (나중에)
 

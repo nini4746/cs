@@ -173,6 +173,7 @@ env:
 - 하드코딩 위험 → [[git-internals]]
 - 관리형 호스팅 → [[cloud-basics]]
 - 병렬 잡·캐싱 → [[ci-cd-principles]]
+- 서드파티 액션(마켓플레이스) 공급망 위험 → security/[[supply-chain]]
 
 ## 궁금한 것 (나중에)
 

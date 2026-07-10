@@ -146,6 +146,7 @@ while read line; do ...; done < file
 - command injection → security/[[injection]]
 - 시크릿 → security/[[secrets-management]]
 - CI에서 스크립트 → [[ci-cd-principles]]
+- 권한 최소화 → security/[[least-privilege]]
 
 ## 궁금한 것 (나중에)
 
