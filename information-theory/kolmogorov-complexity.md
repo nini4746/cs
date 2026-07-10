@@ -125,6 +125,7 @@ K(x) = min { |p| : U(p) = x }
 - MDL·학습=압축 → [[information-theory-in-ml]]
 - 계산 불가능성 → automata/[[decidability]], [[turing-machines]]
 - 일반화·오컴 → ai-ml/[[ml-fundamentals]]
+- 베리 역설·괴델 불완전성(Chaitin Ω) → math/[[logic-and-proofs]]
 
 ## 궁금한 것 (나중에)
 

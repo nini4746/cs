@@ -127,6 +127,8 @@ def entropy(probs):
 - cross-entropy 손실 → [[information-theory-in-ml]], ai-ml/[[linear-models]]
 - 확률 기초 → math/[[probability-basics]]
 - 무작위성·엔트로피 소스 → security/[[hashing]]
+- 자기정보=확률변수의 함수, 엔트로피=그 기댓값 → math/[[random-variables]]
+- 키 엔트로피 = 무차별 대입 저항(예측 불가능성) → cryptography/[[symmetric-ciphers]]
 
 ## 궁금한 것 (나중에)
 

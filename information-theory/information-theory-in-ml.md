@@ -122,6 +122,7 @@ H(p,q) = H(p) + KL(p||q) 확인:
 - 과적합·정보이득 → ai-ml/[[ml-fundamentals]]
 - 기울기 건강함 → ai-ml/[[training-dynamics]]
 - perplexity → ai-ml/[[llm-evaluation]]
+- information bottleneck으로 본 층별 표현 학습 → ai-ml/[[neural-networks]]
 
 ## 궁금한 것 (나중에)
 

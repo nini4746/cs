@@ -117,6 +117,8 @@ H(X) ≤ L* < H(X) + 1
 - 실제 부호 (Huffman/arithmetic) → [[huffman-and-entropy-coding]]
 - 분포 모를 때 범용 압축 → [[lempel-ziv]]
 - 손실 압축 한계 → [[rate-distortion]]
+- 분포·평균 길이 L=Σpᵢlᵢ(기댓값) → math/[[probability-basics]]
+- 접두부호 = 이진 트리(잎에 기호 배치) → data-structures/[[tries]]
 
 ## 궁금한 것 (나중에)
 

@@ -129,6 +129,7 @@
 - 재전송 방식(ARQ) → network/[[tcp-reliability]]
 - 검출용 해시와 구별 → security/[[hashing]]
 - RAID·저장 내구성 → database/[[recovery]]
+- Reed-Solomon 유한체 GF(2^m) 연산 → math/[[modular-arithmetic]]
 
 ## 궁금한 것 (나중에)
 

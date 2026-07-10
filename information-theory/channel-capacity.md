@@ -132,6 +132,8 @@ C = B · log₂(1 + S/N)    (B=대역폭, S/N=신호대잡음비)
 - 중복으로 잡음 극복 → [[error-correcting-codes]]
 - 압축(반대 방향) → [[source-coding-theorem]]
 - 연속 채널·SNR → network/[[wifi]]
+- 채널 = 조건부 분포 p(y|x)·랜덤 부호화 → math/[[probability-basics]]
+- 섀넌-하틀리 대역폭 B ↔ 나이퀴스트 표본화 → signal-processing/[[sampling-and-aliasing]]
 
 ## 궁금한 것 (나중에)
 

@@ -137,6 +137,7 @@ PNG   = 필터 + DEFLATE(=gzip)
 - 압축 불가능성 (랜덤) → [[kolmogorov-complexity]]
 - 문자열 매칭 알고리즘 → algorithms/[[string-matching]]
 - 실전 사용: HTTP 압축 → network/[[http]]
+- LZ78/LZW 사전 = 성장하는 트라이 → data-structures/[[tries]]
 
 ## 궁금한 것 (나중에)
 

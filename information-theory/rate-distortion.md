@@ -129,6 +129,8 @@ H.264/265: 예측 + 변환 + 양자화 + 엔트로피 코딩
 - 남은 것 무손실 코딩 → [[huffman-and-entropy-coding]]
 - 변환·기저 → math/[[eigenvalues]], math/[[svd-basics]]
 - 학습된 압축·병목 → [[information-theory-in-ml]]
+- JPEG/MP3의 DCT·주파수 변환 → signal-processing/[[fourier-transform]]
+- 양자화·연속 신호의 이산화 → signal-processing/[[sampling-and-aliasing]]
 
 ## 궁금한 것 (나중에)
 
