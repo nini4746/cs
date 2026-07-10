@@ -4,6 +4,8 @@
 
 사이트: https://nini4746.github.io/cs/ (Quartz, main push마다 자동 배포)
 
+**처음이면 [학습 가이드](study-guide/)부터** - 공부법(능동 회상·간격 반복·파인만), 선수과목 지도, 추천 학습 트랙.
+
 ## 구조
 
 - [AI·머신러닝](ai-ml/) - ML 기초, LLM, 프롬프팅
