@@ -132,6 +132,7 @@ n비트 해시:
 - 커밋먼트 → [[commitment-and-secret-sharing]]
 - 무결성·비밀번호 (응용) → security/[[hashing]], [[password-storage]]
 - git 객체·Merkle → devops/[[git-internals]]
+- BLAKE3 트리 해시 병렬화 → concurrency-parallelism/[[parallel-patterns]]
 
 ## 궁금한 것 (나중에)
 

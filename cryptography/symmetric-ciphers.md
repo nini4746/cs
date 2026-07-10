@@ -144,6 +144,7 @@ IND-CPA: 공격자가 두 평문을 고르고, 하나가 암호화됨
 - 인증 암호(무결성 추가) → [[mac-and-aead]]
 - 응용 (실무) → security/[[crypto-basics]], [[tls-deep-dive]]
 - 무작위성·엔트로피 → information-theory/[[entropy-and-information]]
+- 계산적 안전성은 계산 난이도 가정에 의존 → complexity-theory/[[p-and-np]]
 
 ## 궁금한 것 (나중에)
 

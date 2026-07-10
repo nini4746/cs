@@ -112,6 +112,7 @@ secp256k1:             비트코인·이더리움
 - 대수 구조(군) → math/[[modular-arithmetic]]
 - TLS·SSH 적용 → security/[[tls-deep-dive]], network/[[tls]]
 - 양자 위협 → [[post-quantum-crypto]]
+- Shor로 ECDLP 붕괴 → quantum-computing/[[shor-algorithm]]
 
 ## 궁금한 것 (나중에)
 

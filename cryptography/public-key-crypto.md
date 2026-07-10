@@ -149,6 +149,8 @@ Diffie-Hellman/ECC: 이산로그 (discrete log) → [[diffie-hellman]], [[ellipt
 - 서명 → [[mac-and-aead]], security/[[digital-signatures]]
 - 실무 TLS → security/[[tls-deep-dive]]
 - 양자 위협 → [[post-quantum-crypto]]
+- 소인수분해가 양자에서 붕괴 → quantum-computing/[[shor-algorithm]]
+- 난제 기반 안전성(계산 난이도 가정) → complexity-theory/[[p-and-np]]
 
 ## 궁금한 것 (나중에)
 
