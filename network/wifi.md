@@ -116,6 +116,8 @@
 - 손실을 혼잡으로 오해 → [[congestion-control]]
 - 무선 위 HTTPS → [[http]], security/[[tls-deep-dive]]
 - 링크 계층 위치 → [[internet-overview]]
+- 주파수 대역·OFDM 변조 → signal-processing/[[fourier-transform]]
+- 랜덤 백오프로 충돌 확률 낮춤 → math/[[probability-basics]]
 
 ## 궁금한 것 (나중에)
 

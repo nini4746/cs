@@ -123,6 +123,7 @@ OSPF/IS-IS (AS 내, 최단경로 = 다익스트라)
 - longest prefix match → data-structures/[[tries]]
 - 신뢰 기반 취약성 → [[email-protocols]]
 - traceroute로 경로 관찰 → [[icmp-and-tools]]
+- RPKI 경로 출처 검증 서명 → security/[[digital-signatures]]
 
 ## 궁금한 것 (나중에)
 

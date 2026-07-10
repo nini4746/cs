@@ -130,6 +130,7 @@ SPF/DKIM 결과로 **정책 결정** + 리포트:
 - DKIM 서명 → security/[[digital-signatures]], [[crypto-basics]]
 - 스팸 필터 ML → ai-ml/[[ml-fundamentals]]
 - 대량 블랙리스트 조회 → data-structures/[[bloom-filter]]
+- 베이지안 스팸 필터의 단어 확률 → math/[[probability-basics]]
 
 ## 궁금한 것 (나중에)
 

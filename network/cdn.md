@@ -122,6 +122,8 @@ DNS 조회([[dns]]) 시 **사용자 위치에 따라 다른 IP 반환**:
 - 캐시 무효화 → distributed-systems/[[caching-strategies]]
 - 계층 캐싱 발상 → os/[[page-cache]], computer-architecture/[[memory-hierarchy]]
 - TLS 종료 → security/[[tls-deep-dive]]
+- 버전 URL 캐시 버스팅·스트리밍 성능 → web/[[web-performance]]
+- 엣지 WAF로 악성 요청 필터 → security/[[web-vulnerabilities]]
 
 ## 궁금한 것 (나중에)
 

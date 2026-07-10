@@ -135,6 +135,7 @@ DNS는 **캐싱으로 부하 관리** (매번 루트까지 가면 폭발):
 - URL 접속 전체 과정 → web/[[what-happens-url]]
 - CDN의 DNS 라우팅 → [[cdn]]
 - 암호화 DNS → security/[[tls-deep-dive]]
+- TTL 전파 지연 = 최종 일관성(stale 읽기) → distributed-systems/[[consistency-models]]
 
 ## 궁금한 것 (나중에)
 

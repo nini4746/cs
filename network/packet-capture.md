@@ -118,6 +118,8 @@ Wireshark: http, tcp.port==443, ip.addr==1.2.3.4, tcp.flags.syn==1
 - 드라이버 레벨 캡처 → os/[[io-devices]]
 - 계층 진단 → [[icmp-and-tools]]
 - 암호화가 내용 숨김 → [[tls]]
+- tcpdump/tshark 패킷 분석 도구 → devops/[[linux-debugging]]
+- 스니핑·도청과 침입 탐지/포렌식 → security/[[threat-modeling]]
 
 ## 궁금한 것 (나중에)
 

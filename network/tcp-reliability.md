@@ -132,6 +132,8 @@ ACK          → 수신 확인
 - 신뢰 없는 IP → [[ip-addressing]]
 - 대역폭-지연 곱 → [[internet-overview]]
 - RTT 추정과 이동 평균 → math/[[statistics-basics]]
+- 흐름 제어(rwnd) = bounded channel 백프레셔 → concurrency-parallelism/[[message-passing]]
+- ACK+재전송 = at-least-once 전달 보장 → distributed-systems/[[message-queues]]
 
 ## 궁금한 것 (나중에)
 

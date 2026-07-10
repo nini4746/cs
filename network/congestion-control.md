@@ -131,6 +131,7 @@ cwnd: 천천히 증가(+1) → 손실 → 반토막 → 다시 증가 → 손실
 - 큐잉 지연 → [[internet-overview]]
 - QUIC의 혼잡 제어 → [[quic]]
 - AIMD 수렴 (수학) → math/[[probability-basics]]
+- 경쟁 흐름의 공정 분배 ↔ 공정 CPU 스케줄링 → os/[[cpu-scheduling]]
 
 ## 궁금한 것 (나중에)
 

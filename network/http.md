@@ -131,6 +131,8 @@ HTTP는 **각 요청이 독립** - 서버가 이전 요청을 기억 안 함:
 - 캐싱 상세 → web/[[http-for-web]]
 - 인증/쿠키 → web/[[web-auth]]
 - CDN → [[cdn]]
+- 멱등 메서드의 재시도 안전 → distributed-systems/[[idempotency]]
+- 메서드·상태코드 기반 API 설계 → web/[[rest-design]]
 
 ## 궁금한 것 (나중에)
 

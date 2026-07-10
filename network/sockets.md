@@ -122,6 +122,7 @@ close()    닫기 (FIN)       close()
 - 시스템 콜 → os/[[limited-direct-execution]]
 - 여러 연결 처리 → os/[[io-multiplexing]]
 - 패킷 관찰 → [[packet-capture]]
+- 이벤트 루프 위 async/await → concurrency-parallelism/[[async-and-coroutines]]
 
 ## 궁금한 것 (나중에)
 

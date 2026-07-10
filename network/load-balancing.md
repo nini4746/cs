@@ -147,6 +147,7 @@ consistent hashing 해법:
 - consistent hashing → database/[[partitioning-db]]
 - 읽기 복제 분산 → database/[[replication-db]]
 - 헬스 체크·관측 → [[icmp-and-tools]], devops/[[observability]]
+- consistent hashing = 샤딩/파티셔닝 → distributed-systems/[[partitioning]]
 
 ## 궁금한 것 (나중에)
 

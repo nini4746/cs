@@ -129,6 +129,7 @@ IP가 "어느 호스트로"를 담당, 라우터가 IP로 경로 결정 → [[ro
 - CIDR longest prefix = radix tree → data-structures/[[tries]]
 - TCP/UDP가 IP 위에 → [[tcp-basics]], [[udp]]
 - 전체 계층 → [[internet-overview]]
+- 서브넷 마스크 = 비트 연산·이진 표현 → computer-architecture/[[bits-and-integers]]
 
 ## 궁금한 것 (나중에)
 

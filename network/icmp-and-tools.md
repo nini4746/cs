@@ -131,6 +131,8 @@ TTL=3, 4, ... 목적지 도달까지 반복
 - 연결 상태 = TCP FSM → [[tcp-basics]]
 - 패킷 캡처 → [[packet-capture]]
 - 계층 진단 → [[internet-overview]]
+- ping/traceroute/netstat/tcpdump 진단 도구 → devops/[[linux-debugging]]
+- ICMP flood·스캐닝 악용 → security/[[threat-modeling]]
 
 ## 궁금한 것 (나중에)
 

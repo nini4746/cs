@@ -129,6 +129,7 @@ TCP의 순서 보장이 만드는 부작용:
 - IP 위에서 → [[ip-addressing]]
 - keep-alive → [[http]]
 - 소켓 API → [[sockets]]
+- SYN flood DoS·시퀀스 번호 랜덤화 → security/[[threat-modeling]]
 
 ## 궁금한 것 (나중에)
 

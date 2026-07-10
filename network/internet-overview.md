@@ -128,6 +128,8 @@
 - 네트워크 계층 → [[ip-addressing]], [[routing]]
 - 링크 계층 → [[ethernet-and-arp]]
 - 계층화 = 추상화 → os/[[io-devices]]
+- 계층 분할 = 소프트웨어 계층 구조 → software-design/[[layered-architecture]]
+- 대역폭 vs 지연이 앱 성능에 → web/[[web-performance]]
 
 ## 궁금한 것 (나중에)
 

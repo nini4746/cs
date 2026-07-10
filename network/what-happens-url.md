@@ -175,6 +175,7 @@ JS 실행 (이벤트 루프 → web/[[javascript-event-loop]])
 - 렌더링 → web/[[critical-rendering-path]]
 - 성능 → web/[[web-performance]]
 - 진단 → [[icmp-and-tools]], [[packet-capture]]
+- 서버 처리 시 DB 조회 → database/[[query-execution]]
 
 ## 궁금한 것 (나중에)
 
