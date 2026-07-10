@@ -151,6 +151,7 @@ Paxos든 Raft든 합의의 본질은 같음 ([[consensus-problem]]):
 - 과반수 → [[consensus-problem]]
 - 제안번호 = term → [[clocks]], [[raft]]
 - 조율 서비스 → [[coordination-services]]
+- 안전성 불변식 증명 → algorithms/[[correctness-proofs]]
 
 ## 궁금한 것 (나중에)
 

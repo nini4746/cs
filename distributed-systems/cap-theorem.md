@@ -120,6 +120,7 @@ Else:          Latency vs Consistency
 - 리더리스 quorum (AP 조절) → [[replication]]
 - CP는 합의 → [[consensus-problem]]
 - ACID의 C와 다름 → database/[[transactions-acid]]
+- "NoSQL=AP, SQL=CP" 오해, 설정 가능한 quorum → database/[[nosql-landscape]]
 
 ## 궁금한 것 (나중에)
 

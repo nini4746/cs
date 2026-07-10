@@ -151,6 +151,7 @@
 - 이벤트 무효화 → [[message-queues]]
 - stale-while-revalidate → web/[[http-for-web]]
 - eventual consistency → [[consistency-models]]
+- 캐시 교체(LRU/LFU) = 페이지 교체와 같은 문제 → os/[[swapping]]
 
 ## 궁금한 것 (나중에)
 

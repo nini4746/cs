@@ -133,6 +133,7 @@ RPC의 위험한 환상 - **로컬 호출처럼 보이지만 아니다**:
 - REST 비교 → web/[[rest-design]]
 - 비동기 대안 → [[message-queues]]
 - 네트워크 신뢰성 → network/[[tcp-reliability]]
+- 하부 전송(소켓) → network/[[sockets]]
 
 ## 궁금한 것 (나중에)
 

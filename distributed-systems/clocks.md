@@ -122,6 +122,7 @@ Lamport의 한계 극복 - **인과성을 정확히 포착**:
 - 일관성 모델 → [[consistency-models]]
 - 복제 충돌 감지 → [[replication]]
 - 부분 실패·불확실성 → [[why-distributed]]
+- happened-before로 순서 정의(하드웨어 판) → concurrency-parallelism/[[memory-models]]
 - NTP → network/
 
 ## 궁금한 것 (나중에)

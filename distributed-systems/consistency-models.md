@@ -139,6 +139,7 @@ CAP([[cap-theorem]])의 트레이드오프가 구체화 - 강함=CP, 약함=AP.
 - 강한 일관성 = 합의 → [[consensus-problem]]
 - 격리 수준 (다른 축) → database/[[concurrency-control]]
 - eventual 예 (DNS) → network/[[dns]]
+- 하드웨어 메모리 일관성(sequential consistency의 기원) → concurrency-parallelism/[[memory-models]]
 
 ## 궁금한 것 (나중에)
 

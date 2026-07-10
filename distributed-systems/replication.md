@@ -149,6 +149,7 @@ W + R > N  이면 → 읽기가 최신 쓰기를 반드시 포함 (겹침 보장
 - CAP 트레이드오프 → [[cap-theorem]]
 - failover 합의 → [[consensus-problem]]
 - 파티셔닝 (짝) → [[partitioning]]
+- 충돌 보존·병합(Git merge식) → devops/[[git-workflows]]
 
 ## 궁금한 것 (나중에)
 

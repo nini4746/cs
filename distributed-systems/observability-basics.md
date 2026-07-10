@@ -159,6 +159,7 @@ request_count, latency_p99, error_rate, cpu_usage, queue_depth
 - 백분위수 → algorithms/[[selection]], math/[[statistics-basics]]
 - 요청 추적 발상 → network/[[icmp-and-tools]]
 - SLO·운영 → devops/[[observability]]
+- 여러 서비스라 추적이 어려움 → software-design/[[monolith-vs-microservices]]
 
 ## 궁금한 것 (나중에)
 

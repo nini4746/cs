@@ -144,6 +144,7 @@
 - 이벤트 기반 → software-design/[[event-driven-architecture]]
 - ZooKeeper (Kafka 조율) → [[coordination-services]]
 - 실시간 웹 → web/[[websockets-sse]]
+- 메시지 전달 모델(액터/CSP) → concurrency-parallelism/[[message-passing]]
 
 ## 궁금한 것 (나중에)
 

@@ -126,6 +126,7 @@ FLP에도 불구하고 실제로 동작하는 (타임아웃 + 과반수):
 - Raft/Paxos → [[raft]], [[paxos-overview]]
 - 조율 서비스 → [[coordination-services]]
 - 분산 커밋 → [[distributed-transactions]]
+- 공유메모리 합의(CAS의 consensus number) → concurrency-parallelism/[[atomics-and-cas]]
 
 ## 궁금한 것 (나중에)
 

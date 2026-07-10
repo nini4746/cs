@@ -148,6 +148,8 @@ Phase 2 (commit/abort):
 - saga 이벤트 → [[message-queues]]
 - 로그 (prepare) → database/[[recovery]]
 - 합의 기반 (Spanner) → [[raft]]
+- NewSQL(Spanner/CockroachDB) → database/[[nosql-landscape]]
+- saga choreography = 이벤트 반응 → software-design/[[event-driven-architecture]]
 
 ## 궁금한 것 (나중에)
 
