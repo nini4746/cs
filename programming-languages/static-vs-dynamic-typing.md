@@ -134,6 +134,7 @@ Haskell: 함수 타입 전체 추론 (Hindley-Milner)
 - 컴파일러의 타입 검사 → compilers/[[semantic-analysis]]
 - JIT의 동적 타입 최적화 → [[compiled-vs-interpreted]]
 - 정적 분석 한계 → automata/[[decidability]]
+- 정적 타입이 여는 레이아웃 최적화 → computer-architecture/[[data-layout]]
 
 ## 궁금한 것 (나중에)
 

@@ -149,6 +149,7 @@ Young에서 살아남으면 Old로 승격
 - 참조 카운팅 원자 연산 → computer-architecture/[[cache-coherence]]
 - 소유권 (GC 없는 안전) → [[memory-management-models]]
 - 클로저와 GC → [[scope-and-closures]]
+- 도달 가능성 = 루트에서 그래프 순회 → algorithms/[[graph-traversal]]
 
 ## 궁금한 것 (나중에)
 

@@ -170,6 +170,8 @@ ADT의 진짜 힘 = **잘못된 상태를 타입으로 배제**:
 - 단형화의 최적화 → computer-architecture/[[simd]]
 - 소거의 가상 디스패치 → [[oop-under-the-hood]]
 - 타입 검사 구현 → compilers/[[semantic-analysis]]
+- 곱/합 타입의 값 개수 = 집합의 곱/합 → math/[[sets-relations-functions]]
+- 타입-명제 대응, 의존 타입의 증명 → math/[[logic-and-proofs]]
 
 ## 궁금한 것 (나중에)
 

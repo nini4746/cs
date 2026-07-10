@@ -148,6 +148,7 @@ let x = parse(s)?;   // 실패면 여기서 Err 반환, 성공이면 x에 값
 - 예외의 스택 언와인딩 → computer-architecture/[[procedures-and-stack]]
 - 정적 타입이 오류 잡기 → [[static-vs-dynamic-typing]]
 - 함수형의 Either → [[functional-programming]]
+- 언어 예외 vs 하드웨어 예외/인터럽트 → computer-architecture/[[exceptions-and-interrupts]]
 
 ## 궁금한 것 (나중에)
 

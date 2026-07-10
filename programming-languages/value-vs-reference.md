@@ -146,6 +146,7 @@ bad(2)  # [1, 2]  ← [2]가 아님!
 - aliasing과 최적화 → computer-architecture/[[compiler-optimization-limits]]
 - 참조와 GC → [[garbage-collection]]
 - 공유 가변 상태와 경쟁 → os/[[threads-and-races]]
+- 값/참조 저장 방식과 메모리 레이아웃 → computer-architecture/[[data-layout]]
 
 ## 궁금한 것 (나중에)
 

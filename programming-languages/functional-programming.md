@@ -145,6 +145,8 @@ FP가 순수하게 승리한 건 아니지만 **아이디어가 주류에 스며
 - Result/Either → [[error-handling-models]], [[type-systems-advanced]]
 - 순수 함수 병렬 안전 → os/[[threads-and-races]]
 - map의 병렬성 → computer-architecture/[[simd]]
+- 메모이제이션(순수 함수 캐싱) → algorithms/[[dp-fundamentals]]
+- map/reduce 병렬 패턴 → concurrency-parallelism/[[parallel-patterns]]
 
 ## 궁금한 것 (나중에)
 

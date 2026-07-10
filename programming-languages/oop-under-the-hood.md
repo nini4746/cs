@@ -145,6 +145,7 @@ OOP 3요소:
 - 객체 메모리 레이아웃 → computer-architecture/[[data-layout]]
 - 조합 선호 → software-design/[[composition-over-inheritance]]
 - 제네릭 디스패치 → [[type-systems-advanced]]
+- 동적 디스패치 = 간접 함수 호출 → computer-architecture/[[procedures-and-stack]]
 
 ## 궁금한 것 (나중에)
 
