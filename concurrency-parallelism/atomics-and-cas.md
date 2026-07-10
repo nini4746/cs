@@ -97,6 +97,44 @@ SC(주소, new): 그 사이 아무도 안 건드렸으면 저장 성공
 - **락도 이 위에**: 뮤텍스·스핀락 구현의 바닥 (os/[[locks]])
 - **낙관적 동시성**: DB MVCC(database/[[mvcc]]), 낙관적 락도 같은 발상 (충돌 시 재시도)
 
+## 셀프 체크
+
+> [!question]- `counter += 1`이 원자적이지 않은 이유와 원자 연산이 해결하는 방식은?
+> 읽기·증가·쓰기 3단계라 사이에 다른 스레드가 끼어들 수 있다. `atomic_add`는 하드웨어가 이 read-modify-write를 하나의 불가분 연산으로 수행해 인터리빙을 원천 차단한다.
+
+> [!question]- CAS가 lock-free의 심장인 이유는?
+> "내가 읽은 값이 그대로면 교체, 아니면 실패"라는 낙관적 조건부 교체로, 미리 막지 않고 충돌 시 재시도하며 진행한다. consensus number가 무한이라 어떤 동시 객체도 CAS로 wait-free 구현이 가능하다.
+
+> [!question]- ABA 문제를 한 문장으로 설명하면?
+> CAS는 값만 비교하므로 A→B→A로 되돌아온 사이의 변화를 못 알아채고 "안 바뀐 줄" 착각해 성공한다.
+
+> [!question]- LL/SC가 ABA에 면역인 이유는?
+> 값이 아니라 "그 사이 누가 건드렸는가"를 감시한다. A→B→A여도 중간 쓰기가 있었으면 SC가 실패한다.
+
+## 연습문제
+
+> [!example]- 문제: 아래 Treiber 스택 pop에서 ABA로 해제된 노드를 top에 남기는 인터리빙을 구성하라 (수동 메모리 관리 가정)
+> ```
+> pop(): old=top; new=old.next; if CAS(top, old, new): free(old); return old.val
+> ```
+> **풀이**
+> top=[A→B→C]. T1이 old=A, new=B를 읽고 선점된다. T2가 pop으로 A를, 다시 pop으로 B를 빼고 free한다. 이후 T2가 push로 (재사용된 주소의) A를 다시 넣어 top=[A→C]. T1이 재개하면 top이 여전히 A라 `CAS(top, A, B)` 성공. 그러나 B는 이미 해제되어 top이 free된 노드를 가리킨다.
+> 원인: 값 동일 ≠ 변화 없음. 해결: `(포인터, 버전)` double-width CAS로 버전이 달라져 감지하거나, hazard pointer로 참조 중인 노드의 회수를 지연한다.
+
+> [!example]- 문제: 아래 CAS 재시도 카운터가 경쟁 하에서도 갱신을 절대 잃지 않음을 논증하라
+> ```python
+> while True:
+>     cur = atomic.v
+>     if atomic.compare_and_swap(cur, cur+1): return
+> ```
+> **풀이**
+> CAS는 `atomic.v`가 읽은 `cur`와 여전히 같을 때만 성공한다. 성공했다는 것은 읽기와 쓰기 사이에 아무도 값을 바꾸지 않았음을 뜻하므로 lost update가 불가능하다. 다른 스레드가 그사이 바꿨다면 CAS가 실패하고 최신 값으로 다시 읽어 재시도한다. 경쟁이 심하면 재시도가 반복돼 개별 스레드는 굶을 수 있으나(라이브락) 매 성공은 정확한 증가라 정확성은 보장된다.
+
+## 파인만
+
+> [!note]- 백지에 이 노트 핵심을 남에게 설명하듯 써보라. 막히면 그 부분만 다시.
+> **점검 포인트**: (1) CAS의 세 인자와 성공/실패 조건, (2) ABA가 왜 값 비교의 한계에서 오는지와 버전 태그가 어떻게 막는지, (3) 락조차 결국 test-and-set 같은 원자 연산 위에 세워진다는 계층 관계.
+
 ## 연결
 
 - race·비원자성 → [[concurrency-vs-parallelism]]

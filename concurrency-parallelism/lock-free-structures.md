@@ -104,6 +104,43 @@ lock-free는 락 문제를 없애지만 새 문제:
 - **주의**: 구현·검증 어려움 → **대부분은 검증된 라이브러리 사용** (직접 구현 X)
 - 락이 충분히 빠르면 굳이 lock-free 안 함 (복잡도 대비 이득 확인)
 
+## 셀프 체크
+
+> [!question]- wait-free, lock-free, obstruction-free의 진행 보장 강도 차이는?
+> wait-free는 모든 스레드가 유한 단계에 완료(기아 없음)로 가장 강하다. lock-free는 최소 한 스레드는 진행(전역 진행)하나 개별은 굶을 수 있다. obstruction-free는 홀로 실행될 때만 완료를 보장하며 가장 약하다.
+
+> [!question]- Treiber 스택 push가 CAS 하나로 정확한 이유는?
+> `CAS(top, old, node)`는 top이 내가 읽은 old와 여전히 같을 때만 성공한다. 그사이 누가 top을 바꿨으면 실패해 다시 읽고 재시도하므로, 성공 시점엔 항상 일관된 연결이 보장된다.
+
+> [!question]- lock-free가 떠안는 메모리 회수 문제란?
+> pop한 노드를 다른 스레드가 아직 참조 중일 수 있어 언제 free할지가 어렵다. hazard pointer(참조 표시), RCU(유예 기간), epoch 기반으로 안전 시점을 판단하며, GC 언어는 이 문제를 완화한다.
+
+> [!question]- linearizability의 정의는?
+> 각 연산이 호출과 반환 사이 어느 한 순간에 원자적으로 일어난 것처럼 보이는 것. 동시 실행 결과가 어떤 순차 실행과 동일해야 하며, sequential consistency보다 강한 정확성 기준이다.
+
+## 연습문제
+
+> [!example]- 문제: 아래 Treiber pop이 lock-free임을 논증하고, 두 스레드가 동시에 pop할 때 자료 손실이 없음을 보여라
+> ```python
+> def pop(self):
+>     while True:
+>         old = self.top
+>         if old is None: return None
+>         if cas(self.top, old, old.next): return old.val
+> ```
+> **풀이**
+> lock-free 증명: CAS가 실패하는 유일한 경우는 다른 스레드가 그사이 top을 바꿨을 때인데, top이 바뀌었다는 것은 다른 스레드의 push/pop이 성공(진행)했다는 뜻이다. 즉 어떤 스레드도 실패로 반복하려면 반드시 다른 스레드가 성공해야 하므로 전역 진행이 보장된다.
+> 손실 없음: 두 스레드가 같은 old를 읽어도 CAS는 하나만 성공한다. 실패한 쪽은 갱신된 top을 다시 읽어 다른 노드를 pop하므로, 같은 노드가 두 번 반환되지 않는다. (단 노드 재사용 시 ABA 별도 대비 필요.)
+
+> [!example]- 문제: Michael-Scott 큐에서 tail이 실제 마지막 노드보다 뒤처질 때 다른 스레드가 왜 "돕기(helping)"를 해야 하는지 설명하라
+> **풀이**
+> enqueue는 (1) 마지막 노드의 next를 CAS로 연결, (2) tail을 새 노드로 CAS 전진 - 두 단계다. 스레드가 (1) 성공 후 (2) 전에 선점되면 tail이 뒤처진 부분 완료 상태가 된다. 다른 스레드가 이를 그대로 두면 tail 기준 삽입이 영원히 실패한다. 그래서 tail.next가 non-null인 걸 본 스레드가 tail 전진 CAS를 대신 수행(helping)해 미완 연산을 이어받아야 lock-free 진행이 유지된다.
+
+## 파인만
+
+> [!note]- 백지에 이 노트 핵심을 남에게 설명하듯 써보라. 막히면 그 부분만 다시.
+> **점검 포인트**: (1) 세 진행 보장 계층을 "누가 반드시 진행하는가"로 구분, (2) CAS 재시도 루프가 왜 전역 진행을 주지만 개별 기아는 허용하는가, (3) lock-free가 락 문제를 없애는 대신 떠안는 새 난제(ABA·메모리 회수·라이브락)와 linearizability의 필요성.
+
 ## 연결
 
 - CAS·ABA → [[atomics-and-cas]]

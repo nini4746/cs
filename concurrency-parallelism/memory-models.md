@@ -86,6 +86,43 @@ release-acquire 짝 → happens-before 성립
 - **미묘한 버그의 근원**: "가끔 안 되는" 동시성 버그의 상당수가 가시성·순서 문제
 - **하드웨어 이해**: store buffer·캐시 일관성(computer-architecture/[[cache-coherence]])이 소프트웨어에 새어 나옴
 
+## 셀프 체크
+
+> [!question]- 내가 쓴 순서대로 다른 스레드가 못 보는 세 가지 원인은?
+> 컴파일러 재정렬(의존 없으면 순서 바꿈), CPU 재정렬(store buffer·비순차 실행), 캐시 전파 지연(한 코어의 쓰기가 늦게 보임). 단일 스레드는 as-if 규칙으로 안전하지만 멀티 스레드는 중간 상태가 관찰된다.
+
+> [!question]- happens-before는 무엇을 보장하나?
+> A happens-before B이면 A의 효과를 B가 반드시 본다는 부분 순서다. 프로그램 순서와 동기화(락 해제→획득, release→acquire)로 성립하며, 동기화가 없으면 순서 보장이 없어 데이터 레이스는 미정의 동작이다.
+
+> [!question]- release 쓰기와 acquire 읽기의 짝이 하는 일은?
+> release 쓰기는 그 이전 쓰기들이 넘어오지 못하게, acquire 읽기는 그 이후 읽기들이 앞으로 넘어가지 못하게 막는다. release-acquire 짝이 만나면 happens-before가 성립해 깃발 이전 데이터의 가시성이 보장된다.
+
+> [!question]- sequential consistency가 강력하지만 실제로 잘 안 쓰이는 이유는?
+> 모든 스레드가 하나의 전역 순서에 동의하려면 하드웨어가 모든 재정렬을 금지해야 해 비싸다. 그래서 실제는 더 약한(relaxed) 모델에 acquire/release 같은 도구로 필요한 순서만 강제한다.
+
+## 연습문제
+
+> [!example]- 문제: 초기 x=y=0, 아래 실행에서 r1=r2=0이 실제 x86에서 가능한지 판정하고 이유를 설명하라
+> ```
+> 스레드1: x=1; r1=y        스레드2: y=1; r2=x
+> ```
+> **풀이**
+> 가능하다. x86-TSO는 각 코어의 store buffer 때문에 자기 store(x=1, y=1)를 버퍼에 넣고, 상대 변수(y, x)는 아직 메모리/캐시에 반영되기 전 값을 읽을 수 있다. 즉 store→load 재정렬이 허용되어 두 스레드 모두 상대 쓰기를 못 보고 0을 읽는다. 순차적 인터리빙으로는 설명되지 않는 결과다. 막으려면 두 쓰기와 읽기 사이에 seq_cst 배리어(mfence)가 필요하다.
+
+> [!example]- 문제: 아래 깃발 패턴에서 flag를 relaxed로 지정하면 왜 깨지는지, 올바른 memory_order를 지정하라
+> ```
+> 생산자: data = 42;  flag.store(true, relaxed)
+> 소비자: while(!flag.load(relaxed)); use(data)
+> ```
+> **풀이**
+> relaxed는 원자성만 줄 뿐 순서를 세우지 못한다. 생산자에서 `data=42`가 `flag.store` 뒤로, 소비자에서 `use(data)`가 flag 확인 앞으로 재정렬될 수 있어, 소비자가 flag=true를 봐도 data는 아직 0일 수 있다.
+> 수정: 생산자는 `flag.store(true, release)`, 소비자는 `flag.load(acquire)`. release-acquire 짝이 happens-before를 세워 flag=true를 본 순간 data=42 가시성이 보장된다.
+
+## 파인만
+
+> [!note]- 백지에 이 노트 핵심을 남에게 설명하듯 써보라. 막히면 그 부분만 다시.
+> **점검 포인트**: (1) 재정렬의 세 출처와 단일 스레드가 안전한 이유, (2) happens-before가 부분 순서로 "필요한 순서만" 강제한다는 발상, (3) relaxed < acquire/release < seq_cst의 강도 차이와 깃발 패턴에 왜 release-acquire가 필요한가.
+
 ## 연결
 
 - 재정렬·비순차 실행 → computer-architecture/[[cache-coherence]]
