@@ -111,6 +111,7 @@ csel  ...   ; 분기 대신 조건부 선택 - 분기 자체가 없음
 - 파이프라인 깊이가 예측 실패 비용을 정하는 이유 → [[pipelining]]
 - branchless 변환 → [[assembly-basics]], [[compiler-optimization-limits]]
 - 투기 실행과 ILP → [[instruction-level-parallelism]]
+- 투기 실행이 캐시에 흔적을 남겨 취약점이 되는 Spectre → security/[[memory-safety]]
 
 ## 궁금한 것 (나중에)
 

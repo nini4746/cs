@@ -146,6 +146,7 @@ gcc main.c -L. -lshared -o prog     # 참조만 기록
 - 라이브러리 매핑과 PIC/ASLR → [[virtual-memory]], [[buffer-overflow]]
 - LTO가 여는 최적화 → [[compiler-optimization-limits]]
 - 실행 시 로딩은 OS의 일 → [[process]]
+- 컴파일 툴체인 관점의 링킹 단계 → compilers/[[linking]]
 
 ## 궁금한 것 (나중에)
 

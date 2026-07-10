@@ -276,6 +276,7 @@ CPU는 접근 패턴을 감시하다가 순차/일정 stride 접근을 감지하
 - 캐시 일관성 (MESI, false sharing의 근본 원인) → [[cache-coherence]]
 - OS 페이지 캐시 (같은 원리, RAM = 디스크의 캐시) → [[page-cache]]
 - 가상 메모리와 TLB (주소 변환에도 캐시가 있다) → [[virtual-memory]]
+- 포인터 추적이라 프리페처가 못 돕는 자료구조 → data-structures/[[linked-lists]]
 
 ## 궁금한 것 (나중에)
 

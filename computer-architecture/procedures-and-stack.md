@@ -183,6 +183,7 @@ lldb ./a.out → bt                 # backtrace = fp 체인 걷기
 - 이 구조를 악용하는 공격 (복귀 주소 덮어쓰기) → [[buffer-overflow]]
 - 스택 vs 힙, 프로세스 주소 공간 전체 그림 → [[address-spaces]]
 - 지역변수 배치와 정렬 → [[data-layout]]
+- 스택을 바꿔치기하는 코루틴/green thread → concurrency-parallelism/[[async-and-coroutines]]
 
 ## 궁금한 것 (나중에)
 

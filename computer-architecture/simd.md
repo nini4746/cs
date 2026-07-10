@@ -120,6 +120,8 @@ vectorized (-O2 기본)       : 0.052s  (1.91 Gflop/s)   ← 2.3배
 - FP reduction 순서 문제 → [[floating-point]]
 - SIMD + 블로킹 → [[matrix-blocking]]
 - 정렬 요구 → [[data-layout]]
+- 소프트웨어 관점의 벡터화 → concurrency-parallelism/[[simd-and-vectorization]]
+- GPU의 SIMT와 데이터 병렬 확장 → concurrency-parallelism/[[gpu-computing]]
 
 ## 궁금한 것 (나중에)
 

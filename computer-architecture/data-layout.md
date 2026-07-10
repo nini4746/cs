@@ -178,6 +178,8 @@ int main(void) {
 - 배치가 캐시 라인과 만나는 지점, hot/cold 필드 분리 → [[memory-hierarchy]]
 - 스택 위 지역변수 배치와 오버플로우 → [[buffer-overflow]]
 - column store = SoA의 데이터베이스 버전 → [[db-storage]]
+- 연속 배열의 인덱싱과 성장 → data-structures/[[arrays-and-dynamic-arrays]]
+- 태그드 유니언이 언어의 합 타입/ADT로 → programming-languages/[[type-systems-advanced]]
 
 ## 궁금한 것 (나중에)
 

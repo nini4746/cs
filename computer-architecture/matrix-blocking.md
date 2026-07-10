@@ -121,6 +121,7 @@ blocked64 : 15.09 GFLOPS    ← 8.7배
 - 열 접근이 느린 이유 → [[memory-hierarchy]]
 - 타일 내부 벡터화 → [[simd]]
 - DB의 블로킹된 조인 → [[query-execution]]
+- 타일이 올라앉는 연속 배열 레이아웃 → data-structures/[[arrays-and-dynamic-arrays]]
 
 ## 궁금한 것 (나중에)
 

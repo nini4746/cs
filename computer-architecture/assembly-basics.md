@@ -194,6 +194,7 @@ objdump -d a.out                       # 실행 파일 역어셈블
 - 구조체/배열의 메모리 배치가 주소 지정과 만나는 지점 → [[data-layout]]
 - 왜 RISC/CISC로 갈렸나 → [[isa-design]]
 - cneg가 분기보다 나은 이유 → [[branch-prediction]]
+- 이 어셈블리를 만들어내는 컴파일러 백엔드 → compilers/[[codegen-and-optimization]]
 
 ## 궁금한 것 (나중에)
 

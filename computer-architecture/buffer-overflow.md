@@ -144,6 +144,7 @@ gcc -fsanitize=address bof.c -o bof_asan   # 오버플로우를 정확한 위치
 - NX/ASLR이 기대는 페이지 권한 → [[virtual-memory]]
 - 메모리 안전을 언어가 보장하는 법 → [[memory-safety]]
 - 정수 오버플로우가 버퍼 오버플로우로 → [[bits-and-integers]]
+- 힙 오버플로우가 손상시키는 할당자 메타데이터 → os/[[memory-allocation]]
 
 ## 궁금한 것 (나중에)
 

@@ -124,6 +124,7 @@ s=5%면 코어 무한대라도 최대 20배. **직렬 부분이 확장성을 지
 - 데이터 병렬성 → [[simd]]
 - 소프트웨어 동시성 → [[threads-and-races]], [[locks]]
 - 메모리 순서와 락프리 → [[lock-free-basics]]
+- 암달의 법칙과 병렬화의 근본 상한 → concurrency-parallelism/[[parallelism-limits]]
 
 ## 궁금한 것 (나중에)
 

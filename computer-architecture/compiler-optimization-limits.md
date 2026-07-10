@@ -147,6 +147,7 @@ for (i = 0; i < n; i++) sum += a[i];
 - 명령어 재배열과 해저드 → [[hazards]]
 - 부동소수점 재배열이 막히는 이유 → [[floating-point]]
 - 병렬 실행을 위한 의존성 끊기 → [[instruction-level-parallelism]]
+- 이 한계 위에서 실제 최적화를 수행하는 백엔드 → compilers/[[codegen-and-optimization]]
 
 ## 궁금한 것 (나중에)
 

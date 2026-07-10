@@ -118,6 +118,7 @@ for (i = 0; i < N; i += 4) {
 - 결합법칙이 막혀 자동 최적화가 안 되는 이유 → [[floating-point]]
 - 예측 실패가 ILP를 죽이는 지점 → [[branch-prediction]]
 - 데이터 병렬성의 다른 축 → [[simd]]
+- 의존 체인이 병렬성 상한을 정하는 일반 원리 → concurrency-parallelism/[[parallelism-limits]]
 
 ## 궁금한 것 (나중에)
 
