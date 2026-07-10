@@ -120,6 +120,7 @@ RP ⊆ NP,   ZPP = RP ∩ co-RP
 - 소수판정·암호 응용 → cryptography/[[public-key-crypto]], security/[[crypto-basics]]
 - 확률·기대·Chernoff → math/[[probability-basics]]
 - automata/ 맛보기(BPP 언급) → automata/[[complexity-classes]]
+- 오류 증폭의 Chernoff 집중부등식 → math/[[concentration]]
 
 ## 궁금한 것 (나중에)
 

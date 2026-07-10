@@ -116,6 +116,8 @@ graph LR
 - 실전 함의 상세 → algorithms/[[p-vs-np]]
 - 어려우면 근사로 → approximation-algorithms 및 algorithms/[[approximation-and-heuristics]]
 - 증명 개념 (검증자와 유사) → math/[[logic-and-proofs]]
+- P를 정의하는 결정적 계산 모델 → automata/[[turing-machines]]
+- P=NP면 공개키 암호가 붕괴 → security/[[crypto-basics]]
 
 ## 궁금한 것 (나중에)
 

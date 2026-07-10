@@ -123,6 +123,8 @@ P ⊆ BPP ⊆ BQP ⊆ PSPACE,   BQP ⊆ P^#P
 - 산술화·PCP 계보 → [[approximation-algorithms]]
 - 양자 위협받는 암호 → cryptography/[[diffie-hellman]], cryptography/[[elliptic-curves]], security/[[crypto-basics]]
 - automata/ 맛보기(#P, BQP 언급) → automata/[[complexity-classes]]
+- 인수분해·이산로그를 BQP에 넣는 양자 알고리즘 → quantum-computing/[[shor-algorithm]]
+- 비정형 탐색 제곱 가속(BQP vs NP) → quantum-computing/[[grover-search]]
 
 ## 궁금한 것 (나중에)
 

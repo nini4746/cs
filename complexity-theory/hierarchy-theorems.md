@@ -122,6 +122,7 @@ SPACE(s(n)) ⊊ SPACE(s(n)·ω(1))     사실상 SPACE(o(s)) ⊊ SPACE(s)
 - 상대화 장벽·회로 하한 → [[beyond-np]]
 - automata/ 맛보기(P⊊EXPTIME 언급) → automata/[[complexity-classes]]
 - 대각선 논법·귀류법 → math/[[logic-and-proofs]], math/[[induction]]
+- 머신 열거·가산성·대각선(칸토어) → math/[[sets-relations-functions]]
 
 ## 궁금한 것 (나중에)
 

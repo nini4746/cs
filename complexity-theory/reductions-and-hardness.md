@@ -124,6 +124,8 @@ A ≤ᵀ B: B를 **오라클(신탁)**로 여러 번 호출하며 A를 다항에
 - 공간 클래스 hardness → [[space-classes]]
 - 근사 보존 환원(gap 환원) → [[approximation-algorithms]]
 - 증명 방향·대우 → math/[[logic-and-proofs]]
+- 환원 대상 그래프 가젯(CLIQUE·독립집합 등) → math/[[graph-theory]]
+- ≤ₚ의 추이적 선순서 구조 → math/[[sets-relations-functions]]
 
 ## 궁금한 것 (나중에)
 

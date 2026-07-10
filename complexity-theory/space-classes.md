@@ -117,6 +117,8 @@ graph TD
 - PSPACE-hard 환원 → [[reductions-and-hardness]]
 - 상호작용 증명 IP=PSPACE → [[beyond-np]]
 - 양화 논리 → math/[[logic-and-proofs]]
+- Savitch 정리의 분할정복 재귀 → algorithms/[[divide-and-conquer]]
+- 도달성(PATH/STCON) 그래프 문제 → math/[[graph-theory]]
 
 ## 궁금한 것 (나중에)
 
