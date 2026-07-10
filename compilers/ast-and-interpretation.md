@@ -148,6 +148,8 @@ AST 순회를 구조화하는 흔한 패턴:
 - 느린 이유 (캐시) → computer-architecture/[[cache-misses]], data-structures/[[linked-lists]]
 - 빠르게: 바이트코드 → [[bytecode-vm]]
 - 다음: 의미 분석 → [[semantic-analysis]]
+- 순회 구조화 = visitor → software-design/[[behavioral-patterns]]
+- 노드 디스패치의 분기 비용 → computer-architecture/[[branch-prediction]]
 
 ## 궁금한 것 (나중에)
 

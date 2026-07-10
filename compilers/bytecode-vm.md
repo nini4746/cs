@@ -167,6 +167,7 @@ CPython은 여기서 멈춤(바이트코드 VM), JVM/V8은 JIT까지 → [[compi
 - 디스패치와 분기 예측 → computer-architecture/[[branch-prediction]]
 - 명령 포인터 = PC → computer-architecture/[[assembly-basics]]
 - JIT로 확장 → [[compiled-vs-interpreted]], [[codegen-and-optimization]]
+- 레지스터 기반 VM의 레지스터 개념 → computer-architecture/[[isa-design]]
 
 ## 궁금한 것 (나중에)
 

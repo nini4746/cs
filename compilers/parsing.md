@@ -160,6 +160,7 @@ automata/[[cfg-to-parsing]]에서 다룬 것:
 - 문법과 모호성 → automata/[[context-free-grammars]]
 - 다음 단계 AST → [[ast-and-interpretation]]
 - 파서 콤비네이터 → [[functional-programming]]
+- PDA·재귀 하강의 스택 (호출 스택/명시적 스택) → data-structures/[[stacks-and-queues]]
 
 ## 궁금한 것 (나중에)
 

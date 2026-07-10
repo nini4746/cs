@@ -134,6 +134,7 @@ DFA가 계속 진행하다 더 못 가면(non-accepting) 마지막 수락 지점
 - 다음 단계 파싱 → [[parsing]]
 - 키워드 조회 → data-structures/[[hash-tables]]
 - 숫자 리터럴 → computer-architecture/[[floating-point]], [[bits-and-integers]]
+- 정규식 매칭 엔진 (lex/flex의 실체) → automata/[[regex-engines]]
 
 ## 궁금한 것 (나중에)
 

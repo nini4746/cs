@@ -146,6 +146,7 @@ AST를 순회하며 각 노드의 타입을 아래에서 위로 계산 (bottom-u
 - 스코프 → [[scope-and-closures]]
 - 타입 검사 → [[static-vs-dynamic-typing]], [[type-systems-advanced]]
 - 정적 분석 한계 → automata/[[decidability]]
+- 빌림 검사(소유권/수명 검증) → [[memory-management-models]]
 
 ## 궁금한 것 (나중에)
 

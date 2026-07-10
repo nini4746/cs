@@ -160,6 +160,8 @@ JIT([[compiled-vs-interpreted]])도 같은 백엔드 기술을 **런타임에**:
 - 레지스터 할당 = 그래프 색칠 → algorithms/[[graph-traversal]], [[p-vs-np]]
 - 명령 스케줄링 → computer-architecture/[[hazards]]
 - JIT → [[compiled-vs-interpreted]]
+- 명령 선택 (IR→타겟 ISA) → computer-architecture/[[isa-design]]
+- 루프 언롤링·스케줄링이 노리는 것 → computer-architecture/[[instruction-level-parallelism]]
 
 ## 궁금한 것 (나중에)
 

@@ -134,6 +134,7 @@ AST
 - 언어 개념: [[static-vs-dynamic-typing]], [[scope-and-closures]], [[garbage-collection]], [[type-systems-advanced]]
 - 이론 기반: automata/[[dfa-nfa]], [[cfg-to-parsing]], [[cfl-pumping]], [[turing-machines]]
 - 하드웨어: computer-architecture/[[assembly-basics]], [[procedures-and-stack]]
+- 실행 모델 선택 (tree-walk/바이트코드/JIT) → [[compiled-vs-interpreted]]
 
 ## 궁금한 것 (나중에)
 
