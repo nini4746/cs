@@ -132,6 +132,7 @@ ws.send('hello');            // 보내기 (언제든)
 - 이벤트 루프 → [[javascript-event-loop]]
 - 서버 간 라우팅 → distributed-systems/[[message-queues]]
 - 실시간(WebRTC) UDP → network/[[udp]]
+- 로드 밸런싱 sticky session → network/[[load-balancing]]
 
 ## 궁금한 것 (나중에)
 

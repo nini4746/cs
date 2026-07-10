@@ -124,6 +124,7 @@ HTML의 각 리소스(CSS, JS, 이미지)가 추가 네트워크 요청(network/
 
 - 메인 스레드 → [[browser-architecture]]
 - HTML 파싱 = 파스 트리 → compilers/[[parsing]]
+- HTML 토큰화 → compilers/[[lexing]]
 - 리플로우 상세 → [[reflow-repaint]]
 - 성능 최적화 → [[web-performance]]
 - 리소스 로딩 → network/[[what-happens-url]], [[http]]

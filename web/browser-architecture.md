@@ -113,6 +113,7 @@ DOM+CSSOM → 렌더 트리 → 레이아웃 → 페인트 → 컴포지팅 → 
 - JS 엔진 JIT → programming-languages/[[compiled-vs-interpreted]]
 - 네트워크 → network/[[what-happens-url]], [[sockets]]
 - Spectre 격리 → computer-architecture/[[branch-prediction]]
+- 여러 탭 병렬 실행 → os/[[multicore-and-numa]]
 
 ## 궁금한 것 (나중에)
 

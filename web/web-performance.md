@@ -142,6 +142,7 @@ network/[[what-happens-url]]의 각 단계 지연을 줄이는 것이 웹 성능
 - CDN·HTTP → network/[[cdn]], [[http]], [[what-happens-url]]
 - 번들 최적화 → compilers/[[codegen-and-optimization]]
 - 렌더링 전략 → [[rendering-strategies]]
+- RUM 측정 = 관측성 → distributed-systems/[[observability-basics]]
 
 ## 궁금한 것 (나중에)
 

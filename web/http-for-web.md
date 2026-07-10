@@ -127,6 +127,8 @@ app.js → app.a1b2c3.js   (파일명에 콘텐츠 해시)
 - 리소스 로딩과 렌더 → [[critical-rendering-path]]
 - 연결 지연 → network/[[what-happens-url]]
 - 성능 종합 → [[web-performance]]
+- gzip/Brotli 압축 원리 → information-theory/[[lempel-ziv]]
+- dns-prefetch → network/[[dns]]
 
 ## 궁금한 것 (나중에)
 

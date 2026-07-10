@@ -124,6 +124,8 @@
 - XSS/CSRF 심화 → security/[[xss-csrf]]
 - 인증/인가 실패 → security/[[authn-authz-failures]]
 - 최소 권한 → security/[[least-privilege]]
+- 의존성 취약점 → security/[[supply-chain]]
+- 심층 방어·위협 모델링 → security/[[threat-modeling]]
 
 ## 궁금한 것 (나중에)
 

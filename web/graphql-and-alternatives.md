@@ -128,6 +128,8 @@ REST(사람 친화, 외부 API) vs gRPC(효율, 내부 서비스 간).
 - gRPC의 RPC → distributed-systems/[[rpc]]
 - 타입 시스템 → programming-languages/[[type-systems-advanced]], [[static-vs-dynamic-typing]]
 - 서버 N+1 → database/[[query-execution]]
+- Protocol Buffers 바이너리 직렬화 → computer-architecture/[[data-layout]]
+- gRPC HTTP/2 기반 → network/[[http]]
 
 ## 궁금한 것 (나중에)
 

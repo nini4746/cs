@@ -142,6 +142,7 @@ SSR/SSG의 핵심 개념·대가:
 - SSG + CDN → network/[[cdn]]
 - hydration과 메인 스레드 → [[browser-architecture]], [[javascript-event-loop]]
 - SSR 서버 부하 → database/, distributed-systems/
+- ISR 재생성 = 캐시 갱신 → distributed-systems/[[caching-strategies]]
 
 ## 궁금한 것 (나중에)
 

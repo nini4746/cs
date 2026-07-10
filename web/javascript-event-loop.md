@@ -138,6 +138,8 @@ while (true) {}   // 이벤트 루프 영영 멈춤 - UI, 타이머, 모든 것 
 - 메인 스레드 병목 → [[browser-architecture]]
 - async/await → programming-languages/[[compiled-vs-interpreted]]
 - 렌더링과의 관계 → [[critical-rendering-path]], [[reflow-repaint]]
+- async/await 코루틴 → concurrency-parallelism/[[async-and-coroutines]]
+- 싱글 스레드 동시성 → concurrency-parallelism/[[concurrency-vs-parallelism]]
 
 ## 궁금한 것 (나중에)
 

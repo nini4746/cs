@@ -125,6 +125,7 @@ elements.forEach((el, i) => el.style.width = widths[i] + 10 + 'px');  // 쓰기 
 - 컴포지터 스레드 → [[browser-architecture]]
 - rAF 타이밍 → [[javascript-event-loop]]
 - 성능 지표 → [[web-performance]]
+- GPU 레이어 합성 → concurrency-parallelism/[[gpu-computing]]
 
 ## 궁금한 것 (나중에)
 
