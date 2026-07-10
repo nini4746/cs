@@ -67,7 +67,7 @@
   재귀 케이스: 작은 입력이 맞다고 믿고(귀납 가정) 현재 증명
 ```
 
-- `fact(n) = n × fact(n-1)`: fact(n-1)이 (n-1)!이라 가정 → fact(n) = n! ([[computer-architecture/procedures-and-stack]]의 재귀)
+- `fact(n) = n × fact(n-1)`: fact(n-1)이 (n-1)!이라 가정 → fact(n) = n! (computer-architecture/[[procedures-and-stack]]의 재귀)
 - 구조적 귀납(structural induction): 트리·리스트 같은 재귀 구조에 (자식이 맞으면 부모)
 
 ## 루프 불변식 = 귀납
