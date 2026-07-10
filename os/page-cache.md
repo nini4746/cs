@@ -128,6 +128,8 @@ time cat bigfile   # 두 번째 (캐시, 훨씬 빠름)
 - write-back의 크래시 위험과 fsync → [[crash-consistency]]
 - mmap과 페이지 폴트 → [[virtual-memory]], [[address-spaces]]
 - 파일시스템 블록 → [[file-system-basics]]
+- DB의 버퍼 풀 (같은 아이디어) → database/[[buffer-pool]]
+- 캐시 교체·무효화 전략 → distributed-systems/[[caching-strategies]]
 
 ## 궁금한 것 (나중에)
 

@@ -177,6 +177,8 @@ counter++;   // 원자적 - 유실 없음, 락 불필요
 - 원자 연산과 CAS → [[lock-free-basics]]
 - 조건 대기 → [[condition-variables]]
 - ++의 세 단계 → [[assembly-basics]]
+- 데이터 경쟁과 메모리 모델 → concurrency-parallelism/[[memory-models]]
+- 원자 연산 대안 → concurrency-parallelism/[[atomics-and-cas]]
 
 ## 궁금한 것 (나중에)
 

@@ -128,6 +128,7 @@ free한 자리를 다음 malloc이 재사용. free list가 작동하는 증거.
 - 정렬 → [[data-layout]]
 - arena와 false sharing → [[cache-coherence]], [[locks]]
 - 힙 버그 → [[memory-safety]], [[buffer-overflow]]
+- 자동 할당·회수 (GC) 대비 → programming-languages/[[garbage-collection]]
 
 ## 궁금한 것 (나중에)
 

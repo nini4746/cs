@@ -158,6 +158,8 @@ sem_post(&empty);   // 빈자리 하나 알림
 - 순서 강제 = 조건 변수 → [[condition-variables]]
 - wait 순서와 데드락 → [[deadlock]]
 - 경쟁 조건 기초 → [[threads-and-races]]
+- wait/post 내부의 원자 연산 → concurrency-parallelism/[[atomics-and-cas]]
+- 생산자-소비자 패턴 → concurrency-parallelism/[[message-passing]]
 
 ## 궁금한 것 (나중에)
 

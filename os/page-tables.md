@@ -127,6 +127,7 @@ graph TD
 - 왜 페이징인가 → [[segmentation-and-paging]]
 - 페이지 폴트와 교체 → [[swapping]]
 - 컨텍스트 스위치 시 TLB 비용 → [[limited-direct-execution]]
+- 멀티레벨 = 비트 접두어 트리 → data-structures/[[tries]]
 
 ## 궁금한 것 (나중에)
 

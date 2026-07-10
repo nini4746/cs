@@ -149,6 +149,8 @@ bool CAS(int *p, int expected, int new){
 - CAS 기반 락프리 → [[lock-free-basics]]
 - 조건 대기 → [[condition-variables]]
 - 순환 대기 위험 → [[deadlock]]
+- 하드웨어 원자 명령 (CAS/TAS) → concurrency-parallelism/[[atomics-and-cas]]
+- unlock의 release 순서 → concurrency-parallelism/[[memory-models]]
 
 ## 궁금한 것 (나중에)
 

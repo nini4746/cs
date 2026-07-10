@@ -153,6 +153,8 @@ do {
 - atomic 카운터 실측 → [[threads-and-races]]
 - 메모리 순서와 아키텍처 → [[isa-design]], [[multicore-and-numa]]
 - 데드락 없음이 매력 → [[deadlock]]
+- CAS 원자 연산 자체 → concurrency-parallelism/[[atomics-and-cas]]
+- acquire/release 메모리 순서 → concurrency-parallelism/[[memory-models]]
 
 ## 궁금한 것 (나중에)
 

@@ -130,6 +130,8 @@ unlock(&m);
 - 같은 문제를 세마포어로 → [[semaphores]]
 - 공유 상태 경쟁 → [[threads-and-races]]
 - 스레드 협력 패턴 → [[process-vs-thread]]
+- 생산자-소비자를 채널로 → concurrency-parallelism/[[message-passing]]
+- await/코루틴으로 대기 표현 → concurrency-parallelism/[[async-and-coroutines]]
 
 ## 궁금한 것 (나중에)
 

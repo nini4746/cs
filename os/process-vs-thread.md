@@ -131,6 +131,7 @@ after : global=1000 (thread's change visible!)
 - 동기화 도구 → [[locks]], [[condition-variables]]
 - 멀티코어 병렬성 → [[multicore-and-numa]]
 - 스레드 없는 동시성 (이벤트 루프) → [[io-multiplexing]]
+- 동시성 vs 병렬성 구분 → concurrency-parallelism/[[concurrency-vs-parallelism]]
 
 ## 궁금한 것 (나중에)
 

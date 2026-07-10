@@ -131,6 +131,7 @@ stack (local) : 0x16f7eec48   ← 스택 (훨씬 높음)
 - 스택 프레임 → [[procedures-and-stack]]
 - 세그폴트/페이지 폴트 → [[exceptions-and-interrupts]]
 - COW가 기대는 페이지 권한 → [[swapping]]
+- ASLR·NX로 이 레이아웃을 지키기 → computer-architecture/[[buffer-overflow]]
 
 ## 궁금한 것 (나중에)
 

@@ -149,6 +149,7 @@ parent: fork ret=32762 (child pid), child exited 42
 - 프로세스의 메모리 → [[address-spaces]]
 - 스레드 (프로세스 안의 실행 흐름) → [[process-vs-thread]]
 - 시스템 콜 메커니즘 → [[exceptions-and-interrupts]]
+- 프로세스 관리 (ps/시그널) → devops/[[linux-essentials]]
 
 ## 궁금한 것 (나중에)
 

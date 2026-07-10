@@ -142,6 +142,8 @@ symlink.txt → "original.txt" (경로 문자열)
 - 디스크 지역성 최적화 → [[fast-file-system]]
 - 크래시 시 일관성 → [[crash-consistency]]
 - inode/블록 캐싱 → [[page-cache]]
+- 디렉토리 인덱싱 (B-tree/해시) → data-structures/[[b-trees]]
+- DB의 온디스크 저장 구조 → database/[[db-storage]]
 
 ## 궁금한 것 (나중에)
 
