@@ -131,6 +131,7 @@ FP율 ≈ (1 - e^(-kn/m))^k
 - LSM-tree에서의 사용 → database/[[lsm-tree]]
 - 카디널리티 추정 사촌 → [[hyperloglog]]
 - 캐시 전략 → distributed-systems/[[caching-strategies]]
+- false positive율의 확률 계산 → math/[[probability-basics]]
 
 ## 궁금한 것 (나중에)
 

@@ -129,6 +129,8 @@ dequeue: head에서 읽고 head=(head+1)%size
 - BFS/DFS → [[graph-traversal]]
 - 우선순위 큐 → [[heaps]]
 - 작업 큐 → distributed-systems/[[message-queues]]
+- 수식 파싱/괄호 매칭의 스택 → compilers/[[parsing]]
+- 스택이 계산력을 정의하는 기계 → automata/[[pushdown-automata]]
 
 ## 궁금한 것 (나중에)
 

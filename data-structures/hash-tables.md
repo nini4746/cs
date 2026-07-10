@@ -145,6 +145,9 @@ buckets=256  load=0.39  max_chain=2   ← 여유
 - 오픈 어드레싱 캐시 이점 → [[memory-hierarchy]]
 - 실전 구현과 HashDoS → [[hash-in-practice]]
 - 순서 필요 시 대안 → [[balanced-trees]]
+- 해시 기반 페이지 테이블(hashed page table) → os/[[page-tables]]
+- 해시 인덱스로서의 활용 → database/[[index-usage]]
+- consistent hashing(분산 키 분배) → distributed-systems/[[partitioning]]
 
 ## 궁금한 것 (나중에)
 

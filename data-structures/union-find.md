@@ -132,6 +132,7 @@ union이 그룹을 병합하고 find가 정확히 판정.
 - 크루스칼 MST → algorithms/[[mst]]
 - 연결 요소 → algorithms/[[graph-traversal]]
 - amortized 분석 → algorithms/[[asymptotic-analysis]]
+- 그래프 연결성/연결 요소 개념 → math/[[graph-theory]]
 
 ## 궁금한 것 (나중에)
 

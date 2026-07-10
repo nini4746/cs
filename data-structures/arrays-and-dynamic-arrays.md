@@ -131,6 +131,7 @@
 - 대안과 비교 → [[linked-lists]]
 - amortized 분석 일반론 → algorithms/[[asymptotic-analysis]]
 - 스택/큐 구현 기반 → [[stacks-and-queues]]
+- 재할당(realloc)이 기대는 힙 할당자 → os/[[memory-allocation]]
 
 ## 궁금한 것 (나중에)
 

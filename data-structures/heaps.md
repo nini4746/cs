@@ -156,6 +156,7 @@ for (m=n; m>0; m--) {          // n번 extract
 - heapsort → algorithms/[[comparison-sorts]]
 - 다익스트라/프림 → algorithms/[[shortest-paths]], [[mst]]
 - 허프만 → algorithms/[[greedy]]
+- 우선순위 큐 기반 스케줄링 → os/[[cpu-scheduling]]
 
 ## 궁금한 것 (나중에)
 

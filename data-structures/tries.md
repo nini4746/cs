@@ -128,6 +128,7 @@ radix:        [test] (1간선)
 - IP 라우팅 → network/[[routing]]
 - 문자열 매칭 → algorithms/[[string-matching]]
 - 정규언어 DFA와 유사 구조 → automata/[[dfa-nfa]]
+- 자동완성/접두사 검색 엔진 → database/[[full-text-search]]
 
 ## 궁금한 것 (나중에)
 

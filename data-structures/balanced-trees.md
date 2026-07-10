@@ -133,6 +133,7 @@ BST와 달리 **최악도 O(log n)** - 회전이 높이를 보장. 이게 균형
 - CFS가 쓰는 red-black tree → os/[[cpu-scheduling]]
 - HashMap treeify → [[hash-in-practice]]
 - 확률적 대안 → [[skip-list]]
+- persistent(불변) 균형 트리를 map으로 쓰는 함수형 언어 → programming-languages/[[functional-programming]]
 
 ## 궁금한 것 (나중에)
 

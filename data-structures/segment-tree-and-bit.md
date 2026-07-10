@@ -131,6 +131,7 @@ int query(int i){ int s=0; for(;i>0;i-=i&-i) s+=tree[i]; return s; }
 - 비트 트릭 i&-i → computer-architecture/[[bits-and-integers]]
 - 결합법칙 (세그먼트 트리 조건) → computer-architecture/[[floating-point]] (FP는 안 됨)
 - 누적합과 비교 → algorithms/[[dp-fundamentals]]
+- 결합법칙이 병렬 reduction/scan을 가능케 함 → concurrency-parallelism/[[parallel-patterns]]
 
 ## 궁금한 것 (나중에)
 
