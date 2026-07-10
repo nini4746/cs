@@ -1,0 +1,2 @@
+# 빌드 시 생성되는 Anki 덱 (CI에서 quartz/static으로 생성, repo에 커밋 안 함)
+*.apkg
