@@ -148,6 +148,7 @@ flowchart LR
 - FFT 기반 고속 필터링 → [[fft]]
 - 필터로 잡음 스펙트럼 정형 → [[spectral-analysis]]
 - 극점=고유값 직관 → math/[[eigenvalues]]
+- 학습되는 합성곱 커널 = FIR 필터 → ai-ml/[[cnn-rnn-overview]]
 
 ## 궁금한 것 (나중에)
 

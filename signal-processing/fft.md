@@ -136,6 +136,7 @@ flowchart TD
 - 점화식·마스터 정리 → algorithms/[[asymptotic-analysis]]
 - 고속 합성곱으로 필터링 → [[digital-filters]]
 - 프레임별 FFT → [[spectral-analysis]]
+- OFDM 변복조가 IFFT/FFT → network/[[wifi]]
 
 ## 궁금한 것 (나중에)
 

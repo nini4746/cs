@@ -150,6 +150,7 @@ flowchart LR
 - 실전 스펙트럼 추정·누설 → [[spectral-analysis]]
 - 기저·직교 분해 → math/[[vectors-and-matrices]]
 - 고유함수 개념 → math/[[eigenvalues]]
+- QFT는 양자판 푸리에 변환 → quantum-computing/[[shor-algorithm]]
 
 ## 궁금한 것 (나중에)
 

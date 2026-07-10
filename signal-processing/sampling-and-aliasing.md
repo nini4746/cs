@@ -140,6 +140,7 @@ fs를 나이퀴스트보다 훨씬 크게(예: 4×, 8×) 잡는 기법.
 - 안티에일리어싱·복원 필터 설계 → [[digital-filters]]
 - 정보 손실 없는 표현 → information-theory/[[source-coding-theorem]]
 - 양자화와 정보량 → information-theory/[[entropy-and-information]]
+- 대역폭·나이퀴스트율과 통신 용량 → information-theory/[[channel-capacity]]
 
 ## 궁금한 것 (나중에)
 
