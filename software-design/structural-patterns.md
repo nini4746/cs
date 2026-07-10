@@ -47,7 +47,7 @@
 ```
 
 - 깊은 모듈([[deep-modules]])의 구현 - 복잡함을 감추는 단순 인터페이스
-- 예: 컴파일러의 `compile()` (렉싱·파싱·최적화 감춤 → programming-languages/compilers/), 라이브러리 진입점
+- 예: 컴파일러의 `compile()` (렉싱·파싱·최적화 감춤 → compilers/), 라이브러리 진입점
 - 하위 시스템과 결합↓ ([[coupling-cohesion]])
 
 ## 프록시 (Proxy)

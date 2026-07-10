@@ -87,7 +87,7 @@
 - 최소화 → [[dfa-minimization]]
 - 엔진 구현과 ReDoS → [[regex-engines]]
 - 정규 언어 한계 → [[pumping-lemma]]
-- 렉서가 이걸 씀 → programming-languages/[[lexing]]
+- 렉서가 이걸 씀 → compilers/[[lexing]]
 
 ## 궁금한 것 (나중에)
 

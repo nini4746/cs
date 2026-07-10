@@ -59,7 +59,7 @@ SELECT ... FROM a JOIN b JOIN c WHERE ...
 - **상수 폴딩**: `WHERE 1=1` 제거 (computer-architecture/[[compiler-optimization-limits]]의 그것)
 - **서브쿼리 평탄화**: 상관 서브쿼리를 JOIN으로 ([[sql-deep-dive]])
 
-컴파일러 최적화(programming-languages/compilers/[[codegen-and-optimization]])와 같은 발상 - 의미 보존하며 더 효율적으로.
+컴파일러 최적화(compilers/[[codegen-and-optimization]])와 같은 발상 - 의미 보존하며 더 효율적으로.
 
 ## JOIN 순서
 
@@ -97,7 +97,7 @@ SELECT ... FROM a JOIN b JOIN c WHERE ...
 - 실행 방법 → [[query-execution]]
 - 선택도·인덱스 → [[index-usage]], [[btree-index]]
 - JOIN 순서 DP → algorithms/[[dp-fundamentals]]
-- 규칙 변환 = 컴파일러 최적화 → programming-languages/compilers/[[codegen-and-optimization]]
+- 규칙 변환 = 컴파일러 최적화 → compilers/[[codegen-and-optimization]]
 - I/O 비용 → computer-architecture/[[memory-hierarchy]]
 
 ## 궁금한 것 (나중에)

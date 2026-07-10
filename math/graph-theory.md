@@ -66,7 +66,7 @@
 
 - **4색 정리**: 평면 그래프는 4색이면 충분 (지도 색칠)
 - **채색수 판정은 NP-완전** (algorithms/[[p-vs-np]])
-- **응용**: 레지스터 할당 (programming-languages/compilers/[[codegen-and-optimization]] - 동시에 살아있는 변수 = 인접 = 다른 레지스터), 스케줄링, 주파수 할당
+- **응용**: 레지스터 할당 (compilers/[[codegen-and-optimization]] - 동시에 살아있는 변수 = 인접 = 다른 레지스터), 스케줄링, 주파수 할당
 
 ## 특수 그래프
 
@@ -83,7 +83,7 @@
 - **최단 경로** → algorithms/[[shortest-paths]]
 - **MST (신장 트리)** → algorithms/[[mst]]
 - **매칭·유량 (이분)** → algorithms/[[network-flow]]
-- **채색 (레지스터 할당)** → programming-languages/compilers/[[codegen-and-optimization]]
+- **채색 (레지스터 할당)** → compilers/[[codegen-and-optimization]]
 - **NP-완전 (해밀턴, 채색)** → algorithms/[[p-vs-np]]
 - **네트워크 토폴로지** → network/[[routing]]
 
@@ -91,7 +91,7 @@
 
 - 그래프 알고리즘 → algorithms/[[graph-traversal]], [[shortest-paths]], [[mst]]
 - 트리 자료구조 → data-structures/[[binary-search-trees]]
-- 채색 = 레지스터 할당 → programming-languages/compilers/[[codegen-and-optimization]]
+- 채색 = 레지스터 할당 → compilers/[[codegen-and-optimization]]
 - NP-완전 → algorithms/[[p-vs-np]]
 - 유량·매칭 → algorithms/[[network-flow]]
 

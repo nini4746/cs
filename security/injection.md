@@ -36,7 +36,7 @@ q = f"SELECT * FROM users WHERE name='{name}'"   # 취약!
 인젝션의 본질 = **신뢰 못 할 데이터가 코드로 실행됨**:
 
 - 쿼리 문자열에 입력을 끼우면 → 입력이 쿼리 구조의 일부가 됨
-- 파서(database/[[query-execution]], programming-languages/[[parsing]])가 입력을 SQL 문법으로 해석
+- 파서(database/[[query-execution]], compilers/[[parsing]])가 입력을 SQL 문법으로 해석
 - automata/[[cfg-to-parsing]]의 파싱이 악용됨 - 입력이 문법 토큰이 되어버림
 
 ## 방어: 파라미터화 (prepared statement)
@@ -93,7 +93,7 @@ SQL 인젝션은 20년 넘은 공격인데 여전히 OWASP 상위:
 
 ## 연결
 
-- 쿼리 파싱 → database/[[query-execution]], programming-languages/[[parsing]]
+- 쿼리 파싱 → database/[[query-execution]], compilers/[[parsing]]
 - 파싱 악용 → automata/[[cfg-to-parsing]]
 - XSS → web/[[web-vulnerabilities]], [[xss-csrf]]
 - 최소 권한 → [[least-privilege]]

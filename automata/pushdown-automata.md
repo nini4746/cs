@@ -8,7 +8,7 @@
 
 - 문맥 자유 언어([[context-free-grammars]])를 인식하는 기계
 - 왜 스택이 aⁿbⁿ을 가능케 하나
-- 파서가 왜 스택을 쓰나 → programming-languages/[[parsing]]
+- 파서가 왜 스택을 쓰나 → compilers/[[parsing]]
 
 ## DFA + 스택
 
@@ -56,7 +56,7 @@ DFA=NFA(비결정성 무의미)였지만([[dfa-nfa]]), **PDA는 다름**:
 
 프로그래밍 언어 파서는 **결정적 PDA**에 대응:
 
-- LL/LR 파서 = 결정적으로 동작 (한 번 읽고 확정) → programming-languages/[[parsing]]
+- LL/LR 파서 = 결정적으로 동작 (한 번 읽고 확정) → compilers/[[parsing]]
 - 결정적이라 효율적 O(n) 파싱
 - 그래서 언어 문법을 결정적으로 파싱 가능하게 설계 (LL(1), LR(1))
 - 파서가 스택을 쓰는 이유 = PDA의 스택 (중첩 구조 추적)
@@ -83,7 +83,7 @@ PDA는 스택이 **하나** → 여전히 한계:
 - 유한 오토마타 (스택 없음) → [[dfa-nfa]]
 - CFL 한계 → [[cfl-pumping]]
 - 스택 2개 = 튜링 → [[turing-machines]]
-- 파서의 스택 → programming-languages/[[parsing]]
+- 파서의 스택 → compilers/[[parsing]]
 
 ## 궁금한 것 (나중에)
 

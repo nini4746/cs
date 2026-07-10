@@ -95,7 +95,7 @@ D(P):
 - 대각선 논법 → math/[[sets-relations-functions]]
 - 환원으로 불가능 전파 → [[reductions]]
 - NP-hard이면서 결정 불가 → algorithms/[[p-vs-np]]
-- 정적 분석의 한계 → programming-languages/[[semantic-analysis]]
+- 정적 분석의 한계 → compilers/[[semantic-analysis]]
 
 ## 궁금한 것 (나중에)
 

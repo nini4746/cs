@@ -25,7 +25,7 @@ DOM + CSSOM → 렌더 트리 (보이는 것만)
 
 ### 1. DOM 구성
 
-HTML 파싱 → **DOM 트리** (문서 구조). programming-languages/[[parsing]]의 파스 트리와 같은 발상 - 토큰→트리:
+HTML 파싱 → **DOM 트리** (문서 구조). compilers/[[parsing]]의 파스 트리와 같은 발상 - 토큰→트리:
 - 점진적: HTML을 받는 대로 파싱 (스트리밍)
 - `<script>`가 파싱을 막을 수 있음 (아래)
 
@@ -93,7 +93,7 @@ HTML의 각 리소스(CSS, JS, 이미지)가 추가 네트워크 요청(network/
 ## 연결
 
 - 메인 스레드 → [[browser-architecture]]
-- HTML 파싱 = 파스 트리 → programming-languages/[[parsing]]
+- HTML 파싱 = 파스 트리 → compilers/[[parsing]]
 - 리플로우 상세 → [[reflow-repaint]]
 - 성능 최적화 → [[web-performance]]
 - 리소스 로딩 → network/[[what-happens-url]], [[http]]

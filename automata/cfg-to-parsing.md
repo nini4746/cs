@@ -8,7 +8,7 @@
 
 - CFG 이론([[context-free-grammars]])이 실제 컴파일러로 이어지는 지점
 - LL vs LR 파서의 차이
-- programming-languages/[[parsing]]의 이론 기반
+- compilers/[[parsing]]의 이론 기반
 
 ## 파싱 = 파스 트리 만들기
 
@@ -76,9 +76,9 @@ E → E + T | T 로 "num+num" 파싱:
         DFA (automata)      PDA (automata)          CFG 넘어섬
 ```
 
-- **렉싱**: 정규 언어 = DFA → programming-languages/[[lexing]]
-- **파싱**: 문맥 자유 = PDA → programming-languages/[[parsing]]
-- **의미 분석**: CFG로 못 하는 것(타입, 스코프, 변수 선언-사용 [[cfl-pumping]]) → programming-languages/[[semantic-analysis]]
+- **렉싱**: 정규 언어 = DFA → compilers/[[lexing]]
+- **파싱**: 문맥 자유 = PDA → compilers/[[parsing]]
+- **의미 분석**: CFG로 못 하는 것(타입, 스코프, 변수 선언-사용 [[cfl-pumping]]) → compilers/[[semantic-analysis]]
 
 계산 이론의 계층이 컴파일러 단계에 그대로 대응. 렉서=DFA, 파서=PDA는 우연이 아님.
 
@@ -87,9 +87,9 @@ E → E + T | T 로 "num+num" 파싱:
 - CFG 이론 → [[context-free-grammars]]
 - 파서 = PDA → [[pushdown-automata]]
 - CYK는 DP → algorithms/[[dp-fundamentals]]
-- 실전 파서 구현 → programming-languages/[[parsing]]
-- 렉싱(DFA) → programming-languages/[[lexing]]
-- CFG 한계 → 의미분석 → programming-languages/[[semantic-analysis]]
+- 실전 파서 구현 → compilers/[[parsing]]
+- 렉싱(DFA) → compilers/[[lexing]]
+- CFG 한계 → 의미분석 → compilers/[[semantic-analysis]]
 
 ## 궁금한 것 (나중에)
 

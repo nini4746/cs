@@ -50,7 +50,7 @@ CFL 펌핑으로 증명되는 것들 - **두 개 이상의 독립 개수/매칭*
 - **aⁿbⁿcⁿ**: 세 개수 일치
 - **ww** (같은 문자열 두 번, w wᴿ 회문과 달리): 순서까지 매칭
 - **{aⁱbʲcᵏ : i=j=k}** 등
-- 프로그래밍 언어의 **변수 선언-사용 일치**: 같은 이름 매칭이 이 형태 → 그래서 파싱(CFG) 후 의미 분석 별도 → programming-languages/[[semantic-analysis]]
+- 프로그래밍 언어의 **변수 선언-사용 일치**: 같은 이름 매칭이 이 형태 → 그래서 파싱(CFG) 후 의미 분석 별도 → compilers/[[semantic-analysis]]
 
 이들은 **문맥 민감 문법**(스택 이상)이 필요.
 
@@ -82,7 +82,7 @@ CFL은 **교집합에 닫혀있지 않음**: aⁿbⁿcᵐ (CFL) ∩ aᵐbⁿcⁿ
 - 스택 하나의 한계 → [[pushdown-automata]]
 - CFG 파스 트리 (반복 변수) → [[context-free-grammars]]
 - 문맥 민감이 필요한 것 → [[turing-machines]]
-- 변수 선언-사용은 의미분석 → programming-languages/[[semantic-analysis]]
+- 변수 선언-사용은 의미분석 → compilers/[[semantic-analysis]]
 
 ## 궁금한 것 (나중에)
 

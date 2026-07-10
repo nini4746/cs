@@ -16,7 +16,7 @@
 
 ### 0. URL 파싱
 
-브라우저가 URL을 분해: 프로토콜(https) + 호스트(www.example.com) + 경로(/page). programming-languages/[[lexing]]의 파싱과 같은 원리.
+브라우저가 URL을 분해: 프로토콜(https) + 호스트(www.example.com) + 경로(/page). compilers/[[lexing]]의 파싱과 같은 원리.
 
 ### 1. DNS 조회 → [[dns]]
 
@@ -124,7 +124,7 @@ JS 실행 (이벤트 루프 → web/[[javascript-event-loop]])
 
 ## 연결 (전체 종합)
 
-- 파싱: programming-languages/[[lexing]]
+- 파싱: compilers/[[lexing]]
 - DNS → [[dns]]
 - TCP → [[tcp-basics]], [[tcp-reliability]]
 - TLS → [[tls]], security/[[tls-deep-dive]]

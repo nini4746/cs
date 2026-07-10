@@ -68,7 +68,7 @@ Command { execute(); undo(); }
 - **이터레이터(Iterator)**: 컬렉션 순회를 통일 (내부 구조 감춤) → database/[[query-execution]]의 Volcano 모델, 언어 기본 제공
 - **템플릿 메서드**: 알고리즘 골격 고정, 일부 단계만 서브클래스가 (상속 기반 - 조합 전략과 대조)
 - **책임 연쇄(Chain of Responsibility)**: 요청을 처리기 체인으로 (미들웨어 [[structural-patterns]]의 데코레이터 유사)
-- **비지터(Visitor)**: 구조를 안 바꾸고 연산 추가 → programming-languages/compilers/[[ast-and-interpretation]]의 AST 순회
+- **비지터(Visitor)**: 구조를 안 바꾸고 연산 추가 → compilers/[[ast-and-interpretation]]의 AST 순회
 - **메멘토**: 상태 스냅샷 (undo, database/[[mvcc]] 유사)
 
 ## 여러 곳에 나온 것들 (종합)
@@ -95,7 +95,7 @@ Command { execute(); undo(); }
 - OCP → [[solid]]
 - 옵서버 = pub/sub → [[event-driven-architecture]], distributed-systems/[[message-queues]]
 - 상태 머신 → automata/[[dfa-nfa]], network/[[tcp-basics]]
-- 비지터 = AST → programming-languages/compilers/[[ast-and-interpretation]]
+- 비지터 = AST → compilers/[[ast-and-interpretation]]
 - 이터레이터 → database/[[query-execution]]
 - undo 스택 → data-structures/[[stacks-and-queues]]
 

@@ -62,7 +62,7 @@
 전송·실행할 코드 줄이기:
 
 - **코드 분할(code splitting)**: 필요한 것만 로드 (라우트별, 지연 로드)
-- **트리 셰이킹(tree shaking)**: 안 쓰는 코드 제거 (programming-languages/compilers/[[codegen-and-optimization]]의 DCE)
+- **트리 셰이킹(tree shaking)**: 안 쓰는 코드 제거 (compilers/[[codegen-and-optimization]]의 DCE)
 - **미니피케이션**: 공백·이름 축약
 - **압축**: gzip/brotli
 - 큰 JS = 다운로드 + 파싱 + 실행 전부 비용 (INP·LCP 악화)
@@ -104,7 +104,7 @@ network/[[what-happens-url]]의 각 단계 지연을 줄이는 것이 웹 성능
 - 메인 스레드·이벤트 루프 → [[browser-architecture]], [[javascript-event-loop]]
 - 캐싱·압축 → [[http-for-web]]
 - CDN·HTTP → network/[[cdn]], [[http]], [[what-happens-url]]
-- 번들 최적화 → programming-languages/compilers/[[codegen-and-optimization]]
+- 번들 최적화 → compilers/[[codegen-and-optimization]]
 - 렌더링 전략 → [[rendering-strategies]]
 
 ## 궁금한 것 (나중에)

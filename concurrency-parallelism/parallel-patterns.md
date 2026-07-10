@@ -81,7 +81,7 @@ fork: 하위 작업 분기,  join: 완료 대기 후 결합
 각 단계가 다른 코어에서 동시에 (조립 라인)
 ```
 
-- 컴파일러 단계(programming-languages/compilers/), 스트림 처리, CPU 파이프라인(computer-architecture/[[pipelining]])
+- 컴파일러 단계(compilers/), 스트림 처리, CPU 파이프라인(computer-architecture/[[pipelining]])
 - 처리량↑ (지연은 그대로, 단위시간 처리량 증가)
 - 병목 단계가 전체 속도 결정 (가장 느린 단계)
 

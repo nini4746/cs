@@ -36,7 +36,7 @@
 이 CS 노트들에서 만난 패턴들:
 
 - **상태 머신**([[behavioral-patterns]]): TCP(network/[[tcp-basics]]), Raft(distributed-systems/[[raft]]), DFA(automata/[[dfa-nfa]])
-- **비지터**: 컴파일러 AST(programming-languages/compilers/[[ast-and-interpretation]])
+- **비지터**: 컴파일러 AST(compilers/[[ast-and-interpretation]])
 - **이터레이터**: 쿼리 실행 Volcano(database/[[query-execution]])
 - **프록시/캐싱**: CDN(network/[[cdn]]), 캐싱 전략(distributed-systems/[[caching-strategies]])
 - **pub/sub**(옵서버): 메시지 큐(distributed-systems/[[message-queues]])

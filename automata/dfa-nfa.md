@@ -83,7 +83,7 @@ DFA 상태 = "NFA가 현재 있을 수 있는 상태들의 집합"
 
 ## 실용 응용
 
-- **렉서/토크나이저**: 프로그래밍 언어 토큰 = 정규 언어 → programming-languages/[[lexing]]
+- **렉서/토크나이저**: 프로그래밍 언어 토큰 = 정규 언어 → compilers/[[lexing]]
 - **정규식 엔진**: grep, RE2 → [[regex-engines]]
 - **KMP 문자열 매칭**: 실패 함수 = DFA → algorithms/[[string-matching]]
 - **프로토콜 상태 머신**: TCP 상태 → network/[[tcp-basics]]
@@ -93,7 +93,7 @@ DFA 상태 = "NFA가 현재 있을 수 있는 상태들의 집합"
 - 정규식과의 동치 → [[regex-and-finite-automata]]
 - 한계 증명 → [[pumping-lemma]]
 - 상태 최소화 → [[dfa-minimization]]
-- 렉서 → programming-languages/[[lexing]]
+- 렉서 → compilers/[[lexing]]
 - KMP = DFA → algorithms/[[string-matching]]
 
 ## 궁금한 것 (나중에)
