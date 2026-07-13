@@ -1,2 +1,8 @@
 # 빌드 시 생성되는 Anki 덱 (CI에서 quartz/static으로 생성, repo에 커밋 안 함)
 *.apkg
+
+# 비공개 노트: 별도 private repo(cs-private)의 클론. 공개 repo엔 절대 안 올라감.
+private/
+
+# 로컬 전용 헬퍼 (공개/비공개 둘 다 push)
+push-all.sh
