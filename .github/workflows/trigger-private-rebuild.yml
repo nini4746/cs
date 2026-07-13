@@ -1,0 +1,26 @@
+# 공개 cs에 push되면 비공개 사이트(notes.nini4746.uk = cs-private)도 재빌드시킨다.
+# cs-private가 빌드 때 공개 cs를 새로 clone해 합치므로, 이 트리거가 있어야
+# 공개 글(트렌딩 등)이 비공개 사이트에도 최신으로 반영된다.
+#
+# 활성화: cs-private(Cloudflare) Settings > Build > Deploy Hooks 에서 hook URL 생성 후,
+#         이 repo Secrets에 CF_DEPLOY_HOOK 로 등록. (없으면 이 워크플로는 그냥 skip)
+name: Trigger private site rebuild
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Cloudflare deploy hook
+        env:
+          HOOK: ${{ secrets.CF_DEPLOY_HOOK }}
+        run: |
+          if [ -n "$HOOK" ]; then
+            curl -fsS -X POST "$HOOK" && echo "triggered private rebuild"
+          else
+            echo "CF_DEPLOY_HOOK secret not set - skipping"
+          fi
