@@ -34,10 +34,11 @@ jobs:
       - name: Copy notes into Quartz content
         run: |
           mkdir -p quartz/content
-          rsync -a --exclude='.git' --exclude='.github' --exclude='README.md' --exclude='.gitkeep' --exclude='quartz.layout.ts' notes/ quartz/content/
+          rsync -a --exclude='.git' --exclude='.github' --exclude='README.md' --exclude='.gitkeep' --exclude='quartz.layout.ts' --exclude='quartz.custom.scss' notes/ quartz/content/
           printf -- '---\ntitle: "CS 공부 노트"\n---\n\n' > quartz/content/index.md
           cat notes/README.md >> quartz/content/index.md
           cp notes/quartz.layout.ts quartz/quartz.layout.ts
+          cp notes/quartz.custom.scss quartz/quartz/styles/custom.scss
 
       - name: Inject creation dates from git history
         working-directory: notes

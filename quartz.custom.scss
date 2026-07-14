@@ -1,0 +1,10 @@
+// 긴 레포명(owner/repo)이나 URL이 화면 밖으로 넘치지 않고 줄바꿈되게.
+h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+article a,
+.page-listing a {
+  overflow-wrap: anywhere;
+}
