@@ -1,5 +1,6 @@
 ---
 studied: 2026-07-17
+reviewed: [2026-07-17]
 ---
 
 # 논리와 증명 (Logic and Proofs)
