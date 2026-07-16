@@ -31,6 +31,9 @@ if ! sed -n '2,/^---$/p' "$file" | grep -q '^studied:'; then
 studied: $date
 " "$file"
   echo "studied: $date 기록됨 -> $note"
+elif sed -n '2,/^---$/p' "$file" | grep -q "^studied: $date"; then
+  # 학습 당일 재실행은 복습 아님
+  echo "오늘($date) 학습으로 이미 기록됨 -> $note"
 elif sed -n '2,/^---$/p' "$file" | grep -q '^reviewed:'; then
   # 복습 목록에 추가
   if sed -n '2,/^---$/p' "$file" | grep '^reviewed:' | grep -q "$date"; then
