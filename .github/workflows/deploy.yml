@@ -75,7 +75,7 @@ jobs:
           node-version: 22
 
       - name: Generate progress dashboard
-        run: node notes/scripts/gen-dashboard.mjs notes quartz/content/study-guide/dashboard.md
+        run: node notes/scripts/gen-dashboard.mjs notes quartz/content/study-guide/dashboard.md quartz/content
 
       - name: Build site
         working-directory: quartz
