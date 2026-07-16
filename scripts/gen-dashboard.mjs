@@ -243,7 +243,7 @@ function banner(prefix) {
   l.push(`> 👉 [오늘의 레슨](${prefix}today) · [데일리 퀴즈](${prefix}quiz) · [학습 경로](${prefix}path) · [대시보드](${prefix}dashboard)`)
   return l.join("\n")
 }
-const genNote = "> 빌드 시 노트 frontmatter(`studied`/`reviewed`)에서 자동 생성. 직접 편집 금지. 기록: [비공개 사이트](https://notes.nini4746.uk)에서 노트 우하단 **✅ 학습/복습 완료** 버튼 클릭 (CLI 대안: `bash scripts/mark-studied.sh <과목>/<노트>`)"
+const genNote = "> 빌드 시 노트 frontmatter(`studied`/`reviewed`)에서 자동 생성. 직접 편집 금지. 기록은 자기신고가 아니라 **퀴즈 통과**로만 됨: [비공개 사이트](https://notes.nini4746.uk)에서 노트 우하단 **📝 퀴즈로 점검** → AI 채점 평균 7/10 이상."
 
 // ---------- today.md ----------
 {
@@ -277,7 +277,7 @@ const genNote = "> 빌드 시 노트 frontmatter(`studied`/`reviewed`)에서 자
     l.push("1. 노트를 읽고 **덮은 뒤** `## 셀프 체크` 질문에 먼저 스스로 답한다 (그다음 펼쳐서 확인)")
     l.push("2. `## 연습문제`를 풀이 보기 전에 푼다")
     l.push("3. `## 파인만` - 백지에 남에게 설명하듯 쓴다. 막히면 그 부분만 다시")
-    l.push(`4. 통과했으면 [비공개 사이트에서 이 노트](https://notes.nini4746.uk/${lesson.subject}/${lesson.slug})를 열고 우하단 **✅ 학습/복습 완료** 버튼 클릭 - 커밋·리빌드·XP 전부 자동`, "")
+    l.push(`4. [비공개 사이트에서 이 노트](https://notes.nini4746.uk/${lesson.subject}/${lesson.slug})를 열고 우하단 **📝 퀴즈로 점검** - 답을 직접 타이핑하면 AI가 채점, 평균 7/10 이상이어야 학습으로 기록됨 (기록·리빌드·XP 자동)`, "")
     if (upNext.length) {
       l.push("**다음 대기:** " + upNext.map((n) => `[[${n.subject}/${n.slug}|${n.heading || n.label}]]`).join(" → "), "")
     }
