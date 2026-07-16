@@ -1,3 +1,7 @@
+// 이 파일은 빌드 시 quartz/quartz/styles/custom.scss 를 "덮어쓴다".
+// 원본 custom.scss 의 base.scss import 가 사라지면 사이트 전체 스타일이 죽으므로 필수.
+@use "./base.scss";
+
 // 긴 레포명(owner/repo)이나 URL이 화면 밖으로 넘치지 않고 줄바꿈되게.
 h1, h2, h3, h4, h5, h6 {
   overflow-wrap: anywhere;
