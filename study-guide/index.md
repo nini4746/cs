@@ -95,7 +95,7 @@ graph TD
 ## 진도 추적
 
 - 진실의 원천은 각 노트 frontmatter: `studied: YYYY-MM-DD` (첫 학습), `reviewed: [날짜, ...]` (복습 이력).
-- 기록은 한 줄: `bash scripts/mark-studied.sh os/process` - 첫 실행이면 `studied`, 이후엔 `reviewed`에 오늘 날짜 추가.
+- 기록은 클릭 한 번: [비공개 사이트](https://notes.nini4746.uk)에서 노트를 공부한 뒤 우하단 **✅ 학습/복습 완료** 버튼. 첫 클릭이면 `studied`, 이후엔 `reviewed`에 오늘 날짜가 커밋되고 사이트가 자동 리빌드됨. (CLI 대안: `bash scripts/mark-studied.sh os/process`)
 - 매일 자동 생성되는 4개 페이지 (새벽 크론 빌드로 갱신):
   - [오늘의 레슨](today.md) - 다음 미학습 노트 자동 지정 + 밀린 복습 + 완료 조건
   - [데일리 퀴즈](quiz.md) - 셀프체크 5문제 랜덤 출제 (학습 3 + 미학습 2)
