@@ -290,16 +290,28 @@ const genNote = "> 빌드 시 노트 frontmatter(`studied`/`reviewed`)에서 자
 
 // ---------- quiz.md ----------
 {
-  // 학습한 노트 우선 3 + 나머지 아무거나 2 (풀 부족하면 채움)
-  const qStudied = studiedNotes.flatMap((n) => n.questions.map((q) => ({ q, n })))
-  const qRest = allNotes.filter((n) => !n.studied).flatMap((n) => n.questions.map((q) => ({ q, n })))
-  let picked = [...pick(qStudied, 3), ...pick(qRest, 2)]
-  if (picked.length < 5) picked = [...picked, ...pick(qStudied.concat(qRest).filter((x) => !picked.includes(x)), 5 - picked.length)]
+  // 출제 범위는 학습 경로를 따른다 - 진도를 뛰어넘는 문제 금지.
+  // 복습 3문제: 밀린 복습 큐 우선, 부족하면 학습한 노트 전체.
+  // 예습 2문제: 학습 경로상 다음 노트들(오늘 레슨 포함 앞 5개)에서만.
+  const queueKeys = new Set(queue.map((q) => `${q.subject}/${q.slug}`))
+  const reviewNotes = [...queue, ...studiedNotes.filter((n) => !queueKeys.has(`${n.subject}/${n.slug}`))]
+  const upcoming = []
+  for (const u of units) {
+    if (!u.unlocked) continue
+    for (const n of u.notes) {
+      if (!n.studied && upcoming.length < 5) upcoming.push(n)
+    }
+    if (upcoming.length >= 5) break
+  }
+  const qStudied = reviewNotes.flatMap((n) => n.questions.map((q) => ({ q, n })))
+  const qNext = upcoming.flatMap((n) => n.questions.map((q) => ({ q, n })))
+  let picked = [...pick(qStudied, 3), ...pick(qNext, 2)]
+  if (picked.length < 5) picked = [...picked, ...pick([...qStudied, ...qNext].filter((x) => !picked.includes(x)), 5 - picked.length)]
   const l = []
   l.push("---", 'title: "데일리 퀴즈"', "---", "")
   l.push(`# 데일리 퀴즈 - ${fmtDate(today)}`, "")
   l.push(banner(""), "")
-  l.push("> 매일 자동 출제 (학습한 노트 3 + 미학습 2). **펼치기 전에 소리 내서 답하기.** 막힌 노트는 오늘 복습 대상.", "")
+  l.push("> 매일 자동 출제 - 복습 3문제(밀린 복습 우선) + 예습 2문제(학습 경로상 다음 노트만). **펼치기 전에 소리 내서 답하기.** 막힌 노트는 오늘 복습 대상.", "")
   picked.forEach(({ q, n }, i) => {
     l.push(`## Q${i + 1}. ${bySubject.get(n.subject).title}`, "")
     l.push(q, "")
