@@ -136,10 +136,12 @@ function plainText(s) {
   return s
     .replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, "$2")   // [[slug|label]] → label
     .replace(/\[\[([^\]]+)\]\]/g, "$1")               // [[slug]] → slug
-    .replace(/!?\[([^\]]*)\]\([^)]*\)/g, "$1")        // [text](url)·![alt](url) → text/alt
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, "")             // ![alt](url) 이미지 → 제거(DOM img는 textContent 없음)
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1")          // [text](url) 링크 → text
     .replace(/`([^`]+)`/g, "$1")                       // `code` → code (DOM textContent와 일치)
     .replace(/\*\*([^*]+)\*\*/g, "$1")                 // **bold** → bold
-    .replace(/(?<!\*)\*(?!\*)([^*]+)\*(?!\*)/g, "$1")  // *italic* → italic
+    // 단일 별표(*italic*)는 건드리지 않는다 - 수학(c*, n^c*)·코드(i*8, *ptr) 별표를
+    // 오염시키고, DOM textContent도 그 별표를 보존하므로 제거하면 오히려 불일치.
     .trim()
 }
 
@@ -225,8 +227,8 @@ const qkey = (n) => `${n.subject}/${n.slug}`
 function pickDueToday(q) {
   const asc = [...q].sort((a, b) => a.overdue - b.overdue)
   if (asc.length <= DAILY_REVIEW_CAP) return asc
-  const reserve = Math.min(STALE_RESERVE, DAILY_REVIEW_CAP)
-  const oldest = asc.slice(-reserve)                       // overdue 최대 reserve개
+  const reserve = Math.max(0, Math.min(STALE_RESERVE, DAILY_REVIEW_CAP))
+  const oldest = reserve > 0 ? asc.slice(-reserve) : []    // overdue 최대 reserve개 (reserve=0이면 예약 없음; slice(-0) 함정 회피)
   const oldestKeys = new Set(oldest.map(qkey))
   const fresh = asc.filter((n) => !oldestKeys.has(qkey(n))).slice(0, DAILY_REVIEW_CAP - reserve)
   return [...fresh, ...oldest.slice().reverse()]           // 앞: 덜 밀린, 뒤: 가장 밀린(더 밀린 순)
