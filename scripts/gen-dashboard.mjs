@@ -36,6 +36,11 @@ const UNLOCK_PCT = 0.6
 // 데일리 퀴즈 한 판 상한 - 밀린 복습이 아무리 쌓여도 하루에 이만큼만.
 // 재진입 시 40개를 통째로 안 들이밀기 위한 세션 상한.
 const DAILY_REVIEW_CAP = 8
+// CAP 중 가장 오래 밀린 노트에 예약하는 슬롯 수 - 덜 잊은 것만 계속 내면
+// backlog가 영구 기아되므로, 매 판 이만큼은 가장 밀린 것에서 채운다.
+const STALE_RESERVE = 3
+// 채점 게이트 최소 문항 수 (worker MIN_QUESTIONS와 일치). 이보다 적으면 통과 불가라 큐에서 제외.
+const MIN_QUESTIONS = 3
 
 // 선수과목 지도 (study-guide/index.md의 mermaid와 동일). 순서 = 학습 경로 순서.
 const PREREQS = {
@@ -106,7 +111,9 @@ function noteInfo(notePath) {
   const qa = [] // 평문 {q, ref} - queue.json용
   const lines = text.split("\n")
   for (let i = 0; i < lines.length; i++) {
-    const tm = lines[i].match(/^>\s*\[!question\]-\s*(.*)$/)
+    // folded(`-`)·unfolded 둘 다 매치 - worker의 DOM 셀렉터([data-callout="question"])와
+    // 인덱스를 맞춰야 변형 풀(note,qi) 키가 어긋나지 않는다.
+    const tm = lines[i].match(/^>\s*\[!question\]-?\s*(.*)$/)
     if (!tm) continue
     const block = [lines[i]]
     const body = []
@@ -123,12 +130,16 @@ function noteInfo(notePath) {
   return { studied, reviews, heading, questions, qa }
 }
 
-// 위키링크·굵게 등 마크다운을 평문으로 (퀴즈 오버레이는 DOM 텍스트를 쓰므로 여기서만 필요)
+// 마크다운을 평문으로. worker 오버레이는 DOM textContent(코드/링크가 이미 렌더된 평문)를
+// reference로 쓰므로, 여기 qa.ref도 같은 평문이어야 두 경로의 채점 기준이 일치한다.
 function plainText(s) {
   return s
-    .replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, "$2")
-    .replace(/\[\[([^\]]+)\]\]/g, "$1")
-    .replace(/\*\*([^*]+)\*\*/g, "$1")
+    .replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, "$2")   // [[slug|label]] → label
+    .replace(/\[\[([^\]]+)\]\]/g, "$1")               // [[slug]] → slug
+    .replace(/!?\[([^\]]*)\]\([^)]*\)/g, "$1")        // [text](url)·![alt](url) → text/alt
+    .replace(/`([^`]+)`/g, "$1")                       // `code` → code (DOM textContent와 일치)
+    .replace(/\*\*([^*]+)\*\*/g, "$1")                 // **bold** → bold
+    .replace(/(?<!\*)\*(?!\*)([^*]+)\*(?!\*)/g, "$1")  // *italic* → italic
     .trim()
 }
 
@@ -191,16 +202,36 @@ const studiedToday = activeDays.has(fmtDate(today))
 const lastActive = [...activeDays].sort().pop() || null
 const daysSinceActive = lastActive ? daysBetween(parseDate(lastActive), today) : null
 
-// 복습 큐
+// 복습 큐. 셀프체크 문항이 MIN_QUESTIONS 미만인 노트는 퀴즈로 통과가 불가능해
+// (worker가 400) 큐에 넣으면 매일 재출제되며 영영 안 빠지므로 제외한다.
 const queue = []
+const unquizzable = []
 for (const n of allNotes) {
   if (!n.studied) continue
+  if ((n.qa?.length || 0) < MIN_QUESTIONS) { unquizzable.push(n); continue }
   const last = n.reviews.length ? n.reviews[n.reviews.length - 1] : n.studied
   const due = new Date(last)
   due.setDate(due.getDate() + INTERVALS[Math.min(n.reviews.length, INTERVALS.length - 1)])
   if (due <= today) queue.push({ ...n, due, overdue: daysBetween(due, today) })
 }
 queue.sort((a, b) => b.overdue - a.overdue)
+if (unquizzable.length) {
+  console.error(`warning: ${unquizzable.length} studied note(s) have <${MIN_QUESTIONS} self-check questions, excluded from review queue: ${unquizzable.map((n) => `${n.subject}/${n.slug}`).join(", ")}`)
+}
+
+// 오늘 실제로 낼 복습 배치. 앞쪽은 덜 잊은 것(통과 경험 먼저), 뒤쪽 STALE_RESERVE개는
+// 가장 오래 밀린 것을 예약해 backlog가 영구 기아되지 않게 한다.
+const qkey = (n) => `${n.subject}/${n.slug}`
+function pickDueToday(q) {
+  const asc = [...q].sort((a, b) => a.overdue - b.overdue)
+  if (asc.length <= DAILY_REVIEW_CAP) return asc
+  const reserve = Math.min(STALE_RESERVE, DAILY_REVIEW_CAP)
+  const oldest = asc.slice(-reserve)                       // overdue 최대 reserve개
+  const oldestKeys = new Set(oldest.map(qkey))
+  const fresh = asc.filter((n) => !oldestKeys.has(qkey(n))).slice(0, DAILY_REVIEW_CAP - reserve)
+  return [...fresh, ...oldest.slice().reverse()]           // 앞: 덜 밀린, 뒤: 가장 밀린(더 밀린 순)
+}
+const dueToday = pickDueToday(queue)
 
 // 유닛(과목) 상태: 학습률 + 잠금
 function rateOf(name) {
@@ -265,9 +296,9 @@ const genNote = "> 빌드 시 노트 frontmatter(`studied`/`reviewed`)에서 자
   l.push(`# 오늘의 레슨 - ${fmtDate(today)}`, "")
   l.push(banner(""), "")
   l.push(genNote, "")
-  // 1) 복습 먼저 (듀오링고도 복습 우선). 밀려도 하루 CAP개, 덜 잊은 것부터.
+  // 1) 복습 먼저 (듀오링고도 복습 우선). 밀려도 하루 CAP개, 앞은 덜 잊은 것 + 가장 밀린 것 예약.
   {
-    const todayReview = [...queue].sort((a, b) => a.overdue - b.overdue).slice(0, DAILY_REVIEW_CAP)
+    const todayReview = dueToday
     l.push(`## 1교시 - 오늘 복습 (${todayReview.length}${queue.length > DAILY_REVIEW_CAP ? ` / 전체 ${queue.length}` : ""})`, "")
     if (queue.length === 0) {
       l.push("밀린 복습 없음. 바로 새 레슨으로.", "")
@@ -311,9 +342,8 @@ const genNote = "> 빌드 시 노트 frontmatter(`studied`/`reviewed`)에서 자
 // ---------- queue.json ----------
 // 비공개 사이트 /quiz(데일리 퀴즈)와 ntfy 푸시가 읽는다.
 {
-  // 재진입 구원: 밀린 게 아무리 많아도 하루 CAP개만, 덜 잊은 것(overdue 작은 것)부터.
-  // 돌아온 첫 판이 "가장 잊은 노트에서 불합격"이 아니라 "통과 경험"이 되도록.
-  const dueToday = [...queue].sort((a, b) => a.overdue - b.overdue).slice(0, DAILY_REVIEW_CAP)
+  // 재진입 구원: 밀린 게 아무리 많아도 하루 CAP개만. dueToday(위에서 계산) = 앞은 덜 잊은 것
+  // (통과 경험), 뒤 STALE_RESERVE개는 가장 밀린 것(backlog 기아 방지).
   const out = {
     generated: fmtDate(today),
     streak,
