@@ -2,6 +2,8 @@
   "generated": "2026-07-24",
   "streak": 0,
   "studiedToday": false,
+  "dueTotal": 0,
+  "dueCap": 8,
   "lesson": {
     "note": "math/logic-and-proofs",
     "title": "논리와 증명 (Logic and Proofs)",

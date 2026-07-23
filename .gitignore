@@ -6,3 +6,4 @@ private/
 
 # 로컬 전용 헬퍼 (공개/비공개 둘 다 push)
 push-all.sh
+.wrangler/

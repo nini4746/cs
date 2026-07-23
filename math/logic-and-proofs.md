@@ -19,7 +19,7 @@
 | 부정 | ¬P | not P | `!p` |
 | 논리곱 | P ∧ Q | P and Q | `p && q` |
 | 논리합 | P ∨ Q | P or Q | `p \|\| q` |
-| 함의 | P → Q | P면 Q | `if p then q` |
+| 함의 | P → Q | P면 Q | `!p \|\| q` |
 | 동치 | P ↔ Q | P iff Q | `p == q` |
 
 - **진리표**: 모든 경우의 참/거짓

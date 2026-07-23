@@ -33,6 +33,9 @@ const XP_REVIEW = 5
 const XP_PER_LEVEL = 100
 // 유닛 해제 조건: 모든 선수 과목 학습률 >= UNLOCK_PCT
 const UNLOCK_PCT = 0.6
+// 데일리 퀴즈 한 판 상한 - 밀린 복습이 아무리 쌓여도 하루에 이만큼만.
+// 재진입 시 40개를 통째로 안 들이밀기 위한 세션 상한.
+const DAILY_REVIEW_CAP = 8
 
 // 선수과목 지도 (study-guide/index.md의 mermaid와 동일). 순서 = 학습 경로 순서.
 const PREREQS = {
@@ -231,15 +234,25 @@ for (const u of units) {
 // ---------- 공통 조각 ----------
 const STATUS_ICON = { done: "✅", active: "🟢", open: "⭕", locked: "🔒" }
 function banner(prefix) {
+  // 오늘 실제로 마주할 복습 개수 - 밀려도 하루 CAP개까지만.
+  const todayCount = Math.min(queue.length, DAILY_REVIEW_CAP)
   const fire = studiedToday
     ? `🔥 스트릭 **${streak}일** - 오늘 완료!`
     : streak > 0
       ? `🔥 스트릭 **${streak}일** - 오늘 아직 안 함, 끊기기 전에!`
       : daysSinceActive === null
-        ? `💀 학습 기록 없음 - 오늘이 1일`
-        : `💀 스트릭 끊김 (마지막 학습 ${daysSinceActive}일 전)`
+        ? `🌱 오늘이 1일 - 첫 노트부터 가볍게`
+        : daysSinceActive <= 3
+          ? `👋 ${daysSinceActive}일 만이네요 - 다시 이어가기`
+          : `👋 다시 왔네요 (${daysSinceActive}일 만) - 오늘 ${todayCount}개면 충분`
+  // 밀린 복습 프레이밍: CAP 넘으면 "오늘 N개(전체 M개)"로 부담 완화
+  const dueTxt = queue.length > DAILY_REVIEW_CAP
+    ? `오늘 복습 **${todayCount}개** (전체 ${queue.length}개, 나머지는 내일)`
+    : `밀린 복습 **${queue.length}개**`
+  // 방치 후 복귀는 경고(빨강)가 아니라 중립 톤으로
+  const callout = studiedToday ? "success" : (streak > 0 ? "warning" : "note")
   const l = []
-  l.push(`> [!${studiedToday ? "success" : "warning"}] ${fire} · Lv.${level} (${xp} XP) · 밀린 복습 **${queue.length}개**`)
+  l.push(`> [!${callout}] ${fire} · Lv.${level} (${xp} XP) · ${dueTxt}`)
   l.push(`> 👉 [오늘의 레슨](${prefix}today) · [데일리 퀴즈](https://notes.nini4746.uk/quiz) · [학습 경로](${prefix}path) · [대시보드](${prefix}dashboard)`)
   return l.join("\n")
 }
@@ -252,18 +265,24 @@ const genNote = "> 빌드 시 노트 frontmatter(`studied`/`reviewed`)에서 자
   l.push(`# 오늘의 레슨 - ${fmtDate(today)}`, "")
   l.push(banner(""), "")
   l.push(genNote, "")
-  // 1) 복습 먼저 (듀오링고도 복습 우선)
-  l.push(`## 1교시 - 밀린 복습 (${queue.length})`, "")
-  if (queue.length === 0) {
-    l.push("밀린 복습 없음. 바로 새 레슨으로.", "")
-  } else {
-    l.push("| 노트 | 과목 | 밀린 일수 |", "|---|---|---|")
-    for (const q of queue.slice(0, 5)) {
-      const subjectTitle = bySubject.get(q.subject).title
-      l.push(`| [[${q.subject}/${q.slug}\\|${q.heading || q.label}]] | ${subjectTitle} | ${q.overdue === 0 ? "오늘" : `+${q.overdue}일`} |`)
+  // 1) 복습 먼저 (듀오링고도 복습 우선). 밀려도 하루 CAP개, 덜 잊은 것부터.
+  {
+    const todayReview = [...queue].sort((a, b) => a.overdue - b.overdue).slice(0, DAILY_REVIEW_CAP)
+    l.push(`## 1교시 - 오늘 복습 (${todayReview.length}${queue.length > DAILY_REVIEW_CAP ? ` / 전체 ${queue.length}` : ""})`, "")
+    if (queue.length === 0) {
+      l.push("밀린 복습 없음. 바로 새 레슨으로.", "")
+    } else {
+      if (queue.length > DAILY_REVIEW_CAP) {
+        l.push(`> 밀린 게 ${queue.length}개지만 오늘은 ${DAILY_REVIEW_CAP}개면 됩니다. 덜 잊은 것부터, 나머지는 내일. 한 번에 다 갚을 필요 없어요.`, "")
+      }
+      l.push("| 노트 | 과목 | 밀린 일수 |", "|---|---|---|")
+      for (const q of todayReview.slice(0, 5)) {
+        const subjectTitle = bySubject.get(q.subject).title
+        l.push(`| [[${q.subject}/${q.slug}\\|${q.heading || q.label}]] | ${subjectTitle} | ${q.overdue === 0 ? "오늘" : `+${q.overdue}일`} |`)
+      }
+      if (todayReview.length > 5) l.push("", `...외 ${todayReview.length - 5}개는 [데일리 퀴즈](https://notes.nini4746.uk/quiz)에서 한 판에.`)
+      l.push("")
     }
-    if (queue.length > 5) l.push("", `...외 ${queue.length - 5}개는 [대시보드](dashboard)에서.`)
-    l.push("")
   }
   // 2) 새 레슨
   l.push("## 2교시 - 새 레슨", "")
@@ -292,14 +311,19 @@ const genNote = "> 빌드 시 노트 frontmatter(`studied`/`reviewed`)에서 자
 // ---------- queue.json ----------
 // 비공개 사이트 /quiz(데일리 퀴즈)와 ntfy 푸시가 읽는다.
 {
+  // 재진입 구원: 밀린 게 아무리 많아도 하루 CAP개만, 덜 잊은 것(overdue 작은 것)부터.
+  // 돌아온 첫 판이 "가장 잊은 노트에서 불합격"이 아니라 "통과 경험"이 되도록.
+  const dueToday = [...queue].sort((a, b) => a.overdue - b.overdue).slice(0, DAILY_REVIEW_CAP)
   const out = {
     generated: fmtDate(today),
     streak,
     studiedToday,
+    dueTotal: queue.length,
+    dueCap: DAILY_REVIEW_CAP,
     lesson: lesson
       ? { note: `${lesson.subject}/${lesson.slug}`, title: lesson.heading || lesson.label, subject: lesson.subjectTitle }
       : null,
-    due: queue.map((q) => ({
+    due: dueToday.map((q) => ({
       note: `${q.subject}/${q.slug}`,
       title: q.heading || q.label,
       subject: bySubject.get(q.subject).title,
