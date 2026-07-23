@@ -3,6 +3,8 @@ name: Deploy Quartz site to GitHub Pages
 on:
   push:
     branches: [main]
+  schedule:
+    - cron: "30 19 * * *" # 04:30 KST - 날짜가 바뀌면 복습 큐/대시보드 갱신
   workflow_dispatch:
 
 permissions:
@@ -82,13 +84,6 @@ jobs:
         run: |
           npm ci
           npx quartz build
-
-      - name: Generate Anki deck
-        continue-on-error: true
-        run: |
-          python3 -m venv /tmp/ankivenv
-          /tmp/ankivenv/bin/pip install --quiet genanki
-          /tmp/ankivenv/bin/python notes/scripts/gen-anki.py notes quartz/public/cs-notes.apkg
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

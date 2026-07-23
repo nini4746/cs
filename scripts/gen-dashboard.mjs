@@ -8,8 +8,8 @@
 // 생성물 (outFile과 같은 디렉토리):
 //   dashboard.md - 복습 큐 + 과목별 학습률 + XP/레벨/스트릭
 //   today.md     - 오늘의 레슨 (다음 미학습 노트 자동 지정) + 밀린 복습
-//   quiz.md      - 데일리 퀴즈 (날짜 시드 랜덤 5문제, 답 접힘)
 //   path.md      - 학습 경로 (선수과목 기반 유닛 잠금/해제 스킬트리)
+//   queue.json   - 복습 큐 + 오늘의 레슨 + 문항 평문 (비공개 사이트 /quiz 데일리 퀴즈가 사용)
 // syncRoot 지정 시:
 //   - 각 과목 index.md 체크박스를 studied 기준으로 [x] 동기화
 //   - syncRoot/index.md (홈) 상단에 스트릭/독촉 배너 주입
@@ -73,23 +73,6 @@ function fmtDate(d) {
   const p = (n) => String(n).padStart(2, "0")
   return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`
 }
-// 날짜 시드 결정적 난수 (mulberry32) - 같은 날은 같은 퀴즈
-function rng(seed) {
-  return () => {
-    seed |= 0; seed = (seed + 0x6d2b79f5) | 0
-    let t = Math.imul(seed ^ (seed >>> 15), 1 | seed)
-    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296
-  }
-}
-const rand = rng(Number(fmtDate(today).replace(/-/g, "")))
-function pick(arr, n) {
-  const a = [...arr]
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(rand() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]
-  }
-  return a.slice(0, n)
-}
 function bar(done, total, width = 20) {
   if (total === 0) return "─".repeat(width)
   const filled = Math.round((done / total) * width)
@@ -117,16 +100,33 @@ function noteInfo(notePath) {
   const heading = hm ? hm[1].trim() : null
   // 셀프체크 질문 콜아웃 블록 추출 (제목 줄 + 이어지는 "> " 본문)
   const questions = []
+  const qa = [] // 평문 {q, ref} - queue.json용
   const lines = text.split("\n")
   for (let i = 0; i < lines.length; i++) {
-    if (!/^>\s*\[!question\]-/.test(lines[i])) continue
+    const tm = lines[i].match(/^>\s*\[!question\]-\s*(.*)$/)
+    if (!tm) continue
     const block = [lines[i]]
+    const body = []
     let j = i + 1
-    while (j < lines.length && /^>/.test(lines[j])) { block.push(lines[j]); j++ }
+    while (j < lines.length && /^>/.test(lines[j])) {
+      block.push(lines[j])
+      body.push(lines[j].replace(/^>\s?/, ""))
+      j++
+    }
     questions.push(block.join("\n"))
+    qa.push({ q: plainText(tm[1]), ref: plainText(body.join("\n").trim()) })
     i = j - 1
   }
-  return { studied, reviews, heading, questions }
+  return { studied, reviews, heading, questions, qa }
+}
+
+// 위키링크·굵게 등 마크다운을 평문으로 (퀴즈 오버레이는 DOM 텍스트를 쓰므로 여기서만 필요)
+function plainText(s) {
+  return s
+    .replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, "$2")
+    .replace(/\[\[([^\]]+)\]\]/g, "$1")
+    .replace(/\*\*([^*]+)\*\*/g, "$1")
+    .trim()
 }
 
 function titleOf(indexPath, fallback) {
@@ -157,7 +157,7 @@ for (const name of readdirSync(repoRoot).sort()) {
   const notes = notesOf(indexPath)
   if (notes.length === 0) continue
   const enriched = notes.map((n) => {
-    const info = noteInfo(join(dir, `${n.slug}.md`)) || { studied: null, reviews: [], heading: null, questions: [] }
+    const info = noteInfo(join(dir, `${n.slug}.md`)) || { studied: null, reviews: [], heading: null, questions: [], qa: [] }
     return { ...n, subject: name, ...info }
   })
   bySubject.set(name, { name, title: titleOf(indexPath, name), notes: enriched })
@@ -240,10 +240,10 @@ function banner(prefix) {
         : `💀 스트릭 끊김 (마지막 학습 ${daysSinceActive}일 전)`
   const l = []
   l.push(`> [!${studiedToday ? "success" : "warning"}] ${fire} · Lv.${level} (${xp} XP) · 밀린 복습 **${queue.length}개**`)
-  l.push(`> 👉 [오늘의 레슨](${prefix}today) · [데일리 퀴즈](${prefix}quiz) · [학습 경로](${prefix}path) · [대시보드](${prefix}dashboard)`)
+  l.push(`> 👉 [오늘의 레슨](${prefix}today) · [데일리 퀴즈](https://notes.nini4746.uk/quiz) · [학습 경로](${prefix}path) · [대시보드](${prefix}dashboard)`)
   return l.join("\n")
 }
-const genNote = "> 빌드 시 노트 frontmatter(`studied`/`reviewed`)에서 자동 생성. 직접 편집 금지. 기록은 자기신고가 아니라 **퀴즈 통과**로만 됨: [비공개 사이트](https://notes.nini4746.uk)에서 노트 우하단 **📝 퀴즈로 점검** → AI 채점 평균 7/10 이상."
+const genNote = "> 빌드 시 노트 frontmatter(`studied`/`reviewed`)에서 자동 생성. 직접 편집 금지. 기록은 자기신고가 아니라 **퀴즈 통과**로만 됨: [비공개 사이트](https://notes.nini4746.uk)에서 노트 우하단 **📝 퀴즈로 점검** → 매번 LLM 변형 문항 출제, AI 채점 평균 7/10 이상."
 
 // ---------- today.md ----------
 {
@@ -273,52 +273,41 @@ const genNote = "> 빌드 시 노트 frontmatter(`studied`/`reviewed`)에서 자
     l.push(`> [!todo] 오늘의 노트: [[${lesson.subject}/${lesson.slug}|${lesson.heading || lesson.label}]] (${lesson.subjectTitle})`)
     if (lesson.desc) l.push(`> ${lesson.desc}`)
     l.push(`> 완료 보상: +${XP_STUDY} XP`, "")
-    l.push("**완료 조건** - 전부 만족해야 학습으로 침:", "")
+    l.push("**게이트는 퀴즈 하나** - 통과해야만 학습으로 기록:", "")
+    l.push(`- [비공개 사이트에서 이 노트](https://notes.nini4746.uk/${lesson.subject}/${lesson.slug})를 열고 우하단 **📝 퀴즈로 점검** - 매번 LLM 변형 문항이 출제되고, 답을 직접 타이핑하면 AI가 채점. 평균 7/10 이상이어야 기록됨 (기록·리빌드·XP 자동)`, "")
+    l.push("**권장 학습법** - 강제는 아니지만 통과 확률과 기억을 크게 올림:", "")
     l.push("1. 노트를 읽고 **덮은 뒤** `## 셀프 체크` 질문에 먼저 스스로 답한다 (그다음 펼쳐서 확인)")
     l.push("2. `## 연습문제`를 풀이 보기 전에 푼다")
-    l.push("3. `## 파인만` - 백지에 남에게 설명하듯 쓴다. 막히면 그 부분만 다시")
-    l.push(`4. [비공개 사이트에서 이 노트](https://notes.nini4746.uk/${lesson.subject}/${lesson.slug})를 열고 우하단 **📝 퀴즈로 점검** - 답을 직접 타이핑하면 AI가 채점, 평균 7/10 이상이어야 학습으로 기록됨 (기록·리빌드·XP 자동)`, "")
+    l.push("3. `## 파인만` - 백지에 남에게 설명하듯 쓴다. 막히면 그 부분만 다시", "")
     if (upNext.length) {
       l.push("**다음 대기:** " + upNext.map((n) => `[[${n.subject}/${n.slug}|${n.heading || n.label}]]`).join(" → "), "")
     }
   }
-  // 3) 퀴즈
+  // 3) 데일리 퀴즈 (비공개 사이트, 채점 게이트)
   l.push("## 3교시 - 데일리 퀴즈", "")
-  l.push("[오늘의 퀴즈 5문제](quiz) - 답 보기 전에 소리 내서 답할 것.", "")
+  l.push("[데일리 퀴즈](https://notes.nini4746.uk/quiz) - 밀린 복습을 변형 문항으로 한 판에. 통과한 노트는 복습으로 자동 기록.", "")
   writeFileSync(join(outDir, "today.md"), l.join("\n"))
 }
 
-// ---------- quiz.md ----------
+// ---------- queue.json ----------
+// 비공개 사이트 /quiz(데일리 퀴즈)와 ntfy 푸시가 읽는다.
 {
-  // 출제 범위는 학습 경로를 따른다 - 진도를 뛰어넘는 문제 금지.
-  // 복습 3문제: 밀린 복습 큐 우선, 부족하면 학습한 노트 전체.
-  // 예습 2문제: 학습 경로상 다음 노트들(오늘 레슨 포함 앞 5개)에서만.
-  const queueKeys = new Set(queue.map((q) => `${q.subject}/${q.slug}`))
-  const reviewNotes = [...queue, ...studiedNotes.filter((n) => !queueKeys.has(`${n.subject}/${n.slug}`))]
-  const upcoming = []
-  for (const u of units) {
-    if (!u.unlocked) continue
-    for (const n of u.notes) {
-      if (!n.studied && upcoming.length < 5) upcoming.push(n)
-    }
-    if (upcoming.length >= 5) break
+  const out = {
+    generated: fmtDate(today),
+    streak,
+    studiedToday,
+    lesson: lesson
+      ? { note: `${lesson.subject}/${lesson.slug}`, title: lesson.heading || lesson.label, subject: lesson.subjectTitle }
+      : null,
+    due: queue.map((q) => ({
+      note: `${q.subject}/${q.slug}`,
+      title: q.heading || q.label,
+      subject: bySubject.get(q.subject).title,
+      overdue: q.overdue,
+      questions: q.qa.map((x, i) => ({ i, q: x.q, ref: x.ref })),
+    })),
   }
-  const qStudied = reviewNotes.flatMap((n) => n.questions.map((q) => ({ q, n })))
-  const qNext = upcoming.flatMap((n) => n.questions.map((q) => ({ q, n })))
-  let picked = [...pick(qStudied, 3), ...pick(qNext, 2)]
-  if (picked.length < 5) picked = [...picked, ...pick([...qStudied, ...qNext].filter((x) => !picked.includes(x)), 5 - picked.length)]
-  const l = []
-  l.push("---", 'title: "데일리 퀴즈"', "---", "")
-  l.push(`# 데일리 퀴즈 - ${fmtDate(today)}`, "")
-  l.push(banner(""), "")
-  l.push("> 매일 자동 출제 - 복습 3문제(밀린 복습 우선) + 예습 2문제(학습 경로상 다음 노트만). **펼치기 전에 소리 내서 답하기.** 막힌 노트는 오늘 복습 대상.", "")
-  picked.forEach(({ q, n }, i) => {
-    l.push(`## Q${i + 1}. ${bySubject.get(n.subject).title}`, "")
-    l.push(q, "")
-    l.push(`출처: [[${n.subject}/${n.slug}|${n.heading || n.label}]]${n.studied ? "" : " (미학습 - 맛보기)"}`, "")
-  })
-  if (picked.length === 0) l.push("출제할 셀프체크 질문이 없습니다.")
-  writeFileSync(join(outDir, "quiz.md"), l.join("\n"))
+  writeFileSync(join(outDir, "queue.json"), JSON.stringify(out, null, 2))
 }
 
 // ---------- path.md ----------

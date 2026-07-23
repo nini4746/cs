@@ -9,6 +9,8 @@ name: Trigger private site rebuild
 on:
   push:
     branches: [main]
+  schedule:
+    - cron: "30 19 * * *" # 04:30 KST - 날짜가 바뀌면 queue.json(복습 큐) 갱신
   workflow_dispatch:
 
 jobs:

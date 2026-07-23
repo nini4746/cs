@@ -5,9 +5,9 @@ title: "학습 대시보드"
 # 학습 대시보드
 
 > [!warning] 💀 학습 기록 없음 - 오늘이 1일 · Lv.1 (0 XP) · 밀린 복습 **0개**
-> 👉 [오늘의 레슨](today) · [데일리 퀴즈](quiz) · [학습 경로](path) · [대시보드](dashboard)
+> 👉 [오늘의 레슨](today) · [데일리 퀴즈](https://notes.nini4746.uk/quiz) · [학습 경로](path) · [대시보드](dashboard)
 
-> 빌드 시 노트 frontmatter(`studied`/`reviewed`)에서 자동 생성. 직접 편집 금지. 기록은 자기신고가 아니라 **퀴즈 통과**로만 됨: [비공개 사이트](https://notes.nini4746.uk)에서 노트 우하단 **📝 퀴즈로 점검** → AI 채점 평균 7/10 이상.
+> 빌드 시 노트 frontmatter(`studied`/`reviewed`)에서 자동 생성. 직접 편집 금지. 기록은 자기신고가 아니라 **퀴즈 통과**로만 됨: [비공개 사이트](https://notes.nini4746.uk)에서 노트 우하단 **📝 퀴즈로 점검** → 매번 LLM 변형 문항 출제, AI 채점 평균 7/10 이상.
 
 ## 레벨 & XP
 
