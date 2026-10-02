@@ -36,7 +36,7 @@ jobs:
       - name: Copy notes into Quartz content
         run: |
           mkdir -p quartz/content
-          rsync -a --exclude='.git' --exclude='.github' --exclude='README.md' --exclude='.gitkeep' --exclude='quartz.layout.ts' --exclude='quartz.custom.scss' notes/ quartz/content/
+          rsync -a --exclude='.git' --exclude='.github' --exclude='README.md' --exclude='.gitkeep' --exclude='quartz.layout.ts' --exclude='quartz.custom.scss' --exclude='*.html' notes/ quartz/content/
           printf -- '---\ntitle: "CS 공부 노트"\n---\n\n' > quartz/content/index.md
           cat notes/README.md >> quartz/content/index.md
           cp notes/quartz.layout.ts quartz/quartz.layout.ts
@@ -84,6 +84,16 @@ jobs:
         run: |
           npm ci
           npx quartz build
+
+      # Quartz strips .html from assets, so Pages serves them as octet-stream (download).
+      # Copy standalone HTML pages into the output as-is instead.
+      - name: Copy standalone HTML pages
+        run: |
+          cd notes
+          git ls-files '*.html' | while read -r f; do
+            mkdir -p "../quartz/public/$(dirname "$f")"
+            cp "$f" "../quartz/public/$f"
+          done
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
